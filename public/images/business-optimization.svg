@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad1)"/>
+  
+  <!-- Graph -->
+  <g transform="translate(200,150)">
+    <path d="M0 300 L400 300 M0 300 L0 0" stroke="#d1d5db" stroke-width="2" fill="none"/>
+    <path d="M0 250 C100 250, 150 200, 200 150 S300 50, 400 50" stroke="#8b5cf6" stroke-width="3" fill="none"/>
+    
+    <!-- Data Points -->
+    <g fill="#7c3aed">
+      <circle cx="0" cy="250" r="5"/>
+      <circle cx="100" cy="250" r="5"/>
+      <circle cx="200" cy="150" r="5"/>
+      <circle cx="300" cy="100" r="5"/>
+      <circle cx="400" cy="50" r="5"/>
+    </g>
+  </g>
+  
+  <!-- Process Flow -->
+  <g transform="translate(250,400)">
+    <!-- Process Boxes -->
+    <g fill="#ffffff" stroke="#8b5cf6" stroke-width="2">
+      <rect x="0" y="0" width="80" height="40" rx="5"/>
+      <rect x="120" y="0" width="80" height="40" rx="5"/>
+      <rect x="240" y="0" width="80" height="40" rx="5"/>
+    </g>
+    
+    <!-- Connection Arrows -->
+    <g stroke="#7c3aed" stroke-width="2">
+      <path d="M80 20 L120 20" fill="none"/>
+      <path d="M200 20 L240 20" fill="none"/>
+      <path d="M115 20 L120 15 L120 25 Z" fill="#7c3aed"/>
+      <path d="M235 20 L240 15 L240 25 Z" fill="#7c3aed"/>
+    </g>
+  </g>
+  
+  <!-- Optimization Icons -->
+  <g transform="translate(300,250)">
+    <circle cx="0" cy="0" r="30" fill="#ffffff" stroke="#8b5cf6" stroke-width="2">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-15 0 L15 0 M0 -15 L0 15" stroke="#7c3aed" stroke-width="3"/>
+  </g>
+  
+  <!-- Progress Indicators -->
+  <g transform="translate(500,200)">
+    <rect x="0" y="0" width="100" height="10" rx="5" fill="#f3f4f6"/>
+    <rect x="0" y="0" width="75" height="10" rx="5" fill="#8b5cf6">
+      <animate attributeName="width" values="0;75" dur="2s" fill="freeze"/>
+    </rect>
+    
+    <rect x="0" y="20" width="100" height="10" rx="5" fill="#f3f4f6"/>
+    <rect x="0" y="20" width="90" height="10" rx="5" fill="#7c3aed">
+      <animate attributeName="width" values="0;90" dur="2s" fill="freeze"/>
+    </rect>
+    
+    <rect x="0" y="40" width="100" height="10" rx="5" fill="#f3f4f6"/>
+    <rect x="0" y="40" width="60" height="10" rx="5" fill="#8b5cf6">
+      <animate attributeName="width" values="0;60" dur="2s" fill="freeze"/>
+    </rect>
+  </g>
+</svg> 

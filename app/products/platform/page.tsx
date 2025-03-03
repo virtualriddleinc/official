@@ -1,0 +1,224 @@
+"use client";
+
+import Link from "next/link";
+
+export default function PlatformPage() {
+  return (
+    <div className="pt-20">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-50 to-white py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">
+              Atlassian Platform
+            </h1>
+            <p className="text-xl text-gray mb-8">
+              Atlassian ürünlerini özelleştirin ve kendi çözümlerinizi geliştirin
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="#"
+                className="px-6 py-3 bg-blue text-white font-medium rounded-lg hover:bg-blue-600 transition-colors"
+              >
+                Başlayın
+              </Link>
+              <Link
+                href="#"
+                className="px-6 py-3 bg-white text-blue font-medium rounded-lg border border-blue hover:bg-blue-50 transition-colors"
+              >
+                Dokümantasyon
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-dark mb-2">API'lar</h3>
+              <p className="text-gray">
+                Güçlü REST API'ları ile Atlassian ürünlerini özelleştirin.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-dark mb-2">UI Bileşenleri</h3>
+              <p className="text-gray">
+                Atlassian Design System ile tutarlı kullanıcı arayüzleri oluşturun.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-dark mb-2">Otomasyon</h3>
+              <p className="text-gray">
+                İş akışlarını otomatikleştirin ve verimliliği artırın.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-dark mb-4">
+              Geliştirici Araçları
+            </h2>
+            <p className="text-gray">
+              İhtiyacınız olan tüm geliştirici araçları ve kaynakları
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Tool 1 */}
+            <div className="bg-white p-8 rounded-xl border border-gray-100">
+              <h3 className="text-xl font-semibold text-dark mb-4">SDK'lar ve Araçlar</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center text-gray">
+                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Atlassian SDK
+                </li>
+                <li className="flex items-center text-gray">
+                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  CLI Araçları
+                </li>
+                <li className="flex items-center text-gray">
+                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  IDE Eklentileri
+                </li>
+              </ul>
+            </div>
+
+            {/* Tool 2 */}
+            <div className="bg-white p-8 rounded-xl border border-gray-100">
+              <h3 className="text-xl font-semibold text-dark mb-4">Kaynaklar</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center text-gray">
+                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  API Dokümantasyonu
+                </li>
+                <li className="flex items-center text-gray">
+                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Örnek Kodlar
+                </li>
+                <li className="flex items-center text-gray">
+                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Geliştirici Rehberleri
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-dark mb-4">
+              Kullanım Senaryoları
+            </h2>
+            <p className="text-gray">
+              Platform ile neler yapabileceğinizi keşfedin
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Use Case 1 */}
+            <div className="bg-white p-6 rounded-xl border border-gray-100">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                </svg>
+              </div>
+              <h3 className="font-semibold text-dark mb-2">Özel Uygulamalar</h3>
+              <p className="text-gray text-sm">Kendi iş akışlarınıza özel uygulamalar geliştirin.</p>
+            </div>
+
+            {/* Use Case 2 */}
+            <div className="bg-white p-6 rounded-xl border border-gray-100">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+                </svg>
+              </div>
+              <h3 className="font-semibold text-dark mb-2">Entegrasyonlar</h3>
+              <p className="text-gray text-sm">Mevcut sistemlerinizi Atlassian ürünleriyle entegre edin.</p>
+            </div>
+
+            {/* Use Case 3 */}
+            <div className="bg-white p-6 rounded-xl border border-gray-100">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                </svg>
+              </div>
+              <h3 className="font-semibold text-dark mb-2">UI Eklentileri</h3>
+              <p className="text-gray text-sm">Atlassian ürünlerinin arayüzünü özelleştirin.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="bg-blue rounded-3xl p-12 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Geliştirmeye Başlayın
+            </h2>
+            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+              Atlassian Platform ile kendi çözümlerinizi geliştirin.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="#"
+                className="px-8 py-4 bg-white text-blue font-medium rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                Geliştirici Portalı
+              </Link>
+              <Link
+                href="#"
+                className="px-8 py-4 bg-transparent text-white font-medium rounded-lg border border-white hover:bg-white/10 transition-colors"
+              >
+                API Dokümantasyonu
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+} 

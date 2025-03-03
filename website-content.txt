@@ -1,0 +1,205 @@
+I. Ana Sayfa
+* Hero Bölümü:
+    * Başlık: "Atlassian Gücüyle İş Akışlarınızı Optimize Edin ve Dijital Dönüşümünüzü Hızlandırın"
+    * Alt Başlık: "Uzman Atlassian danışmanlarımızla süreçlerinizi basitleştirin, verimliliğinizi artırın ve rekabet avantajı elde edin."
+    * Açıklama: "Günümüzün hızlı tempolu iş dünyasında, çeviklik ve verimlilik her zamankinden daha önemli. Atlassian'ın güçlü araçları, ekiplerinizin daha hızlı, daha akıllı ve daha koordineli çalışmasına yardımcı olabilir. Uzman danışmanlarımız, Jira, Confluence, Bitbucket ve diğer Atlassian ürünlerini kullanarak iş akışlarınızı optimize eder, ekiplerinizin iş birliğini artırır ve dijital dönüşümünüzü hızlandırır. İster küçük bir işletme olun, ister büyük bir kuruluş, Atlassian çözümleriyle iş süreçlerinizi bir üst seviyeye taşıyabilirsiniz."
+    * Harekete Geçirici Mesaj Düğmesi: "Ücretsiz Danışmanlık Alın" & "Demo Talep Edin" (İki buton)
+    * Görsel: Dinamik bir ofis ortamında geçen, farklı ekiplerin Jira, Confluence ve Bitbucket kullanarak nasıl iş birliği yaptığını ve projeleri başarıyla tamamladığını gösteren kısa ve yüksek kaliteli bir video. Videoda, Jira panoları üzerinde görevlerin nasıl hareket ettiğini, Confluence sayfalarında nasıl bilgi paylaşıldığını ve Bitbucket'ta kodların nasıl yönetildiğini gösteren animasyonlar kullanılabilir. Video sonunda şirket logosu ve "Atlassian ile Daha Fazlasını Başarın" sloganı yer alabilir. Arka planda enerjik ve modern, telif hakkı içermeyen bir müzik kullanılabilir.
+    * Ek Bilgiler:
+        * Hero bölümünün altına, "Atlassian Platinum Solution Partner" logosunu ekleyin (eğer varsa).
+        * "10 Yıllık Deneyim", "100+ Başarılı Proje", "50+ Sertifikalı Uzman" gibi kısa istatistikler ekleyerek güvenilirliğinizi vurgulayın.
+        * Hero bölümünün hemen altına, "Hizmetlerimiz", "Çözümlerimiz", "Blog" ve "İletişim" gibi önemli sayfalara hızlı bağlantılar ekleyin.
+* Hizmetlerimiz Bölümü: (Her kartın altında "Daha Fazla Bilgi" butonu ekleyin)
+    * Kart 1 - Jira Danışmanlığı:
+        * Görsel: Jira logosu ve çevik bir ekibin Jira panosu etrafında toplantı yaptığı bir illüstrasyon. Pano üzerinde renkli post-it'ler ve iş akışını gösteren oklar bulunabilir.
+        * Başlık: "Jira ile Projelerinizi Planlayın, Takip Edin ve Raporlayın"
+        * Açıklama: "Jira Software, Jira Service Management ve Jira Work Management ile proje yönetimi, hizmet yönetimi ve iş akışı süreçlerinizi optimize edin. İhtiyaçlarınıza göre özelleştirilmiş Jira çözümleriyle verimliliğinizi artırın. Agile, Scrum ve Kanban metodolojilerine uygun projelerinizi planlayın, görevleri atayın, ilerlemeyi takip edin ve detaylı raporlar oluşturun. Jira'nın esnek yapısı, farklı ekiplerin ve departmanların ihtiyaçlarına cevap verebilir."
+        * Ek Bilgiler:
+            * Jira danışmanlığı hizmetlerinizin kapsamını madde işaretleri ile listeleyin (örneğin, Jira kurulumu ve yapılandırması, iş akışı özelleştirme, eklenti entegrasyonu, kullanıcı eğitimi vb.)
+            * "Jira ile %30'a Varan Verimlilik Artışı" gibi bir istatistik ekleyebilirsiniz.
+            * Jira danışmanlığı hizmeti aldığınızda müşterilerinizin elde edebileceği somut faydaları listeleyin (örneğin, "Projelerinizi zamanında ve bütçeniz dahilinde tamamlayın", "Ekiplerinizin verimliliğini artırın", "Daha iyi kararlar almak için gerçek zamanlı verilere erişin" vb.)
+            * Farklı Jira ürünlerine (Jira Software, Jira Service Management, Jira Work Management) özel hizmetleriniz hakkında kısa bilgiler verin.
+    * Kart 2 - Confluence Danışmanlığı:
+        * Görsel: Confluence logosu ve birbirine bağlı Confluence sayfalarının dinamik bir şekilde açılıp kapandığı bir animasyon. Sayfalarda metinler, görseller, videolar ve diğer içerikler bulunabilir.
+        * Başlık: "Confluence ile Bilgi Paylaşımını ve İş Birliğini Kolaylaştırın"
+        * Açıklama: "Confluence ile ekip içi bilgi paylaşımını ve iş birliğini güçlendirin. Şirket içi bilgi birikiminizi düzenleyin, dökümanlarınızı yönetin ve etkili bir şekilde iletişim kurun. Wiki sayfaları, toplantı notları, proje dokümantasyonu ve daha fazlasını Confluence ile kolayca oluşturun ve paylaşın. Bilgiye hızlı ve kolay erişim sağlayarak ekiplerinizin daha verimli çalışmasına yardımcı olun."
+        * Ek Bilgiler:
+            * Confluence danışmanlığı hizmetlerinizin kapsamını listeleyin (örneğin, Confluence kurulumu ve yapılandırması, şablon oluşturma, kullanıcı eğitimi, bilgi yönetimi stratejileri vb.)
+            * "Confluence ile Bilgiye Erişim Süresini %50 Azaltın" gibi bir istatistik ekleyin.
+            * Confluence ile nasıl daha etkili bir bilgi yönetimi sistemi oluşturabileceğinize dair ipuçları verin.
+            * Confluence'ın farklı kullanım alanlarını (örneğin, dokümantasyon, bilgi bankası, proje yönetimi, iş birliği) örneklerle açıklayın.
+    * Kart 3 - Bitbucket Danışmanlığı:
+        * Görsel: Bitbucket logosu ve kod satırlarının hareketli bir şekilde yazıldığı ve değiştirildiği bir animasyon. Animasyonda, farklı renklerde kod blokları ve versiyon kontrol sistemini gösteren dallanma diyagramları kullanılabilir.
+        * Başlık: "Bitbucket ile Kodlarınızı Güvenle Yönetin ve İş Birliğini Artırın"
+        * Açıklama: "Bitbucket ile yazılım geliştirme süreçlerinizi hızlandırın ve verimliliğinizi artırın. Kodlarınızı güvenli bir şekilde depolayın, versiyon kontrolü sağlayın ve ekip çalışmasını kolaylaştırın. Git kullanımı, branch yönetimi, kod incelemeleri ve CI/CD entegrasyonu konularında uzman desteği alın. Kod kalitenizi yükseltin ve yazılım geliştirme süreçlerinizi hızlandırın."
+        * Ek Bilgiler:
+            * Bitbucket danışmanlığı hizmetlerinizin kapsamını listeleyin (örneğin, Bitbucket kurulumu ve yapılandırması, Git eğitimi, CI/CD pipeline oluşturma, kod inceleme süreçlerinin iyileştirilmesi vb.)
+            * "Bitbucket ile Yazılım Geliştirme Sürecinizi %20 Hızlandırın" gibi bir istatistik ekleyin.
+            * Bitbucket'ı kullanarak nasıl daha güvenli ve verimli bir yazılım geliştirme süreci oluşturabileceğinizi açıklayın.
+            * Bitbucket'ın DevOps uygulamalarında nasıl kullanılabileceğine dair örnekler verin.
+    * Kart 4 - Eğitim ve Destek:
+        * Görsel: Atlassian ürünleri ile ilgili bir eğitim seminerinden bir fotoğraf. Fotoğrafta, eğitmen ve katılımcılar gülümseyerek ve etkileşim halinde görülebilir. Ayrıca, online destek platformunun arayüzünden bir ekran görüntüsü de eklenebilir.
+        * Başlık: "Atlassian Uzmanlarından Kapsamlı Eğitim ve Destek"
+        * Açıklama: "Atlassian ürünleri konusunda uzmanlaşmış eğitmenlerimizle, ekiplerinize özel eğitimler düzenliyoruz. Kullanıcı eğitimlerinden yönetici eğitimlerine kadar farklı seviyelerde eğitimlerimizle Atlassian araçlarını etkili bir şekilde kullanmayı öğrenin. Ayrıca, sürekli teknik destek ve bakım hizmetleriyle Atlassian araçlarınızdan en iyi şekilde yararlanmanızı ve sorunsuz bir deneyim yaşamanızı sağlıyoruz."
+        * Ek Bilgiler:
+            * Sunduğunuz eğitim ve destek hizmetlerini listeleyin (örneğin, online eğitimler, yerinde eğitimler, dokümantasyon, teknik destek, bakım hizmetleri vb.)
+            * "7/24 Atlassian Desteği" veya "Sertifikalı Eğitmenler" gibi ifadeler ekleyin.
+            * Eğitim programlarınızın içeriğini ve sürelerini belirtin.
+            * Farklı öğrenme stillerine uygun eğitim seçenekleri sunduğunuzu vurgulayın (örneğin, online eğitimler, sınıf içi eğitimler, birebir eğitimler).
+* Neden Biz? Bölümü: (Her maddenin altında "Detaylı Bilgi" butonu)
+    * Başlık: "Atlassian Danışmanlığında Neden Bizi Tercih Etmelisiniz?"
+    * Madde 1 - Uzman Ekip:
+        * Başlık: "Sertifikalı ve Deneyimli Atlassian Uzmanları"
+        * Açıklama: "Atlassian ürünlerinde derinlemesine bilgiye sahip, sertifikalı ve deneyimli danışmanlarımız, iş süreçlerinizi analiz eder, ihtiyaçlarınızı anlar ve size en uygun çözümleri sunar. Ekibimiz, Atlassian ürünlerinin tüm özelliklerine hakimdir ve sektörünüzdeki en iyi uygulamaları kullanarak projelerinizi başarıya ulaştırır. Danışmanlarımızın Atlassian sertifikalarını ve deneyimlerini incelemek için tıklayın."
+        * Görsel: Ekip üyelerinin profesyonel fotoğraflarının yer aldığı etkileşimli bir galeri. Fotoğrafların üzerine gelindiğinde, danışmanın adı, uzmanlık alanı, sertifikaları ve kısa bir özgeçmişi görüntülenebilir.
+        * Ek Bilgiler:
+            * Ekip üyelerinizin toplam deneyimini ve sahip oldukları sertifikaların sayısını belirtin.
+            * "Sektörünüzde Uzmanlaşmış Danışmanlar" gibi bir ifade ekleyin.
+            * Ekip üyelerinizin LinkedIn profillerine bağlantılar ekleyin.
+    * Madde 2 - Müşteri Odaklı Yaklaşım:
+        * Başlık: "İhtiyaçlarınıza Özel Çözümler"
+        * Açıklama: "Her projede müşterilerimizin ihtiyaçlarını ve hedeflerini önceliğimiz olarak belirleriz. Projelerinizin her aşamasında sizinle yakın iletişim halinde olur, beklentilerinizi anlar ve size özel çözümler geliştiririz. Başarılı bir Atlassian uygulaması için ihtiyaç duyduğunuz tüm desteği sağlıyoruz. Müşteri odaklı yaklaşımımız hakkında daha fazla bilgi edinmek için tıklayın."
+        * Görsel: Müşteri ile danışmanların bir masa etrafında oturarak proje toplantısı yaptığı ve gülümseyerek sohbet ettiği bir fotoğraf veya video.
+        * Ek Bilgiler:
+            * Müşteri memnuniyet oranınızı veya müşteri yorumlarınızdan alıntılar ekleyin.
+            * "Esnek ve Ölçeklenebilir Çözümler" gibi bir ifade kullanın.
+            * Müşteri referanslarınıza bağlantılar ekleyin.
+    * Madde 3 - Kanıtlanmış Başarı:
+        * Başlık: "Başarılı Projeler ve Mutlu Müşteriler"
+        * Açıklama: "Atlassian danışmanlık alanında uzun yıllara dayanan deneyimimiz ve başarılı projelerimizle sektörde güvenilir bir isim haline geldik. Farklı sektörlerden birçok şirkete Atlassian çözümleri uyguladık ve iş süreçlerini optimize etmelerine yardımcı olduk. Referanslarımıza göz atarak başarı hikayelerimizi inceleyebilirsiniz. Müşteri referanslarımızı ve başarı hikayelerimizi okumak için tıklayın."
+        * Görsel: Müşteri logolarının ve yorumlarının yer aldığı etkileşimli bir slider. Slider'da müşteri fotoğrafları ve yorumları görüntülenebilir. Müşteri logosuna tıklandığında, ilgili müşterinin başarı hikayesinin yer aldığı sayfaya yönlendirme yapılabilir.
+        * Ek Bilgiler:
+            * Gerçekleştirdiğiniz proje sayısını ve farklı sektörlerdeki deneyiminizi vurgulayın.
+            * "Ödüllü Atlassian Partneri" gibi bir ifade ekleyin (eğer varsa).
+            * Başarı hikayelerinizi sektörlere veya Atlassian ürünlerine göre filtrelenebilir hale getirin.
+* Blog Bölümü:
+    * Başlık: "Atlassian Dünyasından Son Haberler ve İçgörüler"
+    * Blog Yazısı 1: " Jira ile Agile Proje Yönetimi: Scrum ve Kanban Uygulamaları" (Kısa özet ve bağlantı) - Özet: "Jira Software ile Scrum ve Kanban metodolojilerini nasıl uygulayabileceğinizi, projelerinizi nasıl daha etkili yönetebileceğinizi ve ekiplerinizin çevikliği nasıl artırabileceğinizi öğrenin. Bu blog yazısında, Jira Software'in çevik proje yönetiminde nasıl kullanılacağına dair ipuçları, en iyi uygulamalar ve örnekler bulabilirsiniz."
+    * ￼
+    * Yeni pencerede açılır
+    * ￼
+    * support.atlassian.comJira Software dashboard with colorful postit notes and graphs 
+    * Blog Yazısı 2: " Confluence ile Etkili Dokümantasyon: Şirket İçi Bilgi Paylaşımını Geliştirme" (Kısa özet ve bağlantı) - Özet: "Confluence'ı kullanarak ekip içi bilgi paylaşımını nasıl geliştirebileceğinizi, daha organize bir bilgi birikimi oluşturabileceğinizi ve etkili dokümantasyon stratejileri oluşturmayı keşfedin. Bu blog yazısında, Confluence sayfalarını nasıl oluşturacağınızı, düzenleyeceğinizi ve paylaşacağınızı, farklı içerik türlerini nasıl entegre edeceğinizi ve Confluence'ı en verimli şekilde nasıl kullanacağınızı öğrenebilirsiniz."
+    * ￼
+    * Yeni pencerede açılır
+    * ￼
+    * www.atlassian.comConfluence page with team members collaborating on a document 
+    * Blog Yazısı 3: " Bitbucket ile DevOps Uygulamaları: Sürekli Entegrasyon ve Teslimat" (Kısa özet ve bağlantı) - Özet: "Bitbucket'ı kullanarak DevOps uygulamalarınızı nasıl güçlendirebileceğinizi, sürekli entegrasyon ve teslimat süreçlerinizi nasıl optimize edebileceğinizi ve yazılım geliştirme döngünüzü nasıl kısaltabileceğinizi öğrenin. Bu blog yazısında, Bitbucket'ın DevOps süreçlerindeki rolünü, CI/CD entegrasyonunu nasıl sağlayacağınızı ve Bitbucket'ı diğer DevOps araçlarıyla nasıl birlikte kullanacağınızı öğrenebilirsiniz."
+    * ￼
+    * Yeni pencerede açılır
+    * ￼
+    * bitbucket.orgBitbucket repository with code and branches 
+    * Buton: "Tüm Blog Yazıları" & "Blog'a Abone Ol" (İki buton)
+    * Ek Bilgiler:
+        * Blog yazılarının yayınlanma tarihini ve yazarını belirtin.
+        * Blog kategorileri ekleyin (örneğin, Jira, Confluence, Bitbucket, Agile, DevOps vb.)
+        * Blog yazılarınızı okuma süresine göre filtrelenebilir hale getirin.
+        * Benzer blog yazılarını önerin.
+* Referanslar Bölümü:
+    * Başlık: "Müşterilerimiz Ne Diyor?"
+    * İçerik: Farklı sektörlerden müşterilerinizin hizmetleriniz hakkında yaptığı kısa ve öz yorumlar. Her yorumun yanında müşteri logosu ve müşteri temsilcisinin adı ve görevi yer alabilir.
+    * Görsel: Müşteri yorumlarının yer aldığı etkileşimli bir slider. Slider'da müşteri fotoğrafları ve yorumları görüntülenebilir. Müşteri fotoğrafına tıklandığında, ilgili müşterinin başarı hikayesinin yer aldığı sayfaya yönlendirme yapılabilir.
+    * Ek Bilgiler:
+        * Müşteri yorumlarına tıklandığında, ilgili müşterinin başarı hikayesinin yer aldığı sayfaya yönlendirme yapın.
+        * "Daha Fazla Referans" butonu ekleyerek tüm referanslarınızı listeleyebilirsiniz.
+        * Müşteri yorumlarını sektörlere veya Atlassian ürünlerine göre filtrelenebilir hale getirin.
+* İletişim Bölümü:
+    * Başlık: "Bizimle İletişime Geçin"
+    * Açıklama: "Atlassian çözümleri hakkında daha fazla bilgi almak, ücretsiz danışmanlık hizmetimizden yararlanmak veya bir demo talep etmek için bizimle iletişime geçebilirsiniz. Sorularınızı yanıtlamaktan ve size yardımcı olmaktan mutluluk duyarız."
+    * 
+* İletişim Formu: Ad, soyad, e-posta, telefon, şirket adı, konu ve mesaj alanlarının bulunduğu bir iletişim formu. Form gönderildiğinde otomatik bir yanıt e-postası gönderildiğini belirtin.
+    * Ek Bilgiler:
+        * Form alanlarını mümkün olduğunca özelleştirin (örneğin, "İlgilendiğiniz Hizmetler" gibi çoktan seçmeli bir alan ekleyin).
+        * Formu dolduran kişilerin verilerinin gizliliğine saygı duyduğunuzu ve verileri sadece iletişim amacıyla kullanacağınızı belirtin.
+    * İletişim Bilgileri:
+        * Telefon Numarası: Şirketinizin telefon numarasını ve varsa farklı departmanlar için farklı telefon numaraları belirtin (örneğin, satış, destek, eğitim).
+        * E-posta Adresi: Genel iletişim için bir e-posta adresi ve varsa farklı departmanlar için farklı e-posta adresleri belirtin.
+        * Adres ve Harita: Şirketinizin adresini ve interaktif bir harita üzerinde konumunuzu gösterin. Ofisinizin fotoğraflarını da ekleyebilirsiniz.
+        * Çalışma Saatleri: Hafta içi ve hafta sonu çalışma saatlerinizi belirtin.
+    * Sosyal Medya:
+        * Sosyal medya hesaplarınızın (LinkedIn, Twitter, Facebook, Instagram vb.) linklerini ekleyin.
+        * Sosyal medya hesaplarınızda paylaştığınız içeriklere örnekler verin (örneğin, blog yazıları, etkinlik duyuruları, şirket haberleri).
+        * "Bizi sosyal medyada takip edin!" gibi bir harekete geçirici mesaj ekleyin.
+    * Ek Bilgiler:
+        * İletişim formunun yanına bir "Canlı Sohbet" butonu ekleyerek ziyaretçilerin anında destek almasını sağlayabilirsiniz.
+        * "Size en kısa sürede dönüş yapacağız" gibi bir mesaj ekleyin.
+II. Menü: (Menü öğelerinin üzerine gelindiğinde kısa açıklamalar görüntülenebilir)
+* Hakkımızda:
+    * Şirket Profili:
+        * Başlık: "Deneyimli ve Güvenilir Atlassian Partneriniz"
+        * İçerik: "[Şirket Adı] olarak, Atlassian ürünlerinde uzmanlaşmış bir danışmanlık firmasıyız. Misyonumuz, müşterilerimizin Atlassian araçlarını en etkili şekilde kullanarak iş süreçlerini optimize etmelerine, ekiplerinin verimliliğini artırmalarına ve dijital dönüşümlerini gerçekleştirmelerine yardımcı olmaktır. Uzman ekibimiz, Atlassian ürünlerinin tüm özelliklerini derinlemesine bilir ve sektörünüzdeki en iyi uygulamaları kullanarak size özel çözümler sunar. Müşteri memnuniyetini her zaman ön planda tutuyoruz ve projelerinizin başarısı için özveriyle çalışıyoruz. Şirketimiz hakkında daha fazla bilgi edinmek için bu sayfayı inceleyebilirsiniz."
+        * Görsel: Şirketinizin ofisinin veya ekibinizin bir fotoğrafı veya şirket kültürünüzü yansıtan kısa bir video.
+        * Ek Bilgiler:
+            * Şirketinizin kuruluş tarihini, vizyonunu ve değerlerini ekleyin.
+            * Ödüllerinizi ve başarılarınızı listeleyin.
+            * Müşteri odaklı yaklaşımınızı ve çalışma prensiplerinizi açıklayın.
+    * Ekibimiz:
+        * Başlık: "Atlassian Uzmanlarından Oluşan Ekibimizle Tanışın"
+        * İçerik: Her ekip üyesinin fotoğrafı, adı, görevi, uzmanlık alanları, sertifikaları, kısa bir özgeçmişi ve LinkedIn profili bağlantısı. Ayrıca, ekip üyelerinin ilgi alanları veya hobileri gibi kişisel bilgiler de ekleyebilirsiniz. Ekip üyelerinizin Atlassian ürünlerindeki uzmanlıklarını ve deneyimlerini vurgulayın.
+        * Görsel: Ekip üyelerinin bireysel fotoğrafları veya tüm ekibin birlikte çekilmiş samimi bir fotoğrafı.
+        * Ek Bilgiler:
+            * Ekip üyelerinin blog yazılarını veya yayınlarını listeleyin.
+            * Ekip üyelerinin katıldığı konferansları ve etkinlikleri belirtin.
+            * Ekip üyelerinizin Atlassian topluluğundaki katkılarına değinebilirsiniz.
+    * Kariyer:
+        * Başlık: "Ekibimize Katılın ve Atlassian Dünyasında Birlikte Büyüyelim"
+        * İçerik:
+            * Şirket Kültürü: Çalışma ortamınızı, değerlerinizi ve ekip ruhunuzu anlatan bir metin. Örneğin, "esnek çalışma saatleri", "sürekli öğrenme ortamı", "takım çalışmasına önem veren bir kültür" gibi ifadeler kullanabilirsiniz.
+            * Çalışanlara Sunduğunuz Avantajlar: Eğitim fırsatları, esnek çalışma saatleri, sağlık sigortası, yemek kartı, ulaşım desteği gibi çalışanlara sunduğunuz avantajları listeleyin.
+            * Açık Pozisyonlar: Açık pozisyonların detaylı açıklamaları, gerekli nitelikler ve başvuru koşulları. Her pozisyon için ayrı bir sayfa oluşturun ve başvuru formunu ekleyin.
+            * Staj Programları: Stajyerlik programları düzenliyorsanız, program hakkında bilgi verin ve başvuru koşullarını belirtin.
+        * Görsel: Çalışma ortamınızı veya ekip aktivitelerinizi gösteren fotoğraflar veya videolar.
+        * Ek Bilgiler:
+            * Çalışanlarınızın çeşitliliğine ve kapsayıcılığa önem verdiğinizi belirtin.
+            * Kariyer gelişim fırsatları hakkında bilgi verin.
+    * Sosyal Sorumluluk:
+        * Başlık: "Topluma Katkıda Bulunmak İçin Çalışıyoruz"
+        * İçerik: Desteklediğiniz sosyal sorumluluk projeleri, çevreye duyarlılığınız, etik değerleriniz ve toplumsal fayda sağlamak için yaptığınız çalışmalar hakkında bilgi verin. Bu projelerde yer alan çalışanlarınızın fotoğraflarını veya videolarını ekleyebilirsiniz.
+        * Görsel: Desteklediğiniz sosyal sorumluluk projelerinin veya etkinliklerin fotoğrafları.
+        * Ek Bilgiler:
+            * Sosyal sorumluluk projelerinizde nasıl yer alınabileceği hakkında bilgi verin.
+            * Çevre politikalarınızı ve sürdürülebilirlik çalışmalarınızı açıklayın.
+* Hizmetler: (Her hizmet kategorisi için ayrı bir sayfa oluşturun ve hizmetleri detaylı bir şekilde açıklayın.)
+    * Atlassian Danışmanlığı:
+        * Jira Danışmanlığı:
+            * Jira Software:
+                * Başlık: "Jira Software ile Çevik Proje Yönetimi"
+                * İçerik: "Jira Software, yazılım ekipleri ve diğer proje ekipleri için güçlü bir proje yönetim aracıdır. Agile, Scrum ve Kanban metodolojilerine uygun olarak projelerinizi planlayın, yönetin ve takip edin. Jira Software'in esnek yapısı, iş süreçlerinize mükemmel bir şekilde uyum sağlar ve ekiplerinizin daha verimli çalışmasına yardımcı olur. Uzman danışmanlarımız, Jira Software'i işletmenizin ihtiyaçlarına göre özelleştirmenize ve en iyi şekilde kullanmanıza yardımcı olur."
+                * Alt Başlıklar:
+                    * Proje Planlama ve Görev Yönetimi: "Projelerinizi Jira Software ile planlayın, görevleri oluşturun, atayın ve ilerlemeyi takip edin. Scrum ve Kanban panoları ile projelerinizi görselleştirin ve iş akışlarınızı yönetin."
+                    * Hata Takibi ve Raporlama: "Yazılım geliştirme sürecinde ortaya çıkan hataları Jira Software ile takip edin, çözümler üretin ve detaylı raporlar oluşturun. Hata takibi ve çözüm süreçlerinizi optimize ederek yazılım kalitenizi artırın."
+                    * Sprint Yönetimi ve İzleme: "Scrum sprintlerinizi Jira Software ile planlayın, yönetin ve izleyin. Sprint hedeflerinizi belirleyin, görevleri sprintlere atayın ve sprint performansınızı detaylı raporlarla analiz edin."
+                    * Agile ve Scrum Uygulamaları: "Jira Software, Agile ve Scrum metodolojilerini uygulamak için ideal bir araçtır. Uzman danışmanlarımız, Agile ve Scrum uygulamalarında size rehberlik eder ve ekiplerinizin çevikliği artırmasına yardımcı olur."
+                    * Kanban Panoları ve İş Akışları: "Kanban metodolojisini Jira Software ile uygulayın ve iş akışlarınızı görselleştirin. Kanban panoları ile işlerinizi sınıflandırın, önceliklendirin ve ilerlemeyi takip edin."
+                    * Jira Özelleştirme ve Eklentiler: "Jira Software'i işletmenizin özel ihtiyaçlarına göre özelleştirin ve eklentilerle işlevselliğini genişletin. Uzmanlarımız, size uygun özelleştirmeleri yapmanıza ve en faydalı eklentileri seçmenize yardımcı olur."
+                * Harekete Geçirici Mesaj: "Jira Software ile proje yönetimini bir üst seviyeye taşımak için bizimle iletişime geçin ve ücretsiz danışmanlık hizmetimizden yararlanın."
+                * Görsel: Jira Software arayüzünden ekran görüntüleri veya Jira ile proje yönetimi konusunda bilgilendirici bir infografik.
+                * Ek Bilgiler:
+                    * Jira Software'in farklı lisans seçeneklerini (örneğin, Cloud, Server, Data Center) açıklayın ve hangisinin müşterileriniz için daha uygun olabileceği konusunda rehberlik edin.
+                    * Jira Software'in diğer Atlassian ürünleri ve üçüncü parti uygulamalar ile entegrasyon seçeneklerini açıklayın.
+            * Jira Service Management:
+                * Başlık: "Jira Service Management ile Hizmet Yönetimini Dönüştürün"
+                * İçerik: "Jira Service Management, IT hizmet yönetimi ve müşteri hizmetleri için eksiksiz bir çözümdür. Talep yönetimi, hizmet desk, incident yönetimi, problem yönetimi, değişiklik yönetimi ve bilgi yönetimi ile hizmet kalitenizi artırın. ITIL süreçlerini Jira Service Management ile kolayca uygulayın ve hizmet operasyonlarınızı optimize edin. Uzman danışmanlarımız, Jira Service Management'i işletmenizin ihtiyaçlarına göre yapılandırmanıza ve en iyi şekilde kullanmanıza yardımcı olur."
+                * Alt Başlıklar:
+                    * Talep Yönetimi ve Hizmet Desk: "Müşteri taleplerini Jira Service Management ile kaydedin, sınıflandırın, önceliklendirin ve takip edin. Hızlı ve etkili bir hizmet desk oluşturarak müşteri memnuniyetini artırın."
+                    * Incident Yönetimi ve Çözüm Süreçleri: "IT sistemlerinizde meydana gelen incident'ları (olayları) Jira Service Management ile yönetin, çözüm süreçlerini izleyin ve hizmet kesintilerini minimize edin."
+                    * Problem Yönetimi ve Kök Neden Analizi: "Tekrarlayan incident'ların kök nedenlerini Jira Service Management ile analiz edin, kalıcı çözümler üretin ve hizmetlerin kesintisiz çalışmasını sağlayın."
+                    * Değişiklik Yönetimi ve Risk Değerlendirmesi: "IT sistemlerinizde yapılacak değişiklikleri Jira Service Management ile planlayın, uygulayın ve takip edin. Değişikliklerin risklerini değerlendirin ve olumsuz etkileri minimize edin."
+                    * Bilgi Yönetimi ve Öz Hizmet Portalı: "Bilgi tabanı ve SSS oluşturarak müşterilerinizin ve çalışanlarınızın bilgiye kolayca erişmesini sağlayın. Öz hizmet portalı ile talep oluşturma ve sorun giderme işlemlerini kolaylaştırın."
+                    * ITIL Süreçleri ve Entegrasyonlar: "ITIL süreçlerini (örneğin, Incident Management, Problem Management, Change Management) Jira Service Management ile entegre edin ve hizmet yönetiminizi standardize edin."
+                * Harekete Geçirici Mesaj: "Jira Service Management ile hizmet yönetiminizi geliştirmek, müşteri memnuniyetini artırmak ve ITIL süreçlerini uygulamak için bizimle iletişime geçin."
+                * Görsel: Jira Service Management arayüzünden ekran görüntüleri veya ITIL süreçlerinin Jira Service Management ile nasıl entegre edildiğini gösteren bir diyagram.
+                * Ek Bilgiler:
+                    * Jira Service Management'ın farklı lisans seçeneklerini (örneğin, Cloud, Server, Data Center) açıklayın ve hangisinin müşterileriniz için daha uygun olabileceği konusunda rehberlik edin.
+                    * Jira Service Management'ın diğer Atlassian ürünleri ve üçüncü parti uygulamalar ile entegrasyon seçeneklerini açıklayın.
+            * Jira Work Management:
+                * Başlık: "Jira Work Management ile Tüm Ekiplerinizi Güçlendirin"
+                * İçerik: "Jira Work Management ile farklı departmanlardaki ekiplerinizin iş akışlarını yönetin, görevleri takip edin ve iş birliğini kolaylaştırın. Proje yönetimi, görev yönetimi, form oluşturma ve otomasyon ile ekiplerinizin verimliliğini artırın. Jira Work Management, işletmenizin tüm departmanları için kullanılabilen esnek bir araçtır."
+                * Alt Başlıklar:
+                    * İş Akışı Otomasyonu ve Görev Yönetimi: "İş akışlarınızı otomatikleştirin, görevleri oluşturun, atayın ve takip edin. İş süreçlerinizi hızlandırın ve manuel işlemleri azaltın."
+                    * Proje Takibi ve İş Birliği: "Projeleri planlayın, yönetin ve takip edin. Ekipler arası iş birliğini geliştirin ve projelerinizi daha verimli bir şekilde yönetin."
+                    * Form Oluşturma ve Özelleştirme: "İhtiyaçlarınıza uygun formlar oluşturun ve özelleştirin. Formlar aracılığıyla veri toplayın, işlemleri başlatın ve iş akışlarınızı otomatikleştirin."
+                    * Raporlama ve Analiz: "İş performansınızı takip edin ve geliştirin. Detaylı raporlar ve grafikler ile iş süreçlerinizi analiz edin ve veriye dayalı kararlar alın."
+                    * Departmanlar Arası İş Akışları: "Farklı departmanlar arasındaki iş akışlarını Jira Work Management ile bağlayın ve entegre edin. Departmanlar arası iş birliğini geliştirin ve süreçlerinizi optimize edin."
+                    * Entegrasyonlar ve API: "Jira Work Management'ı diğer Atlassian ürünleri ve üçüncü parti uygulamalar ile entegre edin. API kullanarak özel entegrasyonlar geliştirin ve işletmenizin ihtiyaçlarına uygun çözümler oluşturun."
+Harekete Geçirici Mesaj: "Jira Work Management ile iş süreçlerinizi optimize edin, ekiplerinizin verimliliğini artırın ve iş birliğini geliştirin. Ücretsiz danışmanlık hizmetimizden yararlanmak için bizimle iletişime geçin." * Görsel: Jira Work Management arayüzünden ekran görüntüleri veya farklı departmanların Jira Work Management ile nasıl iş birliği yaptığını gösteren bir diyagram.
