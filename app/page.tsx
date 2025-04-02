@@ -522,15 +522,15 @@ export default function Home() {
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
               <div className="relative h-48">
                 <Image
-                  src="/images/atlassian-consulting.svg"
+                  src="/images/business-optimization.svg"
                   alt="Atlassian Danışmanlığı"
                   fill
-                  className="object-contain p-8 bg-gradient-to-br from-purple-50 to-purple-100"
+                  className="object-cover p-0"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-semibold text-[#253858] mb-3">Atlassian Danışmanlığı</h3>
-                <p className="text-[#42526E] mb-4">Kurumsal süreç optimizasyonu ve Atlassian ürün entegrasyonları.</p>
+                <p className="text-[#42526E] mb-4">Jira, Confluence ve diğer Atlassian ürünleriyle iş süreçlerinizi optimize edin. Uzman ekibimiz, kurumunuza özel yapılandırma, entegrasyon ve süreç iyileştirme çözümleri sunuyor.</p>
                 <a href="/cozumler/atlassian-danismanligi" className="inline-flex items-center text-[#0052CC] font-medium hover:underline">
                   Detaylı Bilgi
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -538,21 +538,21 @@ export default function Home() {
                   </svg>
                 </a>
               </div>
-              </div>
+            </div>
               
             {/* Cloud Migration */}
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
               <div className="relative h-48">
                 <Image
-                  src="/images/cloud-migration.svg"
+                  src="/images/cloud-infrastructure.svg"
                   alt="Cloud Migration"
                   fill
-                  className="object-contain p-8 bg-gradient-to-br from-blue-50 to-blue-100"
+                  className="object-cover p-0"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-semibold text-[#253858] mb-3">Cloud Migration</h3>
-                <p className="text-[#42526E] mb-4">Bulut geçiş stratejisi ve uygulaması ile işletmenizi geleceğe taşıyın.</p>
+                <p className="text-[#42526E] mb-4">On-premise Atlassian ürünlerinizi sorunsuz şekilde Cloud ortamına taşıyın. Verilerinizin güvenli migrasyonu, kullanıcı yönetimi ve entegrasyonlar için uçtan uca destek sağlıyoruz.</p>
                 <a href="/cozumler/cloud-migration" className="inline-flex items-center text-[#0052CC] font-medium hover:underline">
                   Detaylı Bilgi
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -566,15 +566,15 @@ export default function Home() {
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
               <div className="relative h-48">
                 <Image
-                  src="/images/training-certification.svg"
+                  src="/images/software-development.svg"
                   alt="Eğitim & Sertifikasyon"
                   fill
-                  className="object-contain p-8 bg-gradient-to-br from-green-50 to-green-100"
+                  className="object-cover p-0"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-semibold text-[#253858] mb-3">Eğitim & Sertifikasyon</h3>
-                <p className="text-[#42526E] mb-4">Atlassian ürün eğitimleri ve sertifikasyon programları.</p>
+                <p className="text-[#42526E] mb-4">Ekibinizin Atlassian ürünlerini etkin kullanabilmesi için özelleştirilmiş eğitim programları ve sertifikasyon hazırlık kursları sunuyoruz. Uygulamalı eğitimlerle verimlilik artışı sağlayın.</p>
                 <a href="/cozumler/egitim-sertifikasyon" className="inline-flex items-center text-[#0052CC] font-medium hover:underline">
                   Detaylı Bilgi
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
