@@ -470,7 +470,7 @@ export default function Home() {
               Ücretsiz analiz hizmetimizle işletmeniz için en uygun çözümleri belirleyelim.
             </p>
             <div className="flex justify-center">
-              <a href="/contact" className="group relative px-6 py-3 rounded-xl font-medium transition-all scale-105 hover:scale-110">
+              <a href="/free-discovery" className="group relative px-6 py-3 rounded-xl font-medium transition-all scale-105 hover:scale-110">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-indigo-500/30 rounded-xl blur-xl group-hover:blur-2xl transition-all"></div>
                 <div className="relative bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 backdrop-blur-sm px-8 py-3 rounded-xl transition-all border border-white/10">
                   <span className="text-white text-lg font-semibold tracking-wide">Hemen Başlayın</span>
