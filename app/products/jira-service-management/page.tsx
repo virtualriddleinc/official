@@ -1,170 +1,214 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function JiraServiceManagementPage() {
   return (
-    <div className="pt-20">
+    <main className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-white py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">
-              Jira Service Management
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 py-24">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute h-full w-full bg-[url('/noise.png')] opacity-5"></div>
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-radial from-purple-400/20 via-transparent to-transparent opacity-50"></div>
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-radial from-purple-600/20 via-transparent to-transparent opacity-30"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              ITSM'nin Geleceği Burada
             </h1>
-            <p className="text-xl text-gray mb-8">
-              Modern ekipler için yüksek hızlı ITSM çözümü
+            <p className="text-xl text-gray-300 mb-8">
+              Jira Service Management ile IT ekiplerinizin hızını artırın, sorunu yönetin ve üstün müşteri deneyimi sunun.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="#"
-                className="px-6 py-3 bg-blue text-white font-medium rounded-lg hover:bg-blue-600 transition-colors"
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                href="/contact" 
+                className="px-8 py-4 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition-all w-full sm:w-auto text-center"
               >
                 Ücretsiz Dene
               </Link>
-              <Link
-                href="#"
-                className="px-6 py-3 bg-white text-blue font-medium rounded-lg border border-blue hover:bg-blue-50 transition-colors"
+              <Link 
+                href="/contact" 
+                className="px-8 py-4 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-all w-full sm:w-auto text-center backdrop-blur-sm"
               >
-                Daha Fazla Bilgi
+                Demo İzle
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Features Grid */}
+      <section className="py-24 bg-purple-600/10">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-12">
             {/* Feature 1 */}
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+            <div className="space-y-4">
+              <div className="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center">
+                <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">Incident Yönetimi</h3>
-              <p className="text-gray">
-                Kesintileri hızlıca tespit edin ve çözün.
-              </p>
+              <h3 className="text-2xl font-bold text-purple-600">Müşteri Hizmetleri Mükemmelliği</h3>
+              <p className="text-purple-600/80">Müşterileriniz için kullanımı kolay self-servis portalları, bilgi tabanları ve otomasyon ile hizmet kalitesini artırın.</p>
             </div>
 
             {/* Feature 2 */}
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            <div className="space-y-4">
+              <div className="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center">
+                <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">Change Management</h3>
-              <p className="text-gray">
-                Değişiklikleri güvenli ve verimli bir şekilde yönetin.
-              </p>
+              <h3 className="text-2xl font-bold text-purple-600">Gelişmiş Olay Yönetimi</h3>
+              <p className="text-purple-600/80">Major olayları hızla tespit edin ve çözün. Olayları otomatik sınıflandırma ve önceliklendirme ile etkin yönetin.</p>
             </div>
 
             {/* Feature 3 */}
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+            <div className="space-y-4">
+              <div className="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center">
+                <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">Self Servis Portal</h3>
-              <p className="text-gray">
-                Kullanıcı dostu portal ile hızlı destek çözümleri.
-              </p>
+              <h3 className="text-2xl font-bold text-purple-600">Gerçek Zamanlı Raporlama</h3>
+              <p className="text-purple-600/80">Hizmet seviyesi anlaşmaları (SLA), performans metrikleri ve ekip verimliliği için gerçek zamanlı raporlar ve gösterge panelleri.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-dark mb-4">
-              ITSM'yi Modernleştirin
-            </h2>
-            <p className="text-gray">
-              Jira Service Management ile IT operasyonlarınızı dönüştürün.
-            </p>
+      {/* AI Features */}
+      <section className="py-24 bg-purple-600">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Yapay Zeka Destekli Hizmet Yönetimi</h2>
+            <p className="text-xl text-white/80">Jira Service Management'ın yapay zeka özellikleriyle talep çözüm sürelerini kısaltın ve ekip verimliliğini artırın.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Benefit 1 */}
-            <div className="bg-white p-8 rounded-xl border border-gray-100">
-              <h3 className="text-xl font-semibold text-dark mb-4">DevOps Entegrasyonu</h3>
-              <p className="text-gray">Development ve operations ekiplerini tek platformda birleştirin.</p>
-              <ul className="mt-4 space-y-2">
-                <li className="flex items-center text-gray">
-                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Otomatik iş akışları
-                </li>
-                <li className="flex items-center text-gray">
-                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Kod takibi
-                </li>
-                <li className="flex items-center text-gray">
-                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Deployment izleme
-                </li>
-              </ul>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* AI Feature 1 */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <h4 className="text-lg font-semibold text-white mb-2">Akıllı Bilet Sınıflandırma</h4>
+              <p className="text-white/80">Yapay zeka, talepleri otomatik olarak analiz eder ve doğru departmana yönlendirir.</p>
             </div>
 
-            {/* Benefit 2 */}
-            <div className="bg-white p-8 rounded-xl border border-gray-100">
-              <h3 className="text-xl font-semibold text-dark mb-4">ITIL Uyumlu</h3>
-              <p className="text-gray">ITIL çerçevesine uygun süreç yönetimi.</p>
-              <ul className="mt-4 space-y-2">
-                <li className="flex items-center text-gray">
-                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Problem yönetimi
-                </li>
-                <li className="flex items-center text-gray">
-                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Asset yönetimi
-                </li>
-                <li className="flex items-center text-gray">
-                  <svg className="w-5 h-5 text-blue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  SLA takibi
-                </li>
-              </ul>
+            {/* AI Feature 2 */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <h4 className="text-lg font-semibold text-white mb-2">Çözüm Önerileri</h4>
+              <p className="text-white/80">Benzer biletlerin çözümlerine dayanarak, yapay zeka hızlı çözüm yolları önerir.</p>
+            </div>
+
+            {/* AI Feature 3 */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <h4 className="text-lg font-semibold text-white mb-2">Önleyici Analitik</h4>
+              <p className="text-white/80">Potansiyel sorunları önceden tespit ederek IT ekiplerinin proaktif önlem almasını sağlar.</p>
+            </div>
+
+            {/* AI Feature 4 */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <h4 className="text-lg font-semibold text-white mb-2">Sanal Asistanlar</h4>
+              <p className="text-white/80">Chatbot'lar ile kullanıcılara 7/24 hizmet vererek tekrarlayan talepleri otomatik çözüme ulaştırın.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="py-24 bg-purple-600/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold text-purple-600 mb-4">Çeşitli Kullanım Senaryoları</h2>
+            <p className="text-xl text-purple-600/80">Jira Service Management ile farklı ekip ve departmanlarınızın tüm hizmet yönetimi ihtiyaçlarını karşılayın.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-purple-600">IT Service Desk</h3>
+                <p className="text-purple-600/80">IT yardım masası ekipleriniz için talep yönetimi, sorun çözümü ve asset management. ITIL uyumlu süreçler ve otomasyon.</p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-purple-600">Müşteri Hizmetleri</h3>
+                <p className="text-purple-600/80">Müşteri taleplerinizi tek bir platformda yönetin. Kişiselleştirilmiş yanıtlar ve otomatik bildirimlerle müşteri memnuniyetini artırın.</p>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-purple-600">HR Hizmet Yönetimi</h3>
+                <p className="text-purple-600/80">İşe alım süreçleri, onboarding talepleri ve çalışan sorularını verimli bir şekilde yönetin ve izleyin.</p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-purple-600">DevOps</h3>
+                <p className="text-purple-600/80">Geliştirme ve operasyon ekipleri arasında kesintisiz iş birliği. Değişiklik yönetimi ve otomatik deployment süreçleri.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Geniş Entegrasyon Ağı</h2>
+            <p className="text-xl text-gray-600">Jira Service Management'ı mevcut IT altyapınızla sorunsuz bir şekilde entegre edin.</p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+            {/* Integration Logos */}
+            <div className="flex items-center justify-center bg-gray-100 rounded-xl p-6 w-full h-24">
+              <p className="text-gray-500 font-medium">Slack</p>
+            </div>
+            <div className="flex items-center justify-center bg-gray-100 rounded-xl p-6 w-full h-24">
+              <p className="text-gray-500 font-medium">Microsoft Teams</p>
+            </div>
+            <div className="flex items-center justify-center bg-gray-100 rounded-xl p-6 w-full h-24">
+              <p className="text-gray-500 font-medium">Confluence</p>
+            </div>
+            <div className="flex items-center justify-center bg-gray-100 rounded-xl p-6 w-full h-24">
+              <p className="text-gray-500 font-medium">ServiceNow</p>
+            </div>
+            <div className="flex items-center justify-center bg-gray-100 rounded-xl p-6 w-full h-24">
+              <p className="text-gray-500 font-medium">Zendesk</p>
+            </div>
+            <div className="flex items-center justify-center bg-gray-100 rounded-xl p-6 w-full h-24">
+              <p className="text-gray-500 font-medium">+200 Entegrasyon</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="bg-blue rounded-3xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              IT Servis Yönetimini Başlatın
-            </h2>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Jira Service Management ile IT operasyonlarınızı optimize edin.
-            </p>
-            <Link
-              href="#"
-              className="inline-block px-8 py-4 bg-white text-blue font-medium rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              Hemen Başlayın
-            </Link>
+      <section className="py-24 bg-purple-600">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-white mb-6">Jira Service Management'ı ücretsiz deneyin</h2>
+            <p className="text-xl text-white/80 mb-8">35.000'den fazla şirket IT hizmet yönetimi süreçlerinde Jira Service Management'a güveniyor.</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                href="/contact" 
+                className="px-8 py-4 bg-white text-purple-600 rounded-xl font-semibold hover:bg-white/90 transition-all w-full sm:w-auto text-center"
+              >
+                Ücretsiz Başlayın
+              </Link>
+              <Link 
+                href="/pricing" 
+                className="px-8 py-4 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-all w-full sm:w-auto text-center backdrop-blur-sm"
+              >
+                Fiyatlandırmayı Görüntüle
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 } 
