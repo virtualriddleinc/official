@@ -227,7 +227,6 @@ export default function SitemapPage() {
                   {[
                     { title: "Ana Sayfa", path: "/", icon: "home" },
                     { title: "Hakkımızda", path: "/about", icon: "info" },
-                    { title: "Hizmetler", path: "/services", icon: "services" },
                     { title: "Kariyer", path: "/career", icon: "career" },
                     { title: "İletişim", path: "/contact", icon: "contact" },
                     { title: "Blog", path: "/blog", icon: "blog" },
