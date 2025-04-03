@@ -387,6 +387,18 @@ export default function ClientLayout({
                   Hakkımızda
                 </Link>
                 
+                <Link href="/services" className="flex items-center px-3 py-2 text-gray-600 hover:text-blue font-medium rounded-xl hover:bg-gray-50">
+                  Hizmetler
+                </Link>
+                
+                <Link href="/career" className="flex items-center px-3 py-2 text-gray-600 hover:text-blue font-medium rounded-xl hover:bg-gray-50">
+                  Kariyer
+                </Link>
+                
+                <Link href="/contact" className="flex items-center px-3 py-2 text-gray-600 hover:text-blue font-medium rounded-xl hover:bg-gray-50">
+                  İletişim
+                </Link>
+                
                 <div className="space-y-2">
                   <p className="px-3 text-sm font-semibold text-gray-900">Ürünler</p>
                   <Link href="/products/jira-software" className="flex items-center px-3 py-2 text-gray-600 hover:text-blue font-medium rounded-xl hover:bg-gray-50 ml-4">
@@ -509,7 +521,7 @@ export default function ClientLayout({
                   <Link href="/services" className="text-gray-400 hover:text-white transition-colors">Hizmetler</Link>
                 </li>
                 <li>
-                  <Link href="/careers" className="text-gray-400 hover:text-white transition-colors">Kariyer</Link>
+                  <Link href="/career" className="text-gray-400 hover:text-white transition-colors">Kariyer</Link>
                 </li>
                 <li>
                   <Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link>
@@ -545,6 +557,7 @@ export default function ClientLayout({
               <div className="flex items-center space-x-6">
                 <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">Gizlilik Politikası</Link>
                 <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">Kullanım Koşulları</Link>
+                <Link href="/sitemap" className="text-gray-400 hover:text-white text-sm transition-colors">Site Haritası</Link>
               </div>
             </div>
           </div>

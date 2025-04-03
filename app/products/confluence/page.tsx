@@ -1,193 +1,187 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ConfluencePage() {
   return (
-    <div className="pt-20">
+    <main className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-white py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">
-              Confluence
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 py-24">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute h-full w-full bg-[url('/noise.png')] opacity-5"></div>
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-radial from-blue-400/20 via-transparent to-transparent opacity-50"></div>
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-radial from-blue-600/20 via-transparent to-transparent opacity-30"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Ekip bilgisi için tek kaynak
             </h1>
-            <p className="text-xl text-gray mb-8">
-              Ekip iş birliği ve bilgi paylaşımı için modern wiki platformu
+            <p className="text-xl text-gray-300 mb-8">
+              Confluence ile tüm ekip bilgilerinizi merkezi bir platformda toplayın, düzenleyin ve paylaşın. Yapay zeka destekli bilgi tabanı çözümüyle daha verimli çalışın.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="#"
-                className="px-6 py-3 bg-blue text-white font-medium rounded-lg hover:bg-blue-600 transition-colors"
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                href="/contact" 
+                className="px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all w-full sm:w-auto text-center"
               >
                 Ücretsiz Dene
               </Link>
-              <Link
-                href="#"
-                className="px-6 py-3 bg-white text-blue font-medium rounded-lg border border-blue hover:bg-blue-50 transition-colors"
+              <Link 
+                href="/contact" 
+                className="px-8 py-4 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-all w-full sm:w-auto text-center backdrop-blur-sm"
               >
-                Daha Fazla Bilgi
+                Demo İzle
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Features Grid */}
+      <section className="py-24 bg-blue-600/10">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-12">
             {/* Feature 1 */}
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            <div className="space-y-4">
+              <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center">
+                <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7 8H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7 12H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7 16H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">Bilgi Yönetimi</h3>
-              <p className="text-gray">
-                Ekip bilgilerini organize edin ve kolayca erişilebilir hale getirin.
-              </p>
+              <h3 className="text-2xl font-bold text-blue-600">Merkezi Bilgi Tabanı</h3>
+              <p className="text-blue-600/80">Tüm ekip bilgilerinizi, projelerinizi ve dökümanlarınızı tek bir yerde toplayın. Bilgilere hızlıca erişin ve paylaşın.</p>
             </div>
 
             {/* Feature 2 */}
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+            <div className="space-y-4">
+              <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center">
+                <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">İş Birliği Araçları</h3>
-              <p className="text-gray">
-                Gerçek zamanlı düzenleme ve yorum özellikleriyle ekip çalışmasını güçlendirin.
-              </p>
+              <h3 className="text-2xl font-bold text-blue-600">İş Birliği Alanları</h3>
+              <p className="text-blue-600/80">Ekip çalışması için özel alanlar oluşturun. Gerçek zamanlı düzenleme, yorum ve geri bildirim özellikleriyle verimli çalışın.</p>
             </div>
 
             {/* Feature 3 */}
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors">
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+            <div className="space-y-4">
+              <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center">
+                <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">Özelleştirilebilir Şablonlar</h3>
-              <p className="text-gray">
-                Hazır şablonlarla hızlıca içerik oluşturun ve standardizasyonu sağlayın.
-              </p>
+              <h3 className="text-2xl font-bold text-blue-600">Kesintisiz Entegrasyonlar</h3>
+              <p className="text-blue-600/80">Jira, Bitbucket ve diğer Atlassian ürünleriyle sorunsuz entegre olun. Proje bilgilerinizi ve dokümantasyonlarınızı birbirine bağlayın.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-dark mb-4">
-              Her Ekip İçin Confluence
-            </h2>
-            <p className="text-gray">
-              Farklı departmanların ihtiyaçlarına uygun çözümler
-            </p>
+      {/* AI Features */}
+      <section className="py-24 bg-blue-600">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Yapay Zeka Destekli Dokümantasyon</h2>
+            <p className="text-xl text-white/80">Confluence'ın yapay zeka özellikleri sayesinde içerik oluşturma ve bilgi keşfi süreçlerini hızlandırın.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Engineering */}
-            <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <h3 className="font-semibold text-dark mb-2">Mühendislik</h3>
-              <p className="text-gray text-sm">Teknik dokümantasyon ve API belgeleri</p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* AI Feature 1 */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <h4 className="text-lg font-semibold text-white mb-2">İçerik Özeti</h4>
+              <p className="text-white/80">Uzun dokümanlarda otomatik özetler oluşturarak ekip üyelerinizin bilgiye hızlıca erişmesini sağlayın.</p>
             </div>
-            {/* Marketing */}
-            <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <h3 className="font-semibold text-dark mb-2">Marketing</h3>
-              <p className="text-gray text-sm">Kampanya planları ve içerik stratejileri</p>
+
+            {/* AI Feature 2 */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <h4 className="text-lg font-semibold text-white mb-2">Akıllı Arama</h4>
+              <p className="text-white/80">Yapay zeka destekli arama ile dokümanlarda tam olarak ihtiyacınız olan bilgiyi saniyeler içinde bulun.</p>
             </div>
-            {/* HR */}
-            <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <h3 className="font-semibold text-dark mb-2">İK</h3>
-              <p className="text-gray text-sm">Şirket politikaları ve çalışan el kitapları</p>
+
+            {/* AI Feature 3 */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <h4 className="text-lg font-semibold text-white mb-2">İçerik Asistanı</h4>
+              <p className="text-white/80">Yapay zeka asistanı ile dokümantasyon oluşturmayı hızlandırın ve yazım kalitesini artırın.</p>
             </div>
-            {/* Product */}
-            <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <h3 className="font-semibold text-dark mb-2">Ürün</h3>
-              <p className="text-gray text-sm">Ürün gereksinimleri ve yol haritaları</p>
+
+            {/* AI Feature 4 */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <h4 className="text-lg font-semibold text-white mb-2">Bilgi İlişkilendirme</h4>
+              <p className="text-white/80">İlgili dokümantasyonları otomatik olarak ilişkilendirin ve bilgi siloları oluşmasını engelleyin.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Integration Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-dark mb-4">
-              Atlassian Ürünleriyle Entegrasyon
-            </h2>
-            <p className="text-gray">
-              Confluence'ı diğer Atlassian ürünleriyle birlikte kullanarak verimliliğinizi artırın
-            </p>
+      {/* Use Cases */}
+      <section className="py-24 bg-blue-600/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold text-blue-600 mb-4">Her Departman İçin Çözümler</h2>
+            <p className="text-xl text-blue-600/80">Confluence, organizasyonunuzun her bölümü için bilgi ve iş birliği çözümleri sunar.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Jira Integration */}
-            <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-3">
-                  <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-dark">Jira Entegrasyonu</h3>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-blue-600">Yazılım Geliştirme</h3>
+                <p className="text-blue-600/80">Teknik dokümantasyon, mimari kararlar ve geliştirme süreçlerinizi kayıt altına alın. Kod görünümleri ve diyagramlarla zenginleştirin.</p>
               </div>
-              <p className="text-gray text-sm">Jira görevlerini Confluence sayfalarına bağlayın ve güncel kalın.</p>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-blue-600">İnsan Kaynakları</h3>
+                <p className="text-blue-600/80">Şirket politikaları, onboarding belgeleri ve eğitim materyallerini merkezi bir şekilde yönetin. Çalışan el kitapları oluşturun.</p>
+              </div>
             </div>
 
-            {/* Trello Integration */}
-            <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-3">
-                  <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-dark">Trello Entegrasyonu</h3>
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-blue-600">Pazarlama</h3>
+                <p className="text-blue-600/80">Pazarlama stratejileri, kampanya planları ve içerik takvimlerinizi yönetin. Ekip üyeleri arasında iş birliğini güçlendirin.</p>
               </div>
-              <p className="text-gray text-sm">Trello kartlarını dokümanlara ekleyin ve proje durumunu takip edin.</p>
-            </div>
 
-            {/* Bitbucket Integration */}
-            <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-3">
-                  <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-dark">Bitbucket Entegrasyonu</h3>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-blue-600">Proje Yönetimi</h3>
+                <p className="text-blue-600/80">Proje planları, toplantı notları ve iş öğeleri için merkezi bir depo oluşturun. Jira ile entegre ederek proje izlenebilirliğini artırın.</p>
               </div>
-              <p className="text-gray text-sm">Kod değişikliklerini ve pull request'leri dokümanlarda görüntüleyin.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="bg-blue rounded-3xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Confluence ile Tanışın
-            </h2>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Ekip bilgilerinizi organize edin ve iş birliğini güçlendirin.
-            </p>
-            <Link
-              href="#"
-              className="inline-block px-8 py-4 bg-white text-blue font-medium rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              Hemen Başlayın
-            </Link>
+      <section className="py-24 bg-blue-600">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-white mb-6">Confluence'ı ücretsiz deneyin</h2>
+            <p className="text-xl text-white/80 mb-8">75.000'den fazla şirket Confluence ile bilgi yönetimini geliştiriyor. Siz de ekibe katılın.</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                href="/contact" 
+                className="px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-white/90 transition-all w-full sm:w-auto text-center"
+              >
+                Ücretsiz Başlayın
+              </Link>
+              <Link 
+                href="/pricing" 
+                className="px-8 py-4 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-all w-full sm:w-auto text-center backdrop-blur-sm"
+              >
+                Fiyatlandırmayı Görüntüle
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 } 
