@@ -117,7 +117,7 @@ export default function TermsPage() {
                             <span className="text-indigo-500 mr-2">•</span>
                             Şüpheli aktiviteleri derhal bildirmeniz gerekmektedir
                           </li>
-                        </ul>
+                    </ul>
                       </div>
                       
                       <div className="bg-indigo-50 p-6 rounded-xl">
@@ -139,7 +139,7 @@ export default function TermsPage() {
                             <span className="text-indigo-500 mr-2">•</span>
                             Abonelik paketinizdeki kaynak sınırlarına uymanız gerekmektedir
                           </li>
-                        </ul>
+                    </ul>
                       </div>
                     </div>
                     
@@ -194,7 +194,7 @@ export default function TermsPage() {
                         <p className="text-gray-700 flex items-center">
                           <svg className="w-5 h-5 text-amber-500 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                           Virtual Riddle'ın önceden yazılı izni olmadan bu içerikleri kopyalamak, değiştirmek, dağıtmak veya kullanmak yasaktır.
                         </p>
@@ -311,7 +311,7 @@ export default function TermsPage() {
                             <span className="text-purple-500 mr-2">•</span>
                             Güvenlik ihlali durumunda yasal süre içinde bildirim yapılır
                           </li>
-                        </ul>
+                    </ul>
                       </div>
                       
                       <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
@@ -343,7 +343,7 @@ export default function TermsPage() {
                             <span className="text-purple-500 mr-2">•</span>
                             Hakkınızda otomatik karar verme işlemlerine itiraz edebilirsiniz
                           </li>
-                        </ul>
+                    </ul>
                       </div>
                     </div>
                   </div>
@@ -451,7 +451,7 @@ export default function TermsPage() {
                             <span className="text-rose-500 mr-2">•</span>
                             Yetkisiz erişim, veri değişikliği veya iletim hatası
                           </li>
-                        </ul>
+                    </ul>
                       </div>
                       
                       <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
@@ -468,7 +468,7 @@ export default function TermsPage() {
                             <span className="text-rose-500 mr-2">•</span>
                             100 Türk Lirası (₺100)
                           </li>
-                        </ul>
+                    </ul>
                         <div className="bg-rose-50 p-4 rounded-lg mt-4">
                           <p className="text-rose-700 text-sm">
                             Bu sorumluluk sınırlamaları, Virtual Riddle'a iddia veya zarar olasılığı bildirilmiş olsa dahi geçerlidir ve tüm hukuki teoriler kapsamında (sözleşme, haksız fiil, ihlal veya başka herhangi bir teori) uygulanır.

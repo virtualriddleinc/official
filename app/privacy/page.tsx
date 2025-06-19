@@ -273,7 +273,7 @@ export default function PrivacyPage() {
                           </svg>
                           <span>Yasal yükümlülüklerimizi yerine getirmek, şirketimizin haklarını korumak ve yasal süreçlerde kullanmak için</span>
                         </li>
-                      </ul>
+                    </ul>
                       <div className="bg-white p-4 rounded-lg mt-4 shadow-sm">
                         <p className="text-gray-700 text-sm">
                           <strong>Önemli Bilgilendirme:</strong> Virtual Riddle, kişisel verilerinizi yukarıda belirtilen amaçlar dışında da kullanma ve işleme hakkını saklı tutar. Platformumuzu kullanmaya devam ettiğiniz sürece, verilerinizin şirketimiz tarafından gerekli görülen her türlü amaç için işlenmesini kabul etmiş sayılırsınız. Veri işleme faaliyetlerimiz, herhangi bir bildirimde bulunmaksızın değiştirilebilir. Bu durumda, değişiklikler web sitemizde yayınlandığı andan itibaren geçerli olacaktır. Hizmetlerimizi kullanmaya devam etmeniz, güncellenmiş koşulları kabul ettiğiniz anlamına gelecektir.
@@ -849,7 +849,7 @@ export default function PrivacyPage() {
                             <path d="M11.9945 16H12.0035" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                           <span>Virtual Riddle, talep ettiğiniz hakkın kullanımını yasal yükümlülükler, teknik sınırlamalar, ticari sırlar, fikri mülkiyet hakları veya diğer kullanıcıların gizlilik hakları gerekçesiyle kısmen veya tamamen reddedebilir.</span>
-                        </li>
+                      </li>
                         <li className="flex items-start">
                           <svg className="w-5 h-5 text-amber-600 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -857,7 +857,7 @@ export default function PrivacyPage() {
                             <path d="M11.9945 16H12.0035" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                           <span>Veri silme talepleriniz, yasal saklama sürelerimiz kapsamındaki verileri içeremez ve bu talepler sistem bütünlüğümüzü, hizmet kalitesini veya yasal yükümlülüklerimizi riske atacak şekilde işleme alınamaz.</span>
-                        </li>
+                      </li>
                         <li className="flex items-start">
                           <svg className="w-5 h-5 text-amber-600 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -865,7 +865,7 @@ export default function PrivacyPage() {
                             <path d="M11.9945 16H12.0035" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                           <span>Haklarınızı kötüye kullanım teşkil edecek şekilde veya kötü niyetle kullanamaz, Virtual Riddle'ın operasyonlarını zorlaştıracak sıklıkta veya sayıda talepte bulunamazsınız.</span>
-                        </li>
+                      </li>
                         <li className="flex items-start">
                           <svg className="w-5 h-5 text-amber-600 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -873,7 +873,7 @@ export default function PrivacyPage() {
                             <path d="M11.9945 16H12.0035" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                           <span>Virtual Riddle, mevzuata aykırı olmamak kaydıyla, taleplerin değerlendirilmesi ve işleme alınması konusunda takdir hakkını saklı tutar ve bu hakkını kullanıcı menfaatlerini gözetme yükümlülüğü olmaksızın kullanabilir.</span>
-                        </li>
+                      </li>
                       </ul>
                     </div>
                     
