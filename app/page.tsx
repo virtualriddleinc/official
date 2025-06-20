@@ -6,9 +6,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="pt-16">
+    <main>
       {/* 1. Hero Section */}
-      <section className="relative h-[calc(100vh-4rem)] bg-[#004BB3]">
+      <section className="relative min-h-screen bg-[#004BB3] overflow-hidden">
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#004BB3] via-[#0052CC] to-[#004BB3]" />
         
@@ -36,9 +36,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative h-full">
+        <div className="relative pt-28">
           <div className="container mx-auto px-4 h-full flex items-center">
-            <div className="h-full flex flex-col lg:flex-row items-center gap-10">
+            <div className="h-full flex flex-col lg:flex-row items-center gap-10 pb-16">
               {/* Sol Taraf - İçerik */}
               <div className="flex-1 text-center lg:text-left">
                 <div className="max-w-3xl mx-auto lg:mx-0 space-y-8">
@@ -88,7 +88,7 @@ export default function Home() {
               <div className="flex-1">
                 <div className="relative">
                   {/* Workflow Container */}
-                  <div className="relative p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                  <div className="relative p-8 pb-16 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
                     {/* Workflow Steps */}
                     <div className="relative">
                       <div className="absolute left-[2.25rem] top-12 bottom-4 w-0.5 bg-gradient-to-b from-[#0052CC] via-[#00B8D9] to-[#36B37E]"></div>
@@ -203,9 +203,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Hızlı Entegrasyon Kartı */}
-            <div className="group relative bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:-translate-y-1 border border-gray-100">
+            <div className="group relative bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:-translate-y-1 border border-gray-100 w-5/6 mx-auto lg:w-full">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0052CC]/5 to-[#0052CC]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative">
                 <div className="w-16 h-16 bg-[#0052CC] rounded-2xl flex items-center justify-center mb-6 transform transition-transform group-hover:scale-110 group-hover:rotate-3">
@@ -220,41 +220,35 @@ export default function Home() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Detaylı ihtiyaç analizi ve planlama</span>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Mevcut sistemlerle sorunsuz entegrasyon</span>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Özelleştirilebilir iş akışları</span>
                     </li>
                   </ul>
                 </div>
-                <div className="mt-8 flex items-center text-[#0052CC] font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>Detaylı Bilgi</span>
-                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
               </div>
             </div>
 
-            {/* Güvenli Altyapı Kartı */}
-            <div className="group relative bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:-translate-y-1 border border-gray-100">
+            {/* Atlassian's Best Practices Kartı */}
+            <div className="group relative bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:-translate-y-1 border border-gray-100 w-5/6 mx-auto lg:w-full">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0052CC]/5 to-[#0052CC]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative">
                 <div className="w-16 h-16 bg-[#0052CC] rounded-2xl flex items-center justify-center mb-6 transform transition-transform group-hover:scale-110 group-hover:rotate-3">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12.75L11.25 15L15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-[#253858] mb-4">Atlassian's Best Practices</h3>
@@ -264,46 +258,35 @@ export default function Home() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Doğru yetkilendirme ve proje yönetimi</span>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Doğru yapılandırılmış iş akışları</span>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Verimli proje yönetim metodolojileri</span>
                     </li>
                   </ul>
-                  <div className="bg-[#0052CC]/5 rounded-xl p-4 mt-4 border border-[#0052CC]/10">
-                    <p className="text-sm text-gray-600">
-                      Atlassian metodolojileri ile proje yönetimi
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-8 flex items-center text-[#0052CC] font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>Detaylı Bilgi</span>
-                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
                 </div>
               </div>
             </div>
 
             {/* Uzman Ekip Kartı */}
-            <div className="group relative bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:-translate-y-1 border border-gray-100">
+            <div className="group relative bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:-translate-y-1 border border-gray-100 w-5/6 mx-auto lg:w-full">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0052CC]/5 to-[#0052CC]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative">
                 <div className="w-16 h-16 bg-[#0052CC] rounded-2xl flex items-center justify-center mb-6 transform transition-transform group-hover:scale-110 group-hover:rotate-3">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-[#253858] mb-4">Uzman Ekip</h3>
@@ -313,30 +296,24 @@ export default function Home() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Kapsamlı proje deneyimi</span>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Enterprise seviye proje deneyimi</span>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Proje özelinde dedike ekip</span>
                     </li>
                   </ul>
-                </div>
-                <div className="mt-8 flex items-center text-[#0052CC] font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>Detaylı Bilgi</span>
-                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
                 </div>
               </div>
             </div>
@@ -517,9 +494,9 @@ export default function Home() {
               İşletmenizin ihtiyaçlarına özel Atlassian çözümleri sunuyoruz.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Atlassian Danışmanlığı */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all w-5/6 mx-auto lg:w-full">
               <div className="relative h-48">
                 <Image
                   src="/images/business-optimization.svg"
@@ -541,7 +518,7 @@ export default function Home() {
             </div>
               
             {/* Cloud Migration */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all w-5/6 mx-auto lg:w-full">
               <div className="relative h-48">
                 <Image
                   src="/images/cloud-infrastructure.svg"
@@ -563,7 +540,7 @@ export default function Home() {
             </div>
 
             {/* Eğitim & Sertifikasyon */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all w-5/6 mx-auto lg:w-full">
               <div className="relative h-48">
                 <Image
                   src="/images/software-development.svg"
@@ -598,9 +575,9 @@ export default function Home() {
             <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* AI DevOps Card */}
-            <div className="group bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-1 hover:from-blue-400 hover:to-blue-500 transition-all duration-300">
+            <div className="group bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-1 hover:from-blue-400 hover:to-blue-500 transition-all duration-300 w-5/6 mx-auto lg:w-full">
               <div className="bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-8 h-full">
                 <div className="mb-6 relative">
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl rotate-3 absolute"></div>
@@ -629,7 +606,7 @@ export default function Home() {
             </div>
 
             {/* Cloud Solutions Card */}
-            <div className="group bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-1 hover:from-blue-400 hover:to-blue-500 transition-all duration-300">
+            <div className="group bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-1 hover:from-blue-400 hover:to-blue-500 transition-all duration-300 w-5/6 mx-auto lg:w-full">
               <div className="bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-8 h-full">
                 <div className="mb-6 relative">
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl rotate-3 absolute"></div>
@@ -655,7 +632,7 @@ export default function Home() {
             </div>
 
             {/* IT Support Card */}
-            <div className="group bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-1 hover:from-blue-400 hover:to-blue-500 transition-all duration-300">
+            <div className="group bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-1 hover:from-blue-400 hover:to-blue-500 transition-all duration-300 w-5/6 mx-auto lg:w-full">
               <div className="bg-gradient-to-br from-blue-800 to-blue-900 rounded-3xl p-8 h-full">
                 <div className="mb-6 relative">
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl rotate-3 absolute"></div>

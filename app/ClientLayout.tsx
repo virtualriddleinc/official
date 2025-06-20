@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import CookieConsent from "./components/CookieConsent";
+import AlphaBanner from "./components/AlphaBanner";
 import { useRouter, usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Search, X, FileText, ChevronRight, Package, Zap, Building, Scale, BookText, ChevronDown } from "lucide-react";
@@ -191,20 +192,20 @@ export default function ClientLayout({
         <nav className="container mx-auto px-6">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center group">
+            <Link href="/" className="flex items-center group flex-shrink-0">
               <img src="/logo.png" alt="Virtual Riddle Logo" className="w-auto h-12" />
             </Link>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-1">
-              <Link
-                href="/about"
+              <Link 
+                href="/about" 
                 className="px-4 py-2 text-base text-gray-800 hover:text-blue-600 font-semibold rounded-xl transition-all duration-200"
               >
                 Hakkımızda
               </Link>
 
-              <div
+              <div 
                 className="relative group"
                 onMouseEnter={handleProductsMouseEnter}
                 onMouseLeave={handleProductsMouseLeave}
@@ -221,39 +222,39 @@ export default function ClientLayout({
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
                       className="absolute left-0 mt-4 w-[550px] bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-3xl border border-white/5 shadow-2xl"
-                    >
-                      <div className="p-6">
+                >
+                  <div className="p-6">
                         <div className="grid grid-cols-2 gap-8">
                           <div>
                             <h3 className="font-semibold text-white mb-4 text-xl tracking-tight text-left">Planlama &amp; Takip</h3>
-                            <ul className="space-y-3">
+                        <ul className="space-y-3">
                               <MenuItem href="/products/jira-software" icon={JiraSoftwareIcon} title="Jira Software" description="Çevik proje yönetimi" color="blue" />
                               <MenuItem href="/products/jira-service-management" icon={JiraServiceManagementIcon} title="Jira Service Management" description="IT servis yönetimi" color="purple" />
                               <MenuItem href="/products/jira-work-management" icon={JiraWorkManagementIcon} title="Jira Work Management" description="İş takımları için proje yönetimi" color="purple" />
                             </ul>
-                          </div>
+                              </div>
                           <div className="space-y-6">
                             <div>
                                 <h3 className="font-semibold text-white mb-4 text-xl tracking-tight">İş Birliği &amp; Güvenlik</h3>
                                 <ul className="space-y-3">
                                     <MenuItem href="/products/confluence" icon={ConfluenceIcon} title="Confluence" description="Takım iş birliği ve bilgi paylaşımı" color="indigo" />
-                                </ul>
-                            </div>
+                        </ul>
+                      </div>
                             <div className="border-t border-white/10 pt-6">
                                 <h4 className="font-semibold text-white mb-4 text-lg tracking-tight">Kod Yönetimi</h4>
-                                <ul className="space-y-3">
+                        <ul className="space-y-3">
                                     <MenuItem href="/products/bitbucket" icon={BitbucketIcon} title="Bitbucket" description="Git tabanlı kod yönetimi" color="blue" />
-                                </ul>
-                            </div>
-                          </div>
-                        </div>
+                        </ul>
                       </div>
+                    </div>
+                  </div>
+                </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
-
-              <div
+              
+              <div 
                 className="relative group"
                 onMouseEnter={handleSolutionsMouseEnter}
                 onMouseLeave={handleSolutionsMouseLeave}
@@ -278,19 +279,19 @@ export default function ClientLayout({
                            <MenuItem href="/solutions/training" icon={TrainingIcon} title="Eğitim & Sertifikasyon" description="Atlassian ürün eğitimleri" color="amber" />
                            <MenuItem href="/free-discovery" icon={DiscoveryIcon} title="Ücretsiz Keşif" description="Dijital dönüşüm ön analizi" color="teal" />
                         </ul>
-                      </div>
+                        </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
-              <Link
-                href="/pricing"
+              <Link 
+                href="/pricing" 
                 className="px-4 py-2 text-base text-gray-800 hover:text-blue-600 font-semibold rounded-xl transition-all duration-200"
               >
                 Fiyatlandırma
               </Link>
-              <Link
-                href="/contact"
+              <Link 
+                href="/contact" 
                 className="px-4 py-2 text-base text-gray-800 hover:text-blue-600 font-semibold rounded-xl transition-all duration-200"
               >
                 İletişim
@@ -300,19 +301,19 @@ export default function ClientLayout({
             {/* Arama Butonu ve Mobil Menu */}
             <div className="flex items-center space-x-4">
               <div className="hidden lg:block">
-                  <button
+                    <button
                     onClick={() => setIsSearchOpen(true)}
                     className="flex items-center justify-between w-72 p-2.5 pl-4 bg-blue-50 rounded-xl border border-blue-100 hover:bg-blue-100/50 transition-colors"
                   >
                     <div className="flex items-center space-x-3">
                         <Search className="w-5 h-5 text-blue-400" />
                         <span className="text-sm text-blue-400">Ara...</span>
-                    </div>
+                  </div>
                     <div className="flex items-center space-x-1.5 text-xs text-blue-400">
                         <kbd className="px-2 py-1 bg-blue-100/50 rounded-lg">{isMac ? '⌘' : 'Ctrl'}</kbd>
                         <span>+</span>
                         <kbd className="px-2 py-1 bg-blue-100/50 rounded-lg">K</kbd>
-                    </div>
+                </div>
                 </button>
               </div>
 
@@ -404,11 +405,11 @@ export default function ClientLayout({
                                 <CategoryIcon category={item.category} className={`h-6 w-6 transition-transform group-hover:scale-110 ${selectedIndex === index ? 'text-blue-600 dark:text-blue-400' : ''}`} />
                                 <div>
                                   <p className={`font-semibold text-base ${selectedIndex === index ? 'text-blue-700 dark:text-blue-300' : 'text-gray-800 dark:text-gray-200'}`}>{item.title}</p>
-                                </div>
-                              </div>
+              </div>
+              </div>
                               <ChevronRight className={`h-5 w-5 ${selectedIndex === index ? 'text-blue-600 dark:text-blue-400' : 'text-gray-400'}`} />
                             </a>
-                          </Link>
+                      </Link>
                         </li>
                       ))}
                     </ul>
@@ -428,9 +429,9 @@ export default function ClientLayout({
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                           Aramaya başlamak için en az 2 karakter girin.
                         </p>
-                      </div>
+                  </div>
                    )}
-                </div>
+                  </div>
                 {searchResults.length > 0 && (
                   <div data-index={searchResults.length} className="border-t border-gray-200 dark:border-gray-700/50">
                     <Link href={`/search?q=${encodeURIComponent(searchText.trim())}`} legacyBehavior>
@@ -577,9 +578,10 @@ export default function ClientLayout({
       </footer>
 
       <CookieConsent />
+      <AlphaBanner />
     </>
   );
-}
+} 
 
 const colorClasses = {
     blue: {
