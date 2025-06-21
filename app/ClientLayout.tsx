@@ -250,22 +250,42 @@ export default function ClientLayout({
                           <div>
                             <h3 className="font-semibold text-white mb-4 text-xl tracking-tight text-left">Planlama &amp; Takip</h3>
                         <ul className="space-y-3">
-                              <MenuItem href="/products/jira-software" icon={JiraSoftwareIcon} title="Jira Software" description="Çevik proje yönetimi" color="blue" onClick={() => setIsMobileMenuOpen(false)} />
-                              <MenuItem href="/products/jira-service-management" icon={JiraServiceManagementIcon} title="Jira Service Management" description="IT servis yönetimi" color="purple" onClick={() => setIsMobileMenuOpen(false)} />
-                              <MenuItem href="/products/jira-work-management" icon={JiraWorkManagementIcon} title="Jira Work Management" description="İş takımları için proje yönetimi" color="purple" onClick={() => setIsMobileMenuOpen(false)} />
+                              <li>
+                                <Link href="/products/jira-software" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                                  Jira Software
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/products/jira-service-management" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                                  Jira Service Management
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/products/jira-work-management" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                                  Jira Work Management
+                                </Link>
+                              </li>
                             </ul>
                               </div>
                           <div className="space-y-6">
                             <div>
                                 <h3 className="font-semibold text-white mb-4 text-xl tracking-tight">İş Birliği &amp; Güvenlik</h3>
                                 <ul className="space-y-3">
-                                    <MenuItem href="/products/confluence" icon={ConfluenceIcon} title="Confluence" description="Takım iş birliği ve bilgi paylaşımı" color="indigo" onClick={() => setIsMobileMenuOpen(false)} />
-                        </ul>
-                      </div>
+                                    <li>
+                                      <Link href="/products/confluence" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                                        Confluence
+                                      </Link>
+                                    </li>
+                                </ul>
+                              </div>
                             <div className="border-t border-white/10 pt-6">
                                 <h4 className="font-semibold text-white mb-4 text-lg tracking-tight">Kod Yönetimi</h4>
                         <ul className="space-y-3">
-                                    <MenuItem href="/products/bitbucket" icon={BitbucketIcon} title="Bitbucket" description="Git tabanlı kod yönetimi" color="blue" onClick={() => setIsMobileMenuOpen(false)} />
+                                    <li>
+                                      <Link href="/products/bitbucket" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                                        Bitbucket
+                                      </Link>
+                                    </li>
                         </ul>
                       </div>
                     </div>
@@ -296,10 +316,26 @@ export default function ClientLayout({
                     >
                       <div className="p-4">
                         <ul className="space-y-2">
-                           <MenuItem href="/solutions/consulting" icon={ConsultingIcon} title="Atlassian Danışmanlığı" description="Kurumsal süreç optimizasyonu" color="emerald" onClick={() => setIsMobileMenuOpen(false)} />
-                           <MenuItem href="/solutions/cloud-migration" icon={CloudMigrationIcon} title="Cloud Migration" description="Bulut geçiş stratejisi" color="sky" onClick={() => setIsMobileMenuOpen(false)} />
-                           <MenuItem href="/solutions/training" icon={TrainingIcon} title="Eğitim & Sertifikasyon" description="Atlassian ürün eğitimleri" color="amber" onClick={() => setIsMobileMenuOpen(false)} />
-                           <MenuItem href="/free-discovery" icon={DiscoveryIcon} title="Ücretsiz Keşif" description="Dijital dönüşüm ön analizi" color="teal" onClick={() => setIsMobileMenuOpen(false)} />
+                           <li>
+                             <Link href="/solutions/consulting" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                               Atlassian Danışmanlığı
+                             </Link>
+                           </li>
+                           <li>
+                             <Link href="/solutions/cloud-migration" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                               Cloud Migration
+                             </Link>
+                           </li>
+                           <li>
+                             <Link href="/solutions/training" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                               Eğitim & Sertifikasyon
+                             </Link>
+                           </li>
+                           <li>
+                             <Link href="/free-discovery" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
+                               Ücretsiz Keşif
+                             </Link>
+                           </li>
                         </ul>
                         </div>
                     </motion.div>
@@ -400,22 +436,6 @@ export default function ClientLayout({
                         </Link>
                     </div>
                     
-                    <MobileAccordion title="Ürünler">
-                      <ul className="space-y-1 pt-2">
-                        {productLinks.map(link => (
-                          <MenuItem key={link.href} {...link} onClick={() => setIsMobileMenuOpen(false)} />
-                        ))}
-                      </ul>
-                    </MobileAccordion>
-
-                    <MobileAccordion title="Çözümler">
-                      <ul className="space-y-1 pt-2">
-                        {solutionLinks.map(link => (
-                          <MenuItem key={link.href} {...link} onClick={() => setIsMobileMenuOpen(false)} />
-                        ))}
-                      </ul>
-                    </MobileAccordion>
-                    
                     <div className="border-b border-white/10">
                         <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white">
                             Fiyatlandırma
@@ -505,4 +525,21 @@ export default function ClientLayout({
                               }`}
                             >
                               <div className="flex items-center space-x-4">
-                                <CategoryIcon category={item.category} className={`
+                                <CategoryIcon category={item.category} className={``} />
+                              </div>
+                            </a>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+      <CookieConsent />
+    </>
+  );
+}
