@@ -116,9 +116,9 @@ export default function UniversalSearchBox() {
         <Search className="w-5 h-5 text-gray-600 dark:text-gray-300" />
       </button>
       {isOpen && (
-        <div className="absolute right-0 top-12 w-80 sm:w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-900 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-3 sm:p-4 z-50">
+        <div className="absolute right-0 top-12 w-[calc(100vw-2rem)] sm:w-80 md:w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-900 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-3 sm:p-4 z-50">
           <form onSubmit={handleSubmit} className="relative">
-            <div className="flex flex-col sm:flex-row gap-2 mb-2">
+            <div className="flex flex-col gap-2 mb-2">
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
@@ -159,7 +159,7 @@ export default function UniversalSearchBox() {
             </div>
             <button type="submit" className="sr-only">Ara</button>
           </form>
-          <div className="mt-2 space-y-2 max-h-64 overflow-y-auto">
+          <div className="mt-2 space-y-2 max-h-48 sm:max-h-64 overflow-y-auto">
             {isLoading ? (
               [...Array(3)].map((_, i) => (
                 <div key={i} className="animate-pulse">
