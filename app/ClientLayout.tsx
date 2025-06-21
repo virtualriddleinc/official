@@ -6,7 +6,7 @@ import CookieConsent from "./components/CookieConsent";
 import AlphaBanner from "./components/AlphaBanner";
 import { useRouter, usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Search, X, FileText, ChevronRight, Package, Zap, Building, Scale, BookText, ChevronDown } from "lucide-react";
+import { Search, X, FileText, ChevronRight, Package, Zap, Building, Scale, BookText, ChevronDown, ChevronUp } from "lucide-react";
 import Fuse, { IFuseOptions, FuseResult } from 'fuse.js';
 import { searchData } from "./lib/searchData";
 import { 
@@ -77,6 +77,14 @@ export default function ClientLayout({
   const router = useRouter();
   let productsCloseTimeout: NodeJS.Timeout;
   let solutionsCloseTimeout: NodeJS.Timeout;
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     setIsMac(navigator.platform.toUpperCase().indexOf('MAC') >= 0);
@@ -185,6 +193,21 @@ export default function ClientLayout({
   const handleResultClick = () => {
     setIsSearchOpen(false);
   };
+
+  const productLinks = [
+    { href: "/products/jira-software", icon: JiraSoftwareIcon, title: "Jira Software", description: "Çevik proje yönetimi", color: "blue" as const },
+    { href: "/products/jira-service-management", icon: JiraServiceManagementIcon, title: "Jira Service Management", description: "IT servis yönetimi", color: "purple" as const },
+    { href: "/products/jira-work-management", icon: JiraWorkManagementIcon, title: "Jira Work Management", description: "İş takımları için proje yönetimi", color: "purple" as const },
+    { href: "/products/confluence", icon: ConfluenceIcon, title: "Confluence", description: "Takım iş birliği ve bilgi paylaşımı", color: "indigo" as const },
+    { href: "/products/bitbucket", icon: BitbucketIcon, title: "Bitbucket", description: "Git tabanlı kod yönetimi", color: "blue" as const },
+  ];
+
+  const solutionLinks = [
+    { href: "/solutions/consulting", icon: ConsultingIcon, title: "Atlassian Danışmanlığı", description: "Kurumsal süreç optimizasyonu", color: "emerald" as const },
+    { href: "/solutions/cloud-migration", icon: CloudMigrationIcon, title: "Cloud Migration", description: "Bulut geçiş stratejisi", color: "sky" as const },
+    { href: "/solutions/training", icon: TrainingIcon, title: "Eğitim & Sertifikasyon", description: "Atlassian ürün eğitimleri", color: "amber" as const },
+    { href: "/free-discovery", icon: DiscoveryIcon, title: "Ücretsiz Keşif", description: "Dijital dönüşüm ön analizi", color: "teal" as const },
+  ];
 
   return (
     <>
@@ -331,6 +354,71 @@ export default function ClientLayout({
           </div>
         </nav>
       </header>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              className="fixed top-0 right-0 h-full w-full max-w-sm z-50 bg-white dark:bg-gray-900 shadow-2xl"
+            >
+              <div className="p-6 h-full overflow-y-auto">
+                <div className="flex justify-between items-center mb-8">
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Menü</h3>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+
+                <div className="space-y-4">
+                  <button 
+                    onClick={() => { setIsMobileMenuOpen(false); setIsSearchOpen(true); }}
+                    className="w-full flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-800/50 rounded-lg text-left"
+                  >
+                    <span className="font-semibold text-gray-700 dark:text-gray-300">Ara...</span>
+                    <Search className="w-5 h-5 text-gray-500" />
+                  </button>
+
+                  <MobileAccordion title="Ürünler">
+                    <ul className="space-y-2 pt-2">
+                      {productLinks.map(link => (
+                         <MenuItem key={link.href} {...link} />
+                      ))}
+                    </ul>
+                  </MobileAccordion>
+
+                  <MobileAccordion title="Çözümler">
+                    <ul className="space-y-2 pt-2">
+                      {solutionLinks.map(link => (
+                         <MenuItem key={link.href} {...link} />
+                      ))}
+                    </ul>
+                  </MobileAccordion>
+
+                  <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 font-semibold text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">Hakkımızda</Link>
+                  <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 font-semibold text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">Fiyatlandırma</Link>
+                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block p-4 font-semibold text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">İletişim</Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Main Content */}
       <main className={pathname === '/search' ? 'pt-20' : ''}>
@@ -639,4 +727,35 @@ const MenuItem = ({ href, icon: Icon, title, description, color }: { href: strin
             </Link>
         </li>
     );
+};
+
+const MobileAccordion = ({ title, children }: { title: string, children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-gray-200 dark:border-gray-700/50">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex justify-between items-center p-4 font-semibold text-gray-700 dark:text-gray-300"
+      >
+        <span>{title}</span>
+        <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="p-4 pt-0">
+              {children}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 }; 
