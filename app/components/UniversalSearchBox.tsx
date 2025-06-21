@@ -116,9 +116,9 @@ export default function UniversalSearchBox() {
         <Search className="w-5 h-5 text-gray-600 dark:text-gray-300" />
       </button>
       {isOpen && (
-        <div className="absolute right-0 top-12 w-96 max-w-full bg-white dark:bg-gray-900 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
+        <div className="absolute right-0 top-12 w-80 sm:w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-900 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-3 sm:p-4 z-50">
           <form onSubmit={handleSubmit} className="relative">
-            <div className="flex gap-2 mb-2">
+            <div className="flex flex-col sm:flex-row gap-2 mb-2">
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
@@ -128,36 +128,38 @@ export default function UniversalSearchBox() {
                   <option key={cat} value={cat}>{cat}</option>
                 ))}
               </select>
-              <input
-                ref={inputRef}
-                type="text"
-                value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                  setHighlightedIndex(-1);
-                }}
-                onKeyDown={handleKeyDown}
-                placeholder="Site içinde ara..."
-                className="w-full px-4 py-2 pr-10 rounded-md bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:text-white"
-                autoComplete="off"
-              />
-              {searchQuery && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSearchQuery("");
-                    setResults([]);
+              <div className="relative flex-1">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
                     setHighlightedIndex(-1);
                   }}
-                  className="flex items-center justify-center px-2"
-                >
-                  <X className="w-4 h-4 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300" />
-                </button>
-              )}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Site içinde ara..."
+                  className="w-full px-4 py-2 pr-10 rounded-md bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:text-white text-sm"
+                  autoComplete="off"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery("");
+                      setResults([]);
+                      setHighlightedIndex(-1);
+                    }}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center justify-center p-1"
+                  >
+                    <X className="w-4 h-4 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300" />
+                  </button>
+                )}
+              </div>
             </div>
             <button type="submit" className="sr-only">Ara</button>
           </form>
-          <div className="mt-2 space-y-2">
+          <div className="mt-2 space-y-2 max-h-64 overflow-y-auto">
             {isLoading ? (
               [...Array(3)].map((_, i) => (
                 <div key={i} className="animate-pulse">
@@ -166,7 +168,7 @@ export default function UniversalSearchBox() {
                 </div>
               ))
             ) : results.length === 0 && searchQuery ? (
-              <div className="text-center text-gray-600 dark:text-gray-400">
+              <div className="text-center text-gray-600 dark:text-gray-400 text-sm py-4">
                 Sonuç bulunamadı
               </div>
             ) : results.length > 0 ? (
@@ -175,7 +177,7 @@ export default function UniversalSearchBox() {
                   <Link
                     key={index}
                     href={result.url}
-                    className={`block w-full text-left p-3 rounded-lg transition-colors ${highlightedIndex === index ? "bg-blue-50 dark:bg-blue-900" : "hover:bg-gray-50 dark:hover:bg-gray-800"}`}
+                    className={`block w-full text-left p-2 sm:p-3 rounded-lg transition-colors ${highlightedIndex === index ? "bg-blue-50 dark:bg-blue-900" : "hover:bg-gray-50 dark:hover:bg-gray-800"}`}
                     onClick={() => {
                       setIsOpen(false);
                       setSearchQuery("");
@@ -183,16 +185,16 @@ export default function UniversalSearchBox() {
                       setHighlightedIndex(-1);
                     }}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">{result.category}</span>
                       {result.tags && result.tags.length > 0 && (
                         <span className="text-xs text-gray-400 dark:text-gray-500">{result.tags.slice(0,2).join(", ")}</span>
                       )}
                     </div>
-                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white mt-1">
                       {result.title}
                     </h3>
-                    <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+                    <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 line-clamp-2">
                       {result.description}
                     </p>
                   </Link>
@@ -200,7 +202,7 @@ export default function UniversalSearchBox() {
                 <div className="pt-2 mt-2 border-t border-gray-200 dark:border-gray-700">
                   <button
                     onClick={navigateToSearch}
-                    className="w-full text-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+                    className="w-full text-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 py-2"
                   >
                     Tüm sonuçları görüntüle
                   </button>

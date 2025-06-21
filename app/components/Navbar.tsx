@@ -135,43 +135,75 @@ export default function Navbar() {
 
         {/* Mobil Menü */}
         {isOpen && (
-          <div className="md:hidden py-4">
-            <div className="flex flex-col space-y-4">
-              <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <div className="md:hidden py-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex flex-col space-y-6">
+              <Link 
+                href="/" 
+                className="text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+                onClick={() => setIsOpen(false)}
+              >
                 Ana Sayfa
               </Link>
               
               {/* Mobil Ürünler Menüsü */}
-              <div className="space-y-2">
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">Ürünler</p>
+              <div className="space-y-4">
+                <p className="text-lg font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+                  Ürünler
+                </p>
                 {Object.entries(products).map(([category, items]) => (
-                  <div key={category} className="pl-4 space-y-2">
-                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300">{category}</p>
-                    {items.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="block pl-4 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                  <div key={category} className="space-y-3">
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                      {category}
+                    </p>
+                    <div className="pl-4 space-y-2">
+                      {items.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="block text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-1"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
 
-              <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Hakkımızda
-              </Link>
-              <Link href="/career" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Kariyer
-              </Link>
-              <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                İletişim
-              </Link>
-              <Link href="/free-discovery" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">
-                Başlayın
-              </Link>
+              <div className="space-y-4 pt-2">
+                <Link 
+                  href="/about" 
+                  className="block text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Hakkımızda
+                </Link>
+                <Link 
+                  href="/career" 
+                  className="block text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Kariyer
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="block text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  İletişim
+                </Link>
+              </div>
+
+              <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                <Link 
+                  href="/free-discovery" 
+                  className="block w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center font-medium text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Başlayın
+                </Link>
+              </div>
             </div>
           </div>
         )}
