@@ -24,7 +24,6 @@ export default function ConsultingPage() {
     currentTools: "",
     projectScope: "",
     timeline: "",
-    budget: "",
     message: ""
   });
 
@@ -71,15 +70,6 @@ export default function ConsultingPage() {
     "Planlama Aşamasında"
   ];
 
-  // Bütçe aralıkları
-  const budgets = [
-    "10K-50K TL",
-    "50K-100K TL",
-    "100K-250K TL",
-    "250K+ TL",
-    "Belirlenmemiş"
-  ];
-
   // Kullanıcıya görünen hizmet etiketleri
   const serviceLabels = {
     processAnalysis: "Süreç Analizi",
@@ -107,7 +97,6 @@ export default function ConsultingPage() {
       currentTools: form.currentTools,
       projectScope: form.projectScope,
       timeline: form.timeline,
-      budget: form.budget,
       message: form.message
     };
   }
@@ -163,7 +152,6 @@ export default function ConsultingPage() {
         currentTools: "",
         projectScope: "",
         timeline: "",
-        budget: "",
         message: ""
       });
       setErrors({});
@@ -193,7 +181,6 @@ export default function ConsultingPage() {
         currentTools: "",
         projectScope: "",
         timeline: "",
-        budget: "",
         message: ""
       });
       setErrors({});
@@ -514,7 +501,7 @@ export default function ConsultingPage() {
                   </div>
 
                   {/* Proje Detayları */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="projectScope" className="block text-sm font-medium text-white/80 mb-2">
                         Proje Kapsamı
@@ -546,23 +533,6 @@ export default function ConsultingPage() {
                         <option value="" disabled>Zaman çizelgesini seçin</option>
                         {timelines.map(timeline => (
                           <option key={timeline} value={timeline} className="bg-blue-900 text-white">{timeline}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label htmlFor="budget" className="block text-sm font-medium text-white/80 mb-2">
-                        Bütçe Aralığı
-                      </label>
-                      <select
-                        id="budget"
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
-                      >
-                        <option value="" disabled>Bütçe aralığını seçin</option>
-                        {budgets.map(budget => (
-                          <option key={budget} value={budget} className="bg-blue-900 text-white">{budget}</option>
                         ))}
                       </select>
                     </div>
