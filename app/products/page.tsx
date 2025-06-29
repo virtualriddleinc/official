@@ -76,15 +76,19 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 text-blue-700 font-semibold text-sm mb-6">
+                <span className="text-lg">🚀</span>
+                <span>ÜRÜN PORTFÖYÜ</span>
+              </div>
+              <h2 className="text-5xl font-bold text-gray-900 mb-6">
                 Tüm Ürünlerimiz
               </h2>
-              <p className="text-xl text-gray-600">
-                Her ihtiyaca uygun çözümler
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Her ihtiyaca uygun çözümler ile işletmenizi dijitalleştirin
               </p>
             </div>
 
@@ -93,45 +97,53 @@ export default function ProductsPage() {
                 <Link
                   key={product.id}
                   href={product.href}
-                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+                  className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 overflow-hidden"
                 >
-                  <div className="flex items-center mb-6">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${product.color} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <Image
-                        src={product.icon}
-                        alt={product.name}
-                        width={32}
-                        height={32}
-                        className="w-8 h-8"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                        {product.name}
-                      </h3>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {product.description}
-                  </p>
-
-                  <div className="space-y-2">
-                    {product.features.map((feature, index) => (
-                      <div key={index} className="flex items-center text-sm text-gray-500">
-                        <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {feature}
+                  {/* Gradient Background on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-16 -translate-y-16 scale-0 group-hover:scale-100"></div>
+                  
+                  <div className="relative">
+                    <div className="flex items-center mb-6">
+                      <div className="text-4xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                        {product.id === "jira-software" && "📋"}
+                        {product.id === "jira-service-management" && "🛠️"}
+                        {product.id === "jira-work-management" && "⚙️"}
+                        {product.id === "confluence" && "📚"}
+                        {product.id === "bitbucket" && "💻"}
                       </div>
-                    ))}
-                  </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {product.name}
+                        </h3>
+                      </div>
+                    </div>
 
-                  <div className="mt-6 flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
-                    Detayları Görüntüle
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {product.description}
+                    </p>
+
+                    <div className="space-y-3 mb-6">
+                      {product.features.map((feature, index) => (
+                        <div key={index} className="flex items-center text-sm text-gray-600 group-hover:text-gray-700 transition-colors">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <span className="text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
+                        Detayları Görüntüle
+                      </span>
+                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                        <svg className="w-4 h-4 text-blue-600 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </Link>
               ))}
@@ -143,74 +155,99 @@ export default function ProductsPage() {
       {/* Categories Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-100 text-green-700 font-semibold text-sm mb-6">
+                <span className="text-lg">🎯</span>
+                <span>KATEGORİLER</span>
+              </div>
+              <h2 className="text-5xl font-bold text-gray-900 mb-6">
                 Kategorilere Göre Keşfedin
               </h2>
-              <p className="text-xl text-gray-600">
-                İhtiyacınıza en uygun ürünü bulun
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                İhtiyacınıza en uygun ürünü bulun ve işletmenizi dönüştürün
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {/* Project Management */}
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Proje Yönetimi</h3>
-                <p className="text-gray-600 mb-6">
-                  Yazılım geliştirme ve genel proje yönetimi için kapsamlı çözümler.
-                </p>
-                <div className="space-y-2">
-                  <Link href="/products/jira-software" className="block text-blue-600 hover:text-blue-700 font-medium">
-                    Jira Software
-                  </Link>
-                  <Link href="/products/jira-work-management" className="block text-blue-600 hover:text-blue-700 font-medium">
-                    Jira Work Management
-                  </Link>
+              <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-16 -translate-y-16 scale-0 group-hover:scale-100"></div>
+                
+                <div className="relative">
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    📋
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Proje Yönetimi</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    Yazılım geliştirme ve genel proje yönetimi için kapsamlı çözümler ile ekiplerinizi organize edin.
+                  </p>
+                  <div className="space-y-3">
+                    <Link href="/products/jira-software" className="flex items-center justify-between p-3 bg-white rounded-xl hover:bg-blue-50 transition-colors group/item">
+                      <span className="text-blue-600 font-medium">Jira Software</span>
+                      <svg className="w-4 h-4 text-blue-600 group-hover/item:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <Link href="/products/jira-work-management" className="flex items-center justify-between p-3 bg-white rounded-xl hover:bg-blue-50 transition-colors group/item">
+                      <span className="text-blue-600 font-medium">Jira Work Management</span>
+                      <svg className="w-4 h-4 text-blue-600 group-hover/item:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
               {/* Service Management */}
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
-                <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Servis Yönetimi</h3>
-                <p className="text-gray-600 mb-6">
-                  IT servis yönetimi ve müşteri desteği için özel çözümler.
-                </p>
-                <div className="space-y-2">
-                  <Link href="/products/jira-service-management" className="block text-green-600 hover:text-green-700 font-medium">
-                    Jira Service Management
-                  </Link>
+              <div className="group relative bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200 to-emerald-200 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-16 -translate-y-16 scale-0 group-hover:scale-100"></div>
+                
+                <div className="relative">
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    🛠️
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Servis Yönetimi</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    IT servis yönetimi ve müşteri desteği için özel çözümler ile hizmet kalitenizi artırın.
+                  </p>
+                  <div className="space-y-3">
+                    <Link href="/products/jira-service-management" className="flex items-center justify-between p-3 bg-white rounded-xl hover:bg-green-50 transition-colors group/item">
+                      <span className="text-green-600 font-medium">Jira Service Management</span>
+                      <svg className="w-4 h-4 text-green-600 group-hover/item:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
               {/* Collaboration */}
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8">
-                <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">İş Birliği & Dokümantasyon</h3>
-                <p className="text-gray-600 mb-6">
-                  Ekip iş birliği ve bilgi yönetimi için güçlü platformlar.
-                </p>
-                <div className="space-y-2">
-                  <Link href="/products/confluence" className="block text-orange-600 hover:text-orange-700 font-medium">
-                    Confluence
-                  </Link>
-                  <Link href="/products/bitbucket" className="block text-orange-600 hover:text-orange-700 font-medium">
-                    Bitbucket
-                  </Link>
+              <div className="group relative bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-orange-100 overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-200 to-amber-200 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-16 -translate-y-16 scale-0 group-hover:scale-100"></div>
+                
+                <div className="relative">
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    🤝
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">İş Birliği & Dokümantasyon</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    Ekip iş birliği ve bilgi yönetimi için güçlü platformlar ile verimliliği artırın.
+                  </p>
+                  <div className="space-y-3">
+                    <Link href="/products/confluence" className="flex items-center justify-between p-3 bg-white rounded-xl hover:bg-orange-50 transition-colors group/item">
+                      <span className="text-orange-600 font-medium">Confluence</span>
+                      <svg className="w-4 h-4 text-orange-600 group-hover/item:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <Link href="/products/bitbucket" className="flex items-center justify-between p-3 bg-white rounded-xl hover:bg-orange-50 transition-colors group/item">
+                      <span className="text-orange-600 font-medium">Bitbucket</span>
+                      <svg className="w-4 h-4 text-orange-600 group-hover/item:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
