@@ -7,7 +7,7 @@ export default function JiraServiceManagementPage() {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 py-24 min-h-[500px] flex items-center justify-center">
+      <section className="w-full py-20 bg-gradient-to-r from-blue-800 to-blue-950 text-white">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute h-full w-full bg-[url('/noise.png')] opacity-5"></div>
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-radial from-blue-400/20 via-transparent to-transparent opacity-50"></div>
@@ -16,10 +16,10 @@ export default function JiraServiceManagementPage() {
         
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl font-bold text-white mb-6">
               ITSM'nin Geleceği Burada
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl mb-8">
               Jira Service Management ile IT ekiplerinizin hızını artırın, sorunu yönetin ve üstün müşteri deneyimi sunun.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -30,10 +30,12 @@ export default function JiraServiceManagementPage() {
                 Ücretsiz Dene
               </Link>
               <Link
-                href="/contact" 
+                href="https://www.atlassian.com/software/jira/service-management" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-all w-full sm:w-auto text-center backdrop-blur-sm"
               >
-                Demo İzle
+                Ürünü İncele
               </Link>
             </div>
           </div>

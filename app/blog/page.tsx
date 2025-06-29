@@ -3,9 +3,15 @@ export default function BlogPage() {
     <main className="flex min-h-screen flex-col items-center pt-32">
       {/* Hero Section */}
       <section className="w-full py-20 bg-gradient-to-r from-blue-800 to-blue-950 text-white">
-        <div className="container mx-auto px-4">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute h-full w-full bg-[url('/noise.png')] opacity-5"></div>
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-radial from-blue-400/20 via-transparent to-transparent opacity-50"></div>
+          <div className="absolute bottom-0 left-0 w-full max-w-[600px] h-[600px] bg-gradient-radial from-blue-600/20 via-transparent to-transparent opacity-30"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">Blog</h1>
+            <h1 className="text-5xl font-bold text-white mb-6">Blog</h1>
             <p className="text-xl">
               Dijital dönüşüm ve teknoloji dünyasından en güncel haberler, makaleler ve analizler
             </p>
