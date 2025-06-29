@@ -67,6 +67,15 @@ export default function ProductsPage() {
       color: "from-red-600 to-red-700",
       features: ["Akıllı uyarı yönetimi", "On-call rotasyonları", "Olay müdahalesi", "Atlassian entegrasyonu"],
       href: "/products/opsgenie"
+    },
+    {
+      id: "statuspage",
+      name: "Statuspage",
+      description: "Gerçek zamanlı servis durumu ve olay bildirimi",
+      icon: "/icons/statuspage.svg",
+      color: "from-indigo-600 to-indigo-700",
+      features: ["Durum bildirimi", "Olay yönetimi", "Güvenilirlik gösterimi", "Entegrasyonlar"],
+      href: "/products/statuspage"
     }
   ];
 
@@ -133,6 +142,7 @@ export default function ProductsPage() {
                         {product.id === "bitbucket" && "💻"}
                         {product.id === "trello" && "📋"}
                         {product.id === "opsgenie" && "🚨"}
+                        {product.id === "statuspage" && "📊"}
                       </div>
                       <div>
                         <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
