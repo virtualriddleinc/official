@@ -85,10 +85,10 @@ export default function ProductsPage() {
                 <span>ÜRÜN PORTFÖYÜ</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Tüm Ürünlerimiz
+                Danışmanlık Hizmeti Verdiğimiz Ürünler
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-                Her ihtiyaca uygun çözümler ile işletmenizi dijitalleştirin
+                Atlassian ekosisteminde uzmanlaştığımız ürünler ile işletmenizi dijitalleştirin
               </p>
             </div>
 
