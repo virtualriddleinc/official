@@ -292,26 +292,26 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-[#253858] mb-4">Uzman Ekip</h3>
                 <div className="space-y-4">
                   <p className="text-gray-600 leading-relaxed">
-                    Deneyimli ekibimizle projenizin her aşamasında yanınızdayız.
+                    Atlassian tarafından onaylı sertifikalı danışmanlarımızla projenizin her aşamasında yanınızdayız.
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-gray-600">Kapsamlı proje deneyimi</span>
+                      <span className="text-gray-600">Atlassian sertifikalı uzmanlar</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-600">Resmi Atlassian partneri</span>
                     </li>
                     <li className="flex items-start">
                       <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">Enterprise seviye proje deneyimi</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="w-5 h-5 text-[#0052CC] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-600">Proje özelinde dedike ekip</span>
                     </li>
                   </ul>
                 </div>
