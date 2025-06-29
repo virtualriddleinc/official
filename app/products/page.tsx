@@ -49,33 +49,6 @@ export default function ProductsPage() {
       color: "from-indigo-600 to-indigo-700",
       features: ["Git hosting", "CI/CD pipeline", "Code review", "Jira entegrasyonu"],
       href: "/products/bitbucket"
-    },
-    {
-      id: "atlas",
-      name: "Atlas",
-      description: "Proje ve ekip yönetimi için modern platform",
-      icon: "/icons/atlas.svg",
-      color: "from-teal-600 to-teal-700",
-      features: ["Proje yönetimi", "Ekip iş birliği", "Görselleştirme", "Raporlama"],
-      href: "/products/atlas"
-    },
-    {
-      id: "platform",
-      name: "Atlassian Platform",
-      description: "Tüm Atlassian ürünlerini birleştiren platform",
-      icon: "/icons/platform.svg",
-      color: "from-gray-600 to-gray-700",
-      features: ["Merkezi yönetim", "Entegrasyonlar", "Güvenlik", "Ölçeklenebilirlik"],
-      href: "/products/platform"
-    },
-    {
-      id: "marketplace",
-      name: "Marketplace",
-      description: "Atlassian ekosistemi için uygulama ve eklenti mağazası",
-      icon: "/icons/marketplace.svg",
-      color: "from-pink-600 to-pink-700",
-      features: ["Uygulama mağazası", "Eklentiler", "Entegrasyonlar", "Özelleştirmeler"],
-      href: "/products/marketplace"
     }
   ];
 
@@ -198,9 +171,6 @@ export default function ProductsPage() {
                   </Link>
                   <Link href="/products/jira-work-management" className="block text-blue-600 hover:text-blue-700 font-medium">
                     Jira Work Management
-                  </Link>
-                  <Link href="/products/atlas" className="block text-blue-600 hover:text-blue-700 font-medium">
-                    Atlas
                   </Link>
                 </div>
               </div>
