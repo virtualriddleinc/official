@@ -13,7 +13,7 @@ export default function NotFound() {
           </div>
         </div>
         
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Sayfa Bulunamadı</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Sayfa Bulunamadı</h1>
         
         <p className="text-lg text-gray-300 mb-8 max-w-lg mx-auto">
           Aradığınız sayfaya ulaşılamıyor. Sayfa kaldırılmış, adı değiştirilmiş veya geçici olarak erişilemiyor olabilir.
@@ -35,12 +35,7 @@ export default function NotFound() {
         </div>
         
         <div className="mt-16 flex items-center justify-center">
-          <div className="w-12 h-12 bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mr-3">
-            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <span className="text-xl font-bold text-white">Virtual Riddle</span>
+          <img src="/logo-footer.svg" alt="Virtual Riddle Logo" className="w-80 h-auto" />
         </div>
       </div>
       

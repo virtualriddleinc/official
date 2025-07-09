@@ -856,9 +856,9 @@ export default function ClientLayout({
       {/* Footer */}
       <footer className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800">
         <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
             {/* Logo ve Sosyal Medya */}
-            <div className="md:col-span-3 flex flex-col items-start space-y-10">
+            <div className="flex flex-col items-start space-y-10">
               <img src="/logo-footer.svg" alt="Virtual Riddle Logo" className="w-72" style={{ height: 'auto', maxHeight: '18rem' }} />
               <p className="text-gray-400">Dijital dönüşüm yolculuğunuzda yanınızdayız. Modern çözümlerle işinizi ileriye taşıyın.</p>
               <div className="flex items-center space-x-4">
@@ -884,26 +884,22 @@ export default function ClientLayout({
             </div>
 
             {/* Ürünler */}
-            <div className="md:col-span-2">
+            <div>
               <h3 className="text-lg font-semibold text-white mb-6">Ürünler</h3>
               <ul className="space-y-4">
-                <li>
-                  <Link href="/products/jira-software" className="text-gray-400 hover:text-white transition-colors">Jira Software</Link>
-                </li>
-                <li>
-                  <Link href="/products/confluence" className="text-gray-400 hover:text-white transition-colors">Confluence</Link>
-                </li>
-                <li>
-                  <Link href="/products/bitbucket" className="text-gray-400 hover:text-white transition-colors">Bitbucket</Link>
-                </li>
-                <li>
-                  <Link href="/products/jira-service-management" className="text-gray-400 hover:text-white transition-colors">Jira Service Management</Link>
-                </li>
+                <li><Link href="/products/jira-software" className="text-gray-400 hover:text-white transition-colors">Jira Software</Link></li>
+                <li><Link href="/products/jira-service-management" className="text-gray-400 hover:text-white transition-colors">Jira Service Management</Link></li>
+                <li><Link href="/products/jira-work-management" className="text-gray-400 hover:text-white transition-colors">Jira Work Management</Link></li>
+                <li><Link href="/products/confluence" className="text-gray-400 hover:text-white transition-colors">Confluence</Link></li>
+                <li><Link href="/products/bitbucket" className="text-gray-400 hover:text-white transition-colors">Bitbucket</Link></li>
+                <li><Link href="/products/trello" className="text-gray-400 hover:text-white transition-colors">Trello</Link></li>
+                <li><Link href="/products/opsgenie" className="text-gray-400 hover:text-white transition-colors">Opsgenie</Link></li>
+                <li><Link href="/products/statuspage" className="text-gray-400 hover:text-white transition-colors">Statuspage</Link></li>
               </ul>
             </div>
 
             {/* Çözümler */}
-            <div className="md:col-span-2">
+            <div>
               <h3 className="text-lg font-semibold text-white mb-6">Çözümler</h3>
               <ul className="space-y-4">
                 <li>
@@ -922,7 +918,7 @@ export default function ClientLayout({
             </div>
 
             {/* Şirket */}
-            <div className="md:col-span-2">
+            <div>
               <h3 className="text-lg font-semibold text-white mb-6">Şirket</h3>
               <ul className="space-y-4">
                 <li>
@@ -941,7 +937,7 @@ export default function ClientLayout({
             </div>
 
             {/* İletişim */}
-            <div className="md:col-span-3">
+            <div>
               <h3 className="text-lg font-semibold text-white mb-6">Bize Ulaşın</h3>
               <div className="space-y-4">
                 <p className="text-gray-400">Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız.</p>
