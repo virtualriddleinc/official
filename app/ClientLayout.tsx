@@ -215,7 +215,7 @@ export default function ClientLayout({
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center group flex-shrink-0">
-              <img src="/logo.png" alt="Virtual Riddle Logo" className="w-auto h-12" />
+              <img src="/logo.svg" alt="Virtual Riddle Logo" className="w-auto h-12" />
             </Link>
 
             {/* Desktop Menu */}
