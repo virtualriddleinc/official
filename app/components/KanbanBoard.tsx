@@ -141,8 +141,8 @@ function SortableIssue({ issue, columnId, isMobile }: { issue: Issue; columnId: 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'high': return 'bg-[#DC2626] text-white'; // Daha koyu kırmızı
-      case 'medium': return 'bg-[#D97706] text-white'; // Daha koyu turuncu
-      case 'low': return 'bg-[#059669] text-white'; // Daha koyu yeşil
+      case 'medium': return 'bg-[#B45309] text-white'; // Daha koyu turuncu
+      case 'low': return 'bg-[#047857] text-white'; // Daha koyu yeşil
       default: return 'bg-[#374151] text-white'; // Daha koyu gri
     }
   };
