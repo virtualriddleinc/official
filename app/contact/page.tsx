@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import { CheckCircle, AlertTriangle, X } from "lucide-react";
 import StructuredData from '../components/StructuredData';
+import dynamic from 'next/dynamic';
+
+const GoogleMap = dynamic(() => import('../components/GoogleMap'), { ssr: false });
 
 export default function ContactPage() {
   const initialForm = { name: "", email: "", subject: "", message: "" };
@@ -231,16 +234,10 @@ export default function ContactPage() {
             {/* Google Maps */}
             <div className="mt-12 flex flex-col items-center gap-4 w-full">
               <div className="w-full max-w-6xl mx-auto rounded-xl overflow-hidden shadow-lg">
-                <iframe
-                  src="https://www.google.com/maps?q=41.1130445,29.0211057&z=17&output=embed"
-                  width="100%"
-                  height="450"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="42 Maslak Konum Haritası"
-                ></iframe>
+                <GoogleMap 
+                  address="Maslak Mah. AOS 55. Sok. 42 Maslak B Blok No:4/542 Sarıyer/İSTANBUL"
+                  apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}
+                />
               </div>
               <span className="text-gray-500 text-sm text-center max-w-md">Konumumuzu siteden ayrılmadan inceleyebilirsiniz.</span>
             </div>

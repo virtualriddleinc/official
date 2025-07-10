@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import KanbanBoard from './components/KanbanBoard';
+import dynamic from 'next/dynamic';
 import Link from "next/link";
 import StructuredData from './components/StructuredData';
+
+const KanbanBoard = dynamic(() => import('./components/KanbanBoard'), { ssr: false });
 
 export default function Home() {
   return (
