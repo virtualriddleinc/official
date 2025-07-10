@@ -3,6 +3,7 @@
 import Image from "next/image";
 import KanbanBoard from './components/KanbanBoard';
 import Link from "next/link";
+import StructuredData from './components/StructuredData';
 
 export default function Home() {
   return (
@@ -662,6 +663,30 @@ export default function Home() {
 
       {/* 7. Kanban Board */}
       <KanbanBoard />
+
+      {/* Structured Data */}
+      <StructuredData
+        type="service"
+        serviceData={{
+          name: 'Virtual Riddle Atlassian Danışmanlığı',
+          description: 'Jira ve Confluence başta olmak üzere tüm Atlassian ürünleri için kurumsal danışmanlık hizmetleri',
+          url: 'https://virtualriddle.com',
+          offers: [
+            {
+              name: 'Atlassian Danışmanlığı',
+              description: 'Jira, Confluence ve diğer Atlassian ürünleriyle iş süreçlerinizi optimize edin'
+            },
+            {
+              name: 'Cloud Migration',
+              description: 'On-premise Atlassian ürünlerinizi sorunsuz şekilde Cloud ortamına taşıyın'
+            },
+            {
+              name: 'Eğitim & Sertifikasyon',
+              description: 'Ekibinizin Atlassian ürünlerini etkin kullanabilmesi için özelleştirilmiş eğitim programları'
+            }
+          ]
+        }}
+      />
     </main>
   );
 }

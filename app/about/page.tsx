@@ -1,3 +1,5 @@
+import StructuredData from '../components/StructuredData';
+
 export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col items-center pt-32">
@@ -355,6 +357,37 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <StructuredData
+        type="breadcrumb"
+        breadcrumbItems={[
+          { name: 'Ana Sayfa', item: 'https://virtualriddle.com' },
+          { name: 'Hakkımızda', item: 'https://virtualriddle.com/about' }
+        ]}
+      />
+      
+      <StructuredData
+        type="faq"
+        faqItems={[
+          {
+            question: 'Virtual Riddle ne zaman kuruldu?',
+            answer: 'Virtual Riddle Teknoloji A.Ş. 2024 yılında kuruldu.'
+          },
+          {
+            question: 'Virtual Riddle nerede bulunuyor?',
+            answer: 'Virtual Riddle, İstanbul\'un iş ve teknoloji merkezi Maslak 42\'de bulunmaktadır.'
+          },
+          {
+            question: 'Virtual Riddle hangi hizmetleri sunuyor?',
+            answer: 'Virtual Riddle, Atlassian ürünleri için danışmanlık, kurulum, eğitim ve destek hizmetleri sunmaktadır.'
+          },
+          {
+            question: 'Virtual Riddle\'ın misyonu nedir?',
+            answer: 'İşletmelerin dijital dönüşüm süreçlerini en verimli şekilde yönetmelerine yardımcı olmak ve Atlassian teknolojilerini kullanarak rekabet avantajı elde etmelerini sağlamak.'
+          }
+        ]}
+      />
     </main>
   );
 } 

@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
+import StructuredData from '../components/StructuredData';
 
 const packages = [
   {
@@ -124,8 +125,39 @@ const PricingPage = () => {
           ))}
         </div>
       </div>
+
+      {/* Structured Data */}
+      <StructuredData
+        type="breadcrumb"
+        breadcrumbItems={[
+          { name: 'Ana Sayfa', item: 'https://virtualriddle.com' },
+          { name: 'Fiyatlandırma', item: 'https://virtualriddle.com/pricing' }
+        ]}
+      />
+      
+      <StructuredData
+        type="faq"
+        faqItems={[
+          {
+            question: 'Virtual Riddle\'ın fiyatlandırma paketleri nelerdir?',
+            answer: 'Virtual Riddle, Dedike Danışmanlık Paketi, Talep Bazlı Danışmanlık ve Eğitim Paketi olmak üzere 3 farklı paket sunmaktadır.'
+          },
+          {
+            question: 'En popüler paket hangisidir?',
+            answer: 'Dedike Danışmanlık Paketi en popüler seçenektir ve haftaiçi 5 gün tam zamanlı danışmanlık hizmeti sunar.'
+          },
+          {
+            question: 'Fiyatlara KDV dahil midir?',
+            answer: 'Hayır, tüm fiyatlar KDV hariçtir. Fiyatlara %20 KDV eklenmektedir.'
+          },
+          {
+            question: 'Paketler arasında geçiş yapabilir miyim?',
+            answer: 'Evet, ihtiyaçlarınıza göre paketler arasında geçiş yapabilirsiniz. Esnek çözümler sunuyoruz.'
+          }
+        ]}
+      />
     </section>
   );
 };
 
-export default dynamic(() => Promise.resolve(PricingPage), { ssr: false }); 
+export default PricingPage; 

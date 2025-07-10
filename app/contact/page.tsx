@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { CheckCircle, AlertTriangle, X } from "lucide-react";
+import StructuredData from '../components/StructuredData';
 
 export default function ContactPage() {
   const initialForm = { name: "", email: "", subject: "", message: "" };
@@ -246,6 +247,37 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <StructuredData
+        type="breadcrumb"
+        breadcrumbItems={[
+          { name: 'Ana Sayfa', item: 'https://virtualriddle.com' },
+          { name: 'İletişim', item: 'https://virtualriddle.com/contact' }
+        ]}
+      />
+      
+      <StructuredData
+        type="faq"
+        faqItems={[
+          {
+            question: 'Virtual Riddle ile nasıl iletişime geçebilirim?',
+            answer: 'Virtual Riddle ile iletişime geçmek için info@virtualriddle.com adresine e-posta gönderebilir veya web sitemizdeki iletişim formunu kullanabilirsiniz.'
+          },
+          {
+            question: 'Virtual Riddle\'ın adresi nedir?',
+            answer: 'Virtual Riddle, İstanbul\'un Maslak bölgesinde Maslak Mahallesi AOS 55. Sokak 42 Maslak B Blok No: 4/542 adresinde bulunmaktadır.'
+          },
+          {
+            question: 'Çalışma saatleri nedir?',
+            answer: 'Pazartesi-Cuma 09:00-18:00, Cumartesi 10:00-14:00 saatleri arasında hizmet vermekteyiz.'
+          },
+          {
+            question: 'Hangi hizmetler için iletişime geçebilirim?',
+            answer: 'Atlassian danışmanlığı, Jira kurulumu, Confluence danışmanlığı, dijital dönüşüm projeleri ve teknoloji çözümleri için iletişime geçebilirsiniz.'
+          }
+        ]}
+      />
     </main>
   );
 } 
