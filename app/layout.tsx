@@ -28,6 +28,13 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://virtualriddle.com'),
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/favicon.svg',
+    shortcut: '/favicon.svg'
+  },
   robots: {
     index: true,
     follow: true,
