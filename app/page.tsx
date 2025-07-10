@@ -5,11 +5,20 @@ import dynamic from 'next/dynamic';
 import Link from "next/link";
 import StructuredData from './components/StructuredData';
 
-const KanbanBoard = dynamic(() => import('./components/KanbanBoard'), { ssr: false });
+// Lazy load components for better performance
+const KanbanBoard = dynamic(() => import('./components/KanbanBoard'), { 
+  ssr: false,
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg"></div>
+});
 
 export default function Home() {
   return (
     <main>
+      {/* Preload critical resources */}
+      <link rel="preload" href="/app/globals.css" as="style" />
+      <link rel="preload" href="/contact" as="fetch" crossOrigin="anonymous" />
+      <link rel="preload" href="/free-discovery" as="fetch" crossOrigin="anonymous" />
+      
       {/* 1. Hero Section */}
       <section className="relative min-h-screen bg-[#004BB3] overflow-hidden">
         {/* Gradient Overlay */}
@@ -74,12 +83,14 @@ export default function Home() {
                     <Link
                       href="/contact"
                       className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold transition-all text-center"
+                      prefetch={true}
                     >
                       İletişime Geç
                     </Link>
                     <Link
                       href="/free-discovery"
                       className="bg-transparent border border-white/30 backdrop-blur-sm text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold transition-all text-center"
+                      prefetch={true}
                     >
                       Ücretsiz Keşif
                     </Link>

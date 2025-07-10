@@ -9,6 +9,7 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
+  fallback: ['system-ui', 'arial']
 })
 
 export const metadata: Metadata = {
@@ -74,7 +75,18 @@ export default function RootLayout({
   return (
     <html lang="tr" className={inter.className}>
       <head>
-        {/* Kritik CSS inline */}
+        {/* DNS Prefetch for external domains */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
+        {/* Preconnect for critical resources */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Preload critical fonts */}
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+        
+        {/* Critical CSS inline */}
         <style>{`
           body { background: #fff; color: #172B4D; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; }
           h1 { font-size: 2.75rem; font-weight: bold; color: #172B4D; }

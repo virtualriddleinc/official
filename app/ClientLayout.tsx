@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback, memo } from "react";
 import Link from "next/link";
 import CookieConsent from "./components/CookieConsent";
+import PerformanceOptimizer from "./components/PerformanceOptimizer";
 import { useRouter, usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Search, X, FileText, ChevronRight, Package, Zap, Building, Scale, BookText, ChevronDown, ChevronUp, Building2, DollarSign, Mail, BarChart, Users, MessageSquare } from "lucide-react";
@@ -43,7 +44,7 @@ const fuseOptions: IFuseOptions<SearchItem> = {
 
 const fuse = new Fuse(searchData as SearchItem[], fuseOptions);
 
-const CategoryIcon = ({ category, className }: { category: string, className?: string }) => {
+const CategoryIcon = memo(({ category, className }: { category: string, className?: string }) => {
   const defaultClassName = "h-5 w-5 text-gray-400";
   const combinedClassName = `${defaultClassName} ${className || ''}`;
 
@@ -55,7 +56,9 @@ const CategoryIcon = ({ category, className }: { category: string, className?: s
     case 'Yasal': return <Scale className={combinedClassName} />;
     default: return <FileText className={combinedClassName} />;
   }
-};
+});
+
+CategoryIcon.displayName = 'CategoryIcon';
 
 export default function ClientLayout({
   children,
@@ -77,6 +80,10 @@ export default function ClientLayout({
   let productsCloseTimeout: NodeJS.Timeout;
   let solutionsCloseTimeout: NodeJS.Timeout;
 
+  // Memoized values for performance
+  const isHomePage = useMemo(() => pathname === '/', [pathname]);
+  const isContactPage = useMemo(() => pathname === '/contact', [pathname]);
+
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -89,19 +96,20 @@ export default function ClientLayout({
     setIsMac(navigator.platform.toUpperCase().indexOf('MAC') >= 0);
   }, []);
 
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      setIsSearchOpen(true);
+    }
+    if (e.key === 'Escape') {
+      setIsSearchOpen(false);
+    }
+  }, []);
+
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        setIsSearchOpen(true);
-      }
-      if (e.key === 'Escape') {
-        setIsSearchOpen(false);
-      }
-    };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [handleKeyDown]);
 
   useEffect(() => {
     if (isSearchOpen) {
@@ -133,37 +141,37 @@ export default function ClientLayout({
     }
   }, [selectedIndex]);
 
-  const handleProductsMouseEnter = () => {
+  const handleProductsMouseEnter = useCallback(() => {
     clearTimeout(productsCloseTimeout);
     setIsSolutionsMenuOpen(false);
     setIsProductsMenuOpen(true);
-  };
+  }, []);
 
-  const handleProductsMouseLeave = () => {
+  const handleProductsMouseLeave = useCallback(() => {
     productsCloseTimeout = setTimeout(() => {
       setIsProductsMenuOpen(false);
     }, 300);
-  };
+  }, []);
 
-  const handleSolutionsMouseEnter = () => {
+  const handleSolutionsMouseEnter = useCallback(() => {
     clearTimeout(solutionsCloseTimeout);
     setIsProductsMenuOpen(false);
     setIsSolutionsMenuOpen(true);
-  };
+  }, []);
 
-  const handleSolutionsMouseLeave = () => {
+  const handleSolutionsMouseLeave = useCallback(() => {
     solutionsCloseTimeout = setTimeout(() => {
       setIsSolutionsMenuOpen(false);
     }, 300);
-  };
+  }, []);
 
-  const handleClearSearch = () => {
+  const handleClearSearch = useCallback(() => {
     setSearchText('');
     const searchInput = document.getElementById('search-input-modal') as HTMLInputElement;
     if (searchInput) searchInput.focus();
-  };
+  }, []);
 
-  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleSearchKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
     const totalResults = searchResults.length;
     const hasViewAllLink = totalResults > 0 && searchText.trim();
     const totalItems = hasViewAllLink ? totalResults + 1 : totalResults;
@@ -187,29 +195,29 @@ export default function ClientLayout({
         setIsSearchOpen(false);
       }
     }
-  };
+  }, [searchResults, searchText, selectedIndex, router]);
   
-  const handleResultClick = () => {
+  const handleResultClick = useCallback(() => {
     setIsSearchOpen(false);
-  };
+  }, []);
 
-  const productLinks = [
+  const productLinks = useMemo(() => [
     { href: "/products/jira-software", icon: JiraSoftwareIcon, title: "Jira Software", description: "Çevik proje yönetimi", color: "blue" as const },
     { href: "/products/jira-service-management", icon: JiraServiceManagementIcon, title: "Jira Service Management", description: "IT servis yönetimi", color: "purple" as const },
     { href: "/products/jira-work-management", icon: JiraWorkManagementIcon, title: "Jira Work Management", description: "İş takımları için proje yönetimi", color: "purple" as const },
     { href: "/products/confluence", icon: ConfluenceIcon, title: "Confluence", description: "Takım iş birliği ve bilgi paylaşımı", color: "indigo" as const },
     { href: "/products/bitbucket", icon: BitbucketIcon, title: "Bitbucket", description: "Git tabanlı kod yönetimi", color: "blue" as const },
-  ];
+  ], []);
 
-  const solutionLinks = [
+  const solutionLinks = useMemo(() => [
     { href: "/solutions/consulting", icon: ConsultingIcon, title: "Atlassian Danışmanlığı", description: "Kurumsal süreç optimizasyonu", color: "emerald" as const },
     { href: "/solutions/cloud-migration", icon: CloudMigrationIcon, title: "Cloud Migration", description: "Bulut geçiş stratejisi", color: "sky" as const },
     { href: "/solutions/training", icon: TrainingIcon, title: "Eğitim & Sertifikasyon", description: "Atlassian ürün eğitimleri", color: "amber" as const },
     { href: "/free-discovery", icon: DiscoveryIcon, title: "Ücretsiz Keşif", description: "Dijital dönüşüm ön analizi", color: "teal" as const },
-  ];
+  ], []);
 
   return (
-    <>
+    <PerformanceOptimizer>
       <header className="fixed w-full bg-white z-50 border-b border-gray-100">
         <nav className="container mx-auto px-6">
           <div className="flex justify-between items-center h-20">
@@ -972,7 +980,7 @@ export default function ClientLayout({
       </footer>
 
       <CookieConsent />
-    </>
+    </PerformanceOptimizer>
   );
 } 
 

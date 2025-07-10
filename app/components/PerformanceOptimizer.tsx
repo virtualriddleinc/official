@@ -1,0 +1,71 @@
+"use client";
+
+import { useEffect, useRef } from 'react';
+
+interface PerformanceOptimizerProps {
+  children: React.ReactNode;
+}
+
+export default function PerformanceOptimizer({ children }: PerformanceOptimizerProps) {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    // Intersection Observer for lazy loading
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target as HTMLElement;
+            target.classList.add('gpu-accelerated');
+            observerRef.current?.unobserve(target);
+          }
+        });
+      },
+      {
+        rootMargin: '50px',
+        threshold: 0.1,
+      }
+    );
+
+    // Observe all images and heavy elements
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    const heavyElements = document.querySelectorAll('.contain-layout, .contain-paint');
+    
+    [...images, ...heavyElements].forEach((el) => {
+      observerRef.current?.observe(el);
+    });
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    // Preload critical resources
+    const preloadLinks = [
+      { href: '/contact', as: 'fetch' },
+      { href: '/free-discovery', as: 'fetch' },
+      { href: '/about', as: 'fetch' },
+    ];
+
+    preloadLinks.forEach(({ href, as }) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.href = href;
+      link.as = as as any;
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+    });
+
+    // Service Worker registration for caching
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {
+          // Service worker registration failed
+        });
+      });
+    }
+  }, []);
+
+  return <>{children}</>;
+} 
