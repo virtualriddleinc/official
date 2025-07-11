@@ -4,6 +4,21 @@ import { Link } from "../components/Link";
 
 const posts = [
   {
+    href: "/blog/jira-danismanligi-avantajlari",
+    category: "Jira Danışmanlığı",
+    title: "Jira Danışmanlığı Almanın İşletmenize Sağlayacağı 8 Kritik Avantaj",
+    summary: "Jira danışmanlığı ile işletmenizin proje yönetimi süreçlerini optimize edin. %40-60 verimlilik artışı, maliyet tasarrufu ve sürekli iyileştirme avantajları.",
+    date: "15 Mart 2024",
+    color: "from-blue-600 to-blue-800",
+    icon: (
+      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    categoryColor: "text-blue-700",
+    hoverColor: "group-hover:text-blue-800"
+  },
+  {
     href: "/blog/favori-wiki-aracimiz-confluence",
     category: "Atlassian",
     title: "Favori Wiki Aracımız: Confluence!",
