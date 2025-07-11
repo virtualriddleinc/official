@@ -100,25 +100,25 @@ export default function ConfluencePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* AI Feature 1 */}
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
-              <h4 className="text-lg font-semibold text-white mb-2">İçerik Özeti</h4>
+              <h3 className="text-lg font-semibold text-white mb-2">İçerik Özeti</h3>
               <p className="text-white/80">Uzun dokümanlarda otomatik özetler oluşturarak ekip üyelerinizin bilgiye hızlıca erişmesini sağlayın.</p>
             </div>
 
             {/* AI Feature 2 */}
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
-              <h4 className="text-lg font-semibold text-white mb-2">Akıllı Arama</h4>
+              <h3 className="text-lg font-semibold text-white mb-2">Akıllı Arama</h3>
               <p className="text-white/80">Yapay zeka destekli arama ile dokümanlarda tam olarak ihtiyacınız olan bilgiyi saniyeler içinde bulun.</p>
             </div>
 
             {/* AI Feature 3 */}
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
-              <h4 className="text-lg font-semibold text-white mb-2">İçerik Asistanı</h4>
+              <h3 className="text-lg font-semibold text-white mb-2">İçerik Asistanı</h3>
               <p className="text-white/80">Yapay zeka asistanı ile dokümantasyon oluşturmayı hızlandırın ve yazım kalitesini artırın.</p>
             </div>
 
             {/* AI Feature 4 */}
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition-all">
-              <h4 className="text-lg font-semibold text-white mb-2">Bilgi İlişkilendirme</h4>
+              <h3 className="text-lg font-semibold text-white mb-2">Bilgi İlişkilendirme</h3>
               <p className="text-white/80">İlgili dokümantasyonları otomatik olarak ilişkilendirin ve bilgi siloları oluşmasını engelleyin.</p>
             </div>
           </div>

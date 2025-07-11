@@ -48,6 +48,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['@heroicons/react', 'lucide-react'],
+    optimizeServerReact: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -74,6 +75,12 @@ const nextConfig = {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+          },
+          styles: {
+            name: 'styles',
+            test: /\.(css|scss)$/,
+            chunks: 'all',
+            enforce: true,
           },
         },
       };

@@ -27,7 +27,7 @@ export default function JiraSoftwareNedir() {
           <h2>Proje yönetimi artık bir kabus değil 📊</h2>
           <p>Hatırlıyor musunuz, eskiden projeleri Excel tablolarında ya da post-it'lerle takip etmeye çalıştığınız günleri? O günler artık geride kaldı. Jira ile <b>her şey tek bir yerde</b> ve kontrol altında.</p>
 
-          <h4>Sprint'ler ve Backlog Yönetimi</h4>
+          <h3>Sprint'ler ve Backlog Yönetimi</h3>
           <p><b>"Öncelikler artık kafanızda karışmayacak"</b></p>
           <p>Jira'nın en güçlü yanlarından biri sprint planlaması. Product backlog'unuzu düzenleyebilir, story'leri önceliklendirebilir ve sprint'lerinizi kolayca planlayabilirsiniz. Story point'ler, estimation'lar, velocity tracking - hepsi otomatik olarak hesaplanıyor.</p>
           <p>Burndown chart'ları sayesinde sprint'inizin nasıl gittiğini görebilir, gerektiğinde erken müdahale edebilirsiniz. Bu sadece Scrum Master'ların işini kolaylaştırmıyor, tüm takımın motivasyonunu da artırıyor çünkü <b>ilerlemeyi somut olarak görebiliyorsunuz</b> 📈.</p>
@@ -35,7 +35,7 @@ export default function JiraSoftwareNedir() {
           <h2>Her Görev Bir Hikaye Anlatır 📝</h2>
           <p>Jira'da oluşturduğunuz her issue aslında bir hikaye. Bug report'larından feature request'lere, epic'lerden subtask'lara kadar her türlü işi sistematik olarak takip edebiliyorsunuz.</p>
 
-          <h4>Detaylı İzlenebilirlik</h4>
+          <h3>Detaylı İzlenebilirlik</h3>
           <p><b>"Kim ne yaptı, ne zaman yaptı? Artık bunlar sır değil!"</b></p>
           <p>Her issue üzerinde yapılan değişiklikleri, yorumları, attachment'ları görebiliyorsunuz. Activity stream sayesinde proje üzerindeki tüm hareketliliği real-time takip edebilirsiniz. Bu özellikle büyük takımlarda çok kritik çünkü <b>bilgi kaybı yaşamıyorsunuz</b> 🔍.</p>
           <p>Comment'ler, @mention'lar, notification'lar... Takım içi iletişim hiç bu kadar organize olmamıştı. Artık "Bu konuda konuştuk mu?" sorusuna cevap aramak zorunda kalmıyorsunuz.</p>

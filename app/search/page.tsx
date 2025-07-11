@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef, Suspense } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Fuse, { IFuseOptions } from 'fuse.js';
@@ -268,6 +268,8 @@ function SearchPageComponent() {
 
 export default function SearchPage() {
   return (
-    <SearchPageComponent />
+    <Suspense fallback={<div className="container mx-auto px-4 py-8 md:py-12 pt-20">Yükleniyor...</div>}>
+      <SearchPageComponent />
+    </Suspense>
   );
 } 
