@@ -47,8 +47,16 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['@heroicons/react', 'lucide-react'],
+    optimizePackageImports: ['@heroicons/react', 'lucide-react', 'react', 'react-dom'],
     optimizeServerReact: true,
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -70,11 +78,29 @@ const nextConfig = {
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
+        minSize: 20000,
+        maxSize: 244000,
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 10,
+            reuseExistingChunk: true,
+          },
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'react',
+            chunks: 'all',
+            priority: 20,
+            reuseExistingChunk: true,
+          },
+          lucide: {
+            test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
+            name: 'lucide',
+            chunks: 'all',
+            priority: 15,
+            reuseExistingChunk: true,
           },
           styles: {
             name: 'styles',
@@ -91,7 +117,17 @@ const nextConfig = {
         crypto: false,
         stream: false,
         util: false,
+        fs: false,
+        path: false,
+        os: false,
       };
+      
+      // Tree shaking optimizasyonu
+      config.optimization.usedExports = true;
+      config.optimization.sideEffects = false;
+      
+      // Bundle analizi için
+      config.optimization.minimize = true;
     }
     
     return config;
