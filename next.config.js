@@ -58,6 +58,14 @@ const nextConfig = {
       },
     },
   },
+  // CSS optimization to reduce network dependency chain
+  css: {
+    modules: {
+      getLocalIdent: (context, localIdentName, localName, options) => {
+        return localName;
+      },
+    },
+  },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
