@@ -116,6 +116,25 @@ export const posts = [
     ),
     categoryColor: "text-blue-800",
     hoverColor: "group-hover:text-blue-900"
+  },
+  {
+    href: "/blog/rovo-devrimi",
+    category: "Yapay Zeka",
+    title: "Rovo: Atlassian’ın GenAI ile Kurumsal Bilgiye Dokunma Devrimi",
+    summary: "Yeni nesil yapay zeka destekli kurumsal asistan, ekiplerin dağınık bilgi kaynaklarına hızlı ve anlamlı erişimini sağlıyor. Belgeler, notlar, sohbetler ve görev yönetim araçları tek bir noktada birleşiyor. Aranan bilgi doğal dil ile sorgulanabiliyor, özetleniyor ve kişiye özel hale geliyor. Ayrıca, tekrar eden görevleri otomatikleştirerek zaman kazandırıyor. Güvenlik ve gizlilik ilkelerine uygun şekilde çalışıyor. Verimliliği artırmak, bilgiye kolay ulaşmak ve iş yükünü azaltmak isteyen ekipler için etkili bir çözüm sunuyor.",
+    date: "8 Temmuz 2024",
+    readingTime: "6 dk",
+    color: "from-purple-600 to-blue-700",
+    icon: (
+      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2" />
+        <circle cx="9" cy="10" r="1" fill="white" />
+        <circle cx="15" cy="10" r="1" fill="white" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16c1.333-1 4.667-1 6 0" />
+      </svg>
+    ),
+    categoryColor: "text-purple-700",
+    hoverColor: "group-hover:text-purple-800"
   }
 ];
 

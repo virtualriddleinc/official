@@ -154,6 +154,12 @@
     <priority>0.8</priority>
   </url>
   
+  <url>
+    <loc>https://virtualriddle.com/blog/rovo-devrimi</loc>
+    <lastmod>2024-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Blog Yazıları - Güncel Priority ile -->
   <url>
     <loc>https://virtualriddle.com/blog/2024-devops-trendleri</loc>
