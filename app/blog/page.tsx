@@ -2,6 +2,16 @@
 import { useState } from "react";
 import { Link } from "../components/Link";
 
+// Türkçe ay adlarını destekleyen bir sıralama fonksiyonu ekle
+function parseTurkishDate(dateStr) {
+  const months = {
+    'Ocak': 0, 'Şubat': 1, 'Mart': 2, 'Nisan': 3, 'Mayıs': 4, 'Haziran': 5,
+    'Temmuz': 6, 'Ağustos': 7, 'Eylül': 8, 'Ekim': 9, 'Kasım': 10, 'Aralık': 11
+  };
+  const [day, month, year] = dateStr.split(' ');
+  return new Date(Number(year), months[month], Number(day));
+}
+
 export const posts = [
   {
     href: "/blog/favori-wiki-aracimiz-confluence",
@@ -136,7 +146,7 @@ export const posts = [
     categoryColor: "text-purple-700",
     hoverColor: "group-hover:text-purple-800"
   }
-];
+].sort((a, b) => parseTurkishDate(b.date).getTime() - parseTurkishDate(a.date).getTime());
 
 const POSTS_PER_PAGE = 9;
 
