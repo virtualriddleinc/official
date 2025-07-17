@@ -237,12 +237,9 @@ export default function ContactPage() {
             {/* Google Maps */}
             <div className="mt-12 flex flex-col items-center gap-4 w-full">
               <div className="w-full max-w-6xl mx-auto rounded-xl overflow-hidden shadow-lg">
-                <GoogleMap 
-                  address="Kolektif House Maslak, 42 Maslak, Maslak Mah. AOS 55. Sok. B Blok No:4/542, 34398 Sarıyer/İstanbul"
-                  apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}
-                />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.983818269273!2d29.018530775781436!3d41.1130444713361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab5bf89700723%3A0xb746023adab01c47!2s42%20Maslak!5e0!3m2!1str!2str!4v1752792619140!5m2!1str!2str" width="100%" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
-              <span className="text-gray-500 text-sm text-center max-w-md">Konumumuzu siteden ayrılmadan inceleyebilirsiniz.</span>
+              {/* Adres metni kaldırıldı */}
             </div>
           </div>
         </div>
