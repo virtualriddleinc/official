@@ -42,6 +42,9 @@ export default function ContactPage() {
       setForm(initialForm);
       if (res.ok) {
         setStatus("success");
+        if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
+          (window as any).gtag_report_conversion();
+        }
       } else {
         setStatus("error");
       }
