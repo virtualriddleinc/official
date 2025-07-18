@@ -18,8 +18,8 @@ const officeImages = [
   'IMG_20250702_155056.jpg',
   'IMG_20250702_155058.jpg',
   'IMG_20250702_155140.jpg',
-  'IMG_20250702_155155.jpg',
-  'IMG_20250702_183100.jpg',
+  // 'IMG_20250702_155155.jpg', // 11. fotoğraf kaldırıldı
+  // 'IMG_20250702_183100.jpg', // 12. fotoğraf kaldırıldı
   'IMG_20250702_183109.jpg',
   'IMG_20250702_183118.jpg',
   'IMG_20250702_183129.jpg',
@@ -48,7 +48,7 @@ export default function OfficePhotoSlider() {
         className="rounded-2xl shadow-xl bg-white"
         style={{ minHeight: 220 }}
       >
-        {officeImages.map((img, i) => (
+        {[...officeImages].reverse().map((img, i) => (
           <SwiperSlide key={img}>
             <div className="flex items-center justify-center w-full h-[220px] md:h-[420px] bg-gray-100 rounded-2xl overflow-hidden">
               <img
