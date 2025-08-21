@@ -61,7 +61,7 @@ function SimpleGoogleMap() {
 }
 
 export default function ContactPage() {
-  const initialForm = { name: "", email: "", subject: "", message: "" };
+  const initialForm = { name: "", email: "", subject: "", message: "", phone: "", preferPhone: false };
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState<null | "success" | "error">(null);
   const [loading, setLoading] = useState(false);
@@ -70,6 +70,30 @@ export default function ContactPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, ''); // Sadece sayıları al
+    if (value.length <= 10) { // 5xx xxx xx xx formatı için maksimum 10 karakter
+      setForm({ ...form, phone: value });
+    }
+  };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, preferPhone: e.target.checked });
+  };
+
+  // Lambda ile uyumlu field mapping fonksiyonu
+  function mapFormToLambda(form) {
+    return {
+      page: "/contact",
+      name: form.name,
+      email: form.email,
+      subject: form.subject,
+      message: form.message,
+      phone: form.phone,
+      preferPhone: form.preferPhone
+    };
+  }
 
   useEffect(() => {
     if (status) {
@@ -86,13 +110,27 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
     setStatus(null);
+    
+    // Validasyon
+    if (!form.name || !form.email || !form.subject || !form.phone || !form.message) {
+      setStatus("error");
+      setLoading(false);
+      return;
+    }
+    
+    // Lambda ile uyumlu payload oluştur
+    const payload = mapFormToLambda(form);
+    
     try {
       const res = await fetch("https://rvskttz2jh.execute-api.us-east-1.amazonaws.com/prod/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
+      
+      // Form temizleme
       setForm(initialForm);
+      
       if (res.ok) {
         setStatus("success");
         if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
@@ -102,6 +140,7 @@ export default function ContactPage() {
         setStatus("error");
       }
     } catch {
+      // Form temizleme
       setForm(initialForm);
       setStatus("error");
     } finally {
@@ -130,11 +169,31 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* İletişim Formu */}
               <div className="bg-white p-8 rounded-2xl shadow-lg">
+                {/* Uyarı Kutucuğu */}
+                <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm text-blue-800">
+                        <span className="font-medium">Danışmanlık taleplerinizi</span>{' '}
+                        <a href="/solutions/consulting" className="text-blue-600 hover:text-blue-800 underline font-semibold">
+                          Atlassian Danışmanlığı
+                        </a>{' '}
+                        sayfamızdan oluşturabilirsiniz
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">Bize Ulaşın</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Ad Soyad
+                      Ad Soyad <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -144,6 +203,7 @@ export default function ContactPage() {
                       placeholder="Adınız ve soyadınız"
                       value={form.name}
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   <div>
@@ -158,25 +218,71 @@ export default function ContactPage() {
                       placeholder="ornek@sirket.com"
                       value={form.email}
                       onChange={handleChange}
+                      required
                     />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Telefon <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <span className="text-gray-500 text-sm font-medium">+90</span>
+                      </div>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                        placeholder="5xx xxx xx xx"
+                        value={form.phone}
+                        onChange={handlePhoneChange}
+                        required
+                        maxLength={10}
+                        pattern="[0-9]{10}"
+                      />
+                    </div>
+                    <p className="mt-1 text-xs text-gray-500">
+                      Format: 5xx xxx xx xx (sadece rakam)
+                    </p>
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Konu
+                      Konu <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       id="subject"
                       name="subject"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-transparent"
                       placeholder="Konu başlığı"
                       value={form.subject}
                       onChange={handleChange}
+                      required
                     />
                   </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex items-center h-5">
+                      <input
+                        id="preferPhone"
+                        name="preferPhone"
+                        type="checkbox"
+                        checked={form.preferPhone}
+                        onChange={handleCheckboxChange}
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                      />
+                    </div>
+                    <div className="ml-3 text-sm">
+                      <label htmlFor="preferPhone" className="font-medium text-gray-700 cursor-pointer">
+                        Öncelikli iletişim kanalı olarak telefon ile görüşmeyi tercih ediyorum
+                      </label>
+                    </div>
+                  </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Mesaj
+                    <label htmlFor="message" className="block text-medium text-gray-700 mb-2">
+                      Mesaj <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -186,6 +292,7 @@ export default function ContactPage() {
                       placeholder="Mesajınız..."
                       value={form.message}
                       onChange={handleChange}
+                      required
                     ></textarea>
                   </div>
                   <button
