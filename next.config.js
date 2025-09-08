@@ -53,8 +53,8 @@ const nextConfig = {
     optimizeCss: true,
     optimizePackageImports: ['@heroicons/react', 'lucide-react', 'react', 'react-dom'],
     optimizeServerReact: true,
-    optimizeCss: true,
     scrollRestoration: true,
+    optimizeCss: true,
     turbo: {
       rules: {
         '*.svg': {

@@ -1,4 +1,7 @@
+/* Critical CSS - Load immediately */
 @tailwind base;
+
+/* Non-critical CSS - Load asynchronously */
 @tailwind components;
 @tailwind utilities;
 
