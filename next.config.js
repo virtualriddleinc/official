@@ -1,10 +1,14 @@
 /** @type {import('next').NextConfig} */
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true', // sadece ANALYZE=true ile çalışır
+});
+
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self';",
-      "script-src 'self' https://maps.googleapis.com https://www.googletagmanager.com 'unsafe-inline';",
+      "script-src 'self' https://maps.googleapis.com 'unsafe-inline';",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://virtualriddle.com;",
       "img-src 'self' data: https://virtualriddle.com https://maps.googleapis.com;",
       "font-src 'self' https://fonts.gstatic.com data:;",
@@ -149,4 +153,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig 
+module.exports = withBundleAnalyzer(nextConfig) 

@@ -133,9 +133,6 @@ export default function ContactPage() {
       
       if (res.ok) {
         setStatus("success");
-        if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-          (window as any).gtag_report_conversion();
-        }
       } else {
         setStatus("error");
       }

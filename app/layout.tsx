@@ -90,35 +90,6 @@ export default function RootLayout({
   return (
     <html lang="tr" className={inter.className}>
       <head>
-        {/* Google tag (gtag.js) - Optimized for performance */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17342577259', {
-                'send_page_view': false,
-                'anonymize_ip': true,
-                'allow_google_signals': false,
-                'allow_ad_personalization_signals': false
-              });
-              function gtag_report_conversion(url) {
-                var callback = function () {
-                  if (typeof(url) != 'undefined') {
-                    window.location = url;
-                  }
-                };
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17342577259/XiU0CJfq-PIaEOv0ys1A',
-                    'event_callback': callback
-                });
-                return false;
-              }
-            `
-          }}
-        />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17342577259"></script>
         
         {/* DNS Prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
