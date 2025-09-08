@@ -75,6 +75,8 @@ export default function PerformanceOptimizer({ children }: PerformanceOptimizerP
     // Preload critical images
     const criticalImages = [
       '/vr-showcase/solutions-1.svg',
+      '/vr-showcase/solutions-2.png',
+      '/vr-showcase/solutions-3.png',
       '/logo.svg',
       '/logo-footer.svg'
     ];
@@ -84,6 +86,26 @@ export default function PerformanceOptimizer({ children }: PerformanceOptimizerP
       link.rel = 'preload';
       link.href = src;
       link.as = 'image';
+      if (src.endsWith('.svg')) {
+        link.type = 'image/svg+xml';
+      }
+      document.head.appendChild(link);
+    });
+
+    // Preload critical CSS
+    const criticalCSS = [
+      '/app/globals.css'
+    ];
+
+    criticalCSS.forEach((href) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.href = href;
+      link.as = 'style';
+      link.onload = function() {
+        this.onload = null;
+        this.rel = 'stylesheet';
+      };
       document.head.appendChild(link);
     });
   }, []);

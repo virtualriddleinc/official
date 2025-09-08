@@ -10,7 +10,10 @@ const STATIC_ASSETS = [
   '/manifest.json',
   '/favicon.svg',
   '/logo.svg',
-  '/logo-footer.svg'
+  '/logo-footer.svg',
+  '/vr-showcase/solutions-1.svg',
+  '/vr-showcase/solutions-2.png',
+  '/vr-showcase/solutions-3.png'
 ];
 
 const DYNAMIC_ASSETS = [
