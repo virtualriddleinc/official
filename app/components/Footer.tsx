@@ -27,7 +27,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0F172A] text-white py-16">
+    <footer className="bg-[#0F172A] text-white py-20">
       <div className="container mx-auto px-4">
         {/* Logo ve Açıklama */}
         <div className="flex flex-col items-center mb-12">
