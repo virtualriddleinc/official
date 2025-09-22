@@ -8,7 +8,7 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self';",
-      "script-src 'self' https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval';",
+      "script-src 'self' https://maps.googleapis.com 'unsafe-inline';",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://virtualriddle.com;",
       "img-src 'self' data: https://virtualriddle.com https://maps.googleapis.com;",
       "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com data:;",
@@ -58,6 +58,7 @@ const nextConfig = {
     optimizePackageImports: ['@heroicons/react', 'lucide-react', 'react', 'react-dom'],
     optimizeServerReact: true,
     scrollRestoration: true,
+    cssChunking: 'strict', // CSS chunking for better caching
   },
   turbopack: {
     rules: {
@@ -138,6 +139,8 @@ const nextConfig = {
       
       // Bundle analizi için
       config.optimization.minimize = true;
+      
+      // CSS optimization is handled by Next.js built-in optimizations
     }
     
     return config;

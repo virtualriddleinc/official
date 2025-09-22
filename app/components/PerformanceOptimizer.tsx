@@ -41,6 +41,32 @@ export default function PerformanceOptimizer({ children }: PerformanceOptimizerP
   }, []);
 
   useEffect(() => {
+    // Defer non-critical CSS loading
+    const loadNonCriticalCSS = () => {
+      const nonCriticalCSS = [
+        '/_next/static/css/app/globals.css',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+      ];
+
+      nonCriticalCSS.forEach((href) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.media = 'print';
+        link.onload = () => {
+          link.media = 'all';
+        };
+        document.head.appendChild(link);
+      });
+    };
+
+    // Load non-critical CSS after page load
+    if (document.readyState === 'complete') {
+      loadNonCriticalCSS();
+    } else {
+      window.addEventListener('load', loadNonCriticalCSS);
+    }
+
     // Preload critical resources
     const preloadLinks = [
       { href: '/contact', as: 'fetch' },
@@ -92,8 +118,10 @@ export default function PerformanceOptimizer({ children }: PerformanceOptimizerP
       document.head.appendChild(link);
     });
 
-    // CSS and fonts are handled by Next.js automatically
-    // Additional performance optimizations can be added here
+    // Cleanup
+    return () => {
+      window.removeEventListener('load', loadNonCriticalCSS);
+    };
   }, []);
 
   return <>{children}</>;

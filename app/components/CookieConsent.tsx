@@ -70,7 +70,7 @@ export default function CookieConsent() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
-      <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
+      <div className="max-w-7xl mx-auto px-4 py-6">
         {!showDetails ? (
           // Main Cookie Consent - Sticky Bottom
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">

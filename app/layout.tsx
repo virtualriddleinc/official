@@ -117,7 +117,7 @@ export default function RootLayout({
         
         {/* Critical CSS inline - Above the fold styles */}
         <style>{`
-          /* Critical above-the-fold styles */
+          /* Critical above-the-fold styles - Optimized for LCP */
           * { 
             box-sizing: border-box; 
           }
@@ -139,12 +139,58 @@ export default function RootLayout({
             -moz-osx-font-smoothing: grayscale;
           }
           
-          /* Hero section critical styles */
+          /* Critical header styles */
+          header {
+            position: fixed;
+            width: 100%;
+            background: #fff;
+            z-index: 50;
+            border-bottom: 1px solid #f3f4f6;
+          }
+          
+          nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+          }
+          
+          .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5rem;
+          }
+          
+          /* Critical logo styles */
+          .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+          }
+          
+          .logo img {
+            width: auto;
+            height: 3rem;
+          }
+          
+          /* Critical hero section styles */
           .hero-section { 
             background: linear-gradient(90deg, #004BB3, #0052CC, #004BB3);
             min-height: 100vh;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
           }
           
           /* Critical typography */
@@ -152,7 +198,7 @@ export default function RootLayout({
             font-size: 2.75rem; 
             font-weight: bold; 
             color: white; 
-            margin: 0;
+            margin: 0 0 1.5rem 0;
             line-height: 1.1;
             letter-spacing: -0.025em;
           }
@@ -166,11 +212,11 @@ export default function RootLayout({
             letter-spacing: -0.02em;
           }
           
-          /* Critical layout */
-          .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 1rem; 
+          .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.5;
           }
           
           /* Critical button styles */
@@ -183,13 +229,72 @@ export default function RootLayout({
             display: inline-block;
             font-weight: 600;
             transition: background-color 0.2s;
+            margin: 0.5rem;
           }
           
           .btn-primary:hover {
-            background: #004BB3;
+            background: #f8fafc;
+            color: #003d99;
           }
           
-          /* Loading states */
+          .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 0.875rem 2rem;
+            border: 2px solid white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin: 0.5rem;
+          }
+          
+          .btn-secondary:hover {
+            background: white;
+            color: #004BB3;
+          }
+          
+          /* Critical layout utilities */
+          .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 1rem; 
+          }
+          
+          .text-center {
+            text-align: center;
+          }
+          
+          .flex {
+            display: flex;
+          }
+          
+          .items-center {
+            align-items: center;
+          }
+          
+          .justify-center {
+            justify-content: center;
+          }
+          
+          .space-x-4 > * + * {
+            margin-left: 1rem;
+          }
+          
+          /* Critical responsive */
+          @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.125rem; }
+            .container { padding: 0 0.5rem; }
+            .btn-primary, .btn-secondary {
+              display: block;
+              width: 100%;
+              margin: 0.5rem 0;
+            }
+          }
+          
+          /* Critical loading states */
           .loading-skeleton { 
             background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); 
             background-size: 200% 100%; 
@@ -201,16 +306,44 @@ export default function RootLayout({
             100% { background-position: -200% 0; } 
           }
           
-          /* Critical responsive */
-          @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 0 0.5rem; }
+          /* Critical image optimization */
+          img {
+            max-width: 100%;
+            height: auto;
+            loading: lazy;
+          }
+          
+          /* Critical performance optimizations */
+          .gpu-accelerated {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
           }
         `}</style>
         {/* rel="me" içeren doğrulama linki */}
         <link rel="me" href="https://sosyal.teknofest.app/@virtualriddle" />
         
-        {/* CSS is automatically loaded by Next.js */}
+        {/* Defer non-critical CSS to prevent render blocking */}
+        <link
+          rel="preload"
+          href="/_next/static/css/app/globals.css"
+          as="style"
+          onLoad="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+          <link rel="stylesheet" href="/_next/static/css/app/globals.css" />
+        </noscript>
+        
+        {/* Additional non-critical CSS files */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          as="style"
+          onLoad="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+        </noscript>
       </head>
       <body className="min-h-screen bg-white">
         <ClientLayout>{children}</ClientLayout>
