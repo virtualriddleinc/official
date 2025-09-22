@@ -19,8 +19,10 @@ type Column = {
 
 export default function KanbanBoardContent() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -227,7 +229,7 @@ export default function KanbanBoardContent() {
         ))}
       </div>
 
-      {isMobile && (
+      {isMounted && isMobile && (
         <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
           <div className="flex items-start">
             <svg className="w-5 h-5 text-blue-600 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">

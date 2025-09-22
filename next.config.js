@@ -11,7 +11,7 @@ const securityHeaders = [
       "script-src 'self' https://maps.googleapis.com 'unsafe-inline';",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://virtualriddle.com;",
       "img-src 'self' data: https://virtualriddle.com https://maps.googleapis.com;",
-      "font-src 'self' https://fonts.gstatic.com data:;",
+      "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com data:;",
       "connect-src 'self' https://rvskttz2jh.execute-api.us-east-1.amazonaws.com;",
       "object-src 'none';",
       "frame-src https://www.google.com https://maps.google.com https://www.google.com/maps/ https://maps.gstatic.com;",

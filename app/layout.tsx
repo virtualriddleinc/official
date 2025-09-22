@@ -99,13 +99,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Preload critical fonts with optimized loading */}
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
-        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+        {/* Fonts are loaded by Next.js font optimization */}
         
-        {/* Load non-critical CSS asynchronously */}
-        <link rel="preload" href="/app/globals.css" as="style" />
-        <noscript><link rel="stylesheet" href="/app/globals.css" /></noscript>
+        {/* CSS is automatically loaded by Next.js */}
         
         {/* Preload critical resources to reduce network dependency chain */}
         <link rel="preload" href="/contact" as="fetch" crossOrigin="anonymous" />
@@ -115,8 +111,6 @@ export default function RootLayout({
         <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/vr-showcase/solutions-1.svg" as="image" type="image/svg+xml" />
         
-        {/* Preload critical CSS */}
-        <link rel="preload" href="/app/globals.css" as="style" />
         
         {/* Preload critical fonts */}
         <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLvoW5hJNmnEiuXDsMlGDkNCcPbmJQ31fygqt0.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />

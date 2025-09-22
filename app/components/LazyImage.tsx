@@ -27,11 +27,20 @@ export default function LazyImage({
   blurDataURL,
 }: LazyImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(priority);
+  const [isInView, setIsInView] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (priority) return;
+    setIsMounted(true);
+    if (priority) {
+      setIsInView(true);
+      return;
+    }
+  }, [priority]);
+
+  useEffect(() => {
+    if (!isMounted || priority) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -51,11 +60,11 @@ export default function LazyImage({
     }
 
     return () => observer.disconnect();
-  }, [priority]);
+  }, [isMounted, priority]);
 
   return (
     <div ref={imgRef} className={`relative ${className}`}>
-      {isInView && (
+      {isMounted && isInView && (
         <Image
           src={src}
           alt={alt}
@@ -72,7 +81,10 @@ export default function LazyImage({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       )}
-      {!isLoaded && isInView && (
+      {isMounted && !isLoaded && isInView && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse rounded" />
+      )}
+      {!isMounted && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse rounded" />
       )}
     </div>
