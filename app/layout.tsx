@@ -100,11 +100,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Preload critical fonts with optimized loading */}
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onLoad="this.onload=null;this.rel='stylesheet'" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
         
         {/* Load non-critical CSS asynchronously */}
-        <link rel="preload" href="/app/globals.css" as="style" onLoad="this.onload=null;this.rel='stylesheet'" />
+        <link rel="preload" href="/app/globals.css" as="style" />
         <noscript><link rel="stylesheet" href="/app/globals.css" /></noscript>
         
         {/* Preload critical resources to reduce network dependency chain */}
