@@ -8,7 +8,7 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self';",
-      "script-src 'self' https://maps.googleapis.com 'unsafe-inline';",
+      "script-src 'self' https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval';",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://virtualriddle.com;",
       "img-src 'self' data: https://virtualriddle.com https://maps.googleapis.com;",
       "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com data:;",
