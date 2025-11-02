@@ -42,7 +42,10 @@ export default function ClaudeAtlassianMCPEntegrasyonu() {
 
   return (
     <>
-      <StructuredData data={structuredData} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <main className="flex min-h-screen flex-col items-center pt-32 bg-gray-50">
         <article className="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-8 mx-auto mt-8">
         <header className="mb-8">

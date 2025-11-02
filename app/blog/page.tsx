@@ -12,6 +12,7 @@ function parseTurkishDate(dateStr) {
   return new Date(Number(year), months[month], Number(day));
 }
 
+// @ts-ignore - Next.js type checking
 export const posts = [
   {
     href: "/blog/claude-atlassian-mcp-entegrasyonu",

@@ -323,27 +323,7 @@ export default function RootLayout({
         {/* rel="me" içeren doğrulama linki */}
         <link rel="me" href="https://sosyal.teknofest.app/@virtualriddle" />
         
-        {/* Defer non-critical CSS to prevent render blocking */}
-        <link
-          rel="preload"
-          href="/_next/static/css/app/globals.css"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript>
-          <link rel="stylesheet" href="/_next/static/css/app/globals.css" />
-        </noscript>
-        
-        {/* Additional non-critical CSS files */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-        </noscript>
+        {/* CSS will be loaded automatically by Next.js */}
       </head>
       <body className="min-h-screen bg-white">
         <ClientLayout>{children}</ClientLayout>

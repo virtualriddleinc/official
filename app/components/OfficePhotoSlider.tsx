@@ -31,7 +31,7 @@ const officeImages = [
 export default function OfficePhotoSlider() {
   const [isClient, setIsClient] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [swiperModules, setSwiperModules] = useState(null);
+  const [swiperModules, setSwiperModules] = useState<any[] | null>(null);
   
   useEffect(() => { 
     setIsClient(true); 
@@ -66,7 +66,7 @@ export default function OfficePhotoSlider() {
             </div>
           }>
             <Swiper
-              modules={swiperModules}
+              modules={swiperModules || undefined}
               spaceBetween={24}
               slidesPerView={1}
               navigation={{

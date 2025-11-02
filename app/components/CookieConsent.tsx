@@ -41,7 +41,7 @@ export default function CookieConsent() {
         setCookie("cookie-consent", consent);
         setCookie("cookie-analytics", analytics);
         setCookie("cookie-marketing", marketing);
-        console.log('Cookie preferences saved:', { consent, analytics, marketing });
+        // Cookie preferences saved
       }
     } catch (error) {
       console.error('Error saving cookie preferences:', error);

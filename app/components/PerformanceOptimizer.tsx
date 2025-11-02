@@ -91,9 +91,9 @@ export default function PerformanceOptimizer({ children }: PerformanceOptimizerP
           scope: '/',
           updateViaCache: 'none'
         }).then((registration) => {
-          console.log('SW registered: ', registration);
+          // Service Worker registered
         }).catch((registrationError) => {
-          console.log('SW registration failed: ', registrationError);
+          // Service Worker registration failed
         });
       });
     }
