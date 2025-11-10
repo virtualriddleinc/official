@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import ClientLayout from './ClientLayout'
-import Head from 'next/head'
+import Script from 'next/script'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -90,6 +90,18 @@ export default function RootLayout({
   return (
     <html lang="tr" className={inter.className}>
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TL8K7KXZ0J"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TL8K7KXZ0J');
+          `}
+        </Script>
         
         {/* DNS Prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
