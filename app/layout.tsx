@@ -90,16 +90,87 @@ export default function RootLayout({
   return (
     <html lang="tr" className={inter.className}>
       <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-TL8K7KXZ0J"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="ga-consent-manager" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-TL8K7KXZ0J');
+            (function () {
+              const GA_ID = 'G-TL8K7KXZ0J';
+              if (typeof window === 'undefined') return;
+
+              const GTAG_URL = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+              let gtagInitialized = false;
+
+              const initDataLayer = () => {
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+              };
+
+              const setDefaultConsent = () => {
+                initDataLayer();
+                window.gtag('consent', 'default', {
+                  analytics_storage: 'denied',
+                  ad_storage: 'denied'
+                });
+              };
+
+              const activateGtag = () => {
+                if (gtagInitialized) return;
+                gtagInitialized = true;
+                initDataLayer();
+                window.gtag('js', new Date());
+                window.gtag('config', GA_ID, { anonymize_ip: true });
+              };
+
+              const injectGtagScript = () => {
+                if (document.head.querySelector('script[src="' + GTAG_URL + '"]')) {
+                  activateGtag();
+                  return;
+                }
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = GTAG_URL;
+                script.onload = activateGtag;
+                document.head.appendChild(script);
+              };
+
+              const applyConsent = (analyticsAllowed, marketingAllowed) => {
+                initDataLayer();
+                window.gtag('consent', 'update', {
+                  analytics_storage: analyticsAllowed ? 'granted' : 'denied',
+                  ad_storage: marketingAllowed ? 'granted' : 'denied'
+                });
+
+                if (analyticsAllowed || marketingAllowed) {
+                  injectGtagScript();
+                }
+              };
+
+              const readStoredConsent = () => {
+                try {
+                  const consent = localStorage.getItem('cookie-consent');
+                  const analytics = localStorage.getItem('cookie-analytics');
+                  const marketing = localStorage.getItem('cookie-marketing');
+
+                  const analyticsAllowed = consent === 'all' || (consent === 'custom' && analytics === 'true');
+                  const marketingAllowed = consent === 'all' || (consent === 'custom' && marketing === 'true');
+
+                  return { analyticsAllowed, marketingAllowed };
+                } catch (error) {
+                  return { analyticsAllowed: false, marketingAllowed: false };
+                }
+              };
+
+              setDefaultConsent();
+
+              const storedConsent = readStoredConsent();
+              if (storedConsent.analyticsAllowed || storedConsent.marketingAllowed) {
+                applyConsent(storedConsent.analyticsAllowed, storedConsent.marketingAllowed);
+              }
+
+              window.addEventListener('cookie-consent-updated', function (event) {
+                const detail = event.detail || {};
+                applyConsent(!!detail.analytics, !!detail.marketing);
+              });
+            })();
           `}
         </Script>
         

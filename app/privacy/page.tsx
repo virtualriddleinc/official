@@ -199,6 +199,22 @@ export default function PrivacyPage() {
                         <div className="flex items-center mb-2">
                           <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center mr-3">
                             <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M4 12C4 7 7 4 12 4C17 4 20 7 20 12C20 17 17 20 12 20C7 20 4 17 4 12Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M9.10986 12.21L11.0299 14.13L14.8899 10.27" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <span className="font-medium text-gray-900">Reklam ve Ölçüm Verileri</span>
+                        </div>
+                        <p className="text-gray-600 ml-11 text-sm">
+                        Bu web sitesi, deneyiminizi geliştirmek, içerik ve reklamları kişiselleştirmek ve site trafiğini analiz etmek için çerezleri kullanır. Sitemizi kullanarak çerezlerin kullanımını kabul etmiş olursunuz. Çerez tercihlerinizi dilediğiniz zaman değiştirebilirsiniz.
+                        Ayrıntılar için gizlilik politikamızı inceleyebilirsiniz.
+                        </p>
+                      </div>
+                      
+                      <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <div className="flex items-center mb-2">
+                          <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center mr-3">
+                            <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M12 15C13.3807 15 14.5 13.8807 14.5 12.5C14.5 11.1193 13.3807 10 12 10C10.6193 10 9.5 11.1193 9.5 12.5C9.5 13.8807 10.6193 15 12 15Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                               <path d="M19.14 19.14L15.83 15.83" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                               <path d="M15.83 9.17L19.14 5.86" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -347,6 +363,68 @@ export default function PrivacyPage() {
                     <p className="mt-6 text-gray-600">
                       Kişisel verileriniz, kullanım amacı gerektirdiği sürece ve yasal saklama süreleri boyunca sistemlerimizde muhafaza edilmektedir. 
                       Bu süreler dolduğunda, verileriniz uygun yöntemlerle imha edilmektedir.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Üçüncü Taraf Hizmetler */}
+              <section id="ucuncu-taraf" className="scroll-mt-24">
+                <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-8">
+                  <div className="flex items-center mb-8">
+                    <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mr-5">
+                      <svg className="w-7 h-7 text-blue-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Üçüncü Taraf Hizmetler</h2>
+                  </div>
+
+                  <div className="prose prose-lg max-w-none text-gray-700">
+                    <p className="leading-relaxed text-lg">
+                      Web sitemiz üzerinde kullandığımız bazı analitik ve pazarlama teknolojileri dış hizmet sağlayıcıları tarafından sunulmaktadır.
+                      Bu teknolojiler yalnızca çerez banner'ı üzerinden verdiğiniz rıza doğrultusunda devreye alınır. İlgili sağlayıcıların
+                      politika ve sözleşmelerine aşağıdan ulaşabilirsiniz.
+                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8 mb-10">
+                      <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                        <h3 className="font-semibold text-blue-900 mb-2">Google Analytics</h3>
+                        <p className="text-sm text-blue-800 leading-relaxed">
+                          Ziyaretçi davranışlarını analiz etmek için <a href="https://analytics.google.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">Google Analytics</a> kullanıyoruz.
+                          Rıza vermeniz halinde, iletişim bilgilerinizin SHA-256 ile maskelenmiş halleri gelişmiş ölçümleme ve dönüşüm modelleme amacıyla Google ile paylaşılabilir.
+                        </p>
+                      </div>
+
+                      <div className="bg-indigo-50 p-5 rounded-xl border border-indigo-100">
+                        <h3 className="font-semibold text-indigo-900 mb-2">Google Tag Manager</h3>
+                        <p className="text-sm text-indigo-800 leading-relaxed">
+                          Ölçümleme ve reklam etiketlerini yönetmek için <a href="https://tagmanager.google.com/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 underline">Google Tag Manager</a> kullanıyoruz.
+                          Tag Manager, yalnızca izin verdiğiniz etiketlerin çalıştırılmasını sağlar ve doğrudan kullanıcı verisi saklamaz.
+                        </p>
+                      </div>
+
+                      <div className="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
+                        <h3 className="font-semibold text-emerald-900 mb-2">Google Marketing Platform</h3>
+                        <p className="text-sm text-emerald-800 leading-relaxed">
+                          Reklam kampanyalarını optimize etmek ve kitle analizleri yapmak için <a href="https://marketingplatform.google.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Google Marketing Platform</a> ürünlerinden faydalanabiliriz.
+                          Bu kapsamda ad_storage izni verdiğiniz durumlarda reklam performansını ölçmek için hash'lenmiş iletişim verileri kullanılabilir.
+                        </p>
+                      </div>
+
+                      <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <h3 className="font-semibold text-slate-900 mb-2">Diğer Entegrasyonlar</h3>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          İhtiyaca göre benzer analitik veya reklam teknolojileri entegre edilebilir. Her yeni sağlayıcı için gizlilik politikamızı günceller ve
+                          çerez tercihi paneline gerekli yeni kategorileri ekleriz.
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-gray-600">
+                      Üçüncü taraf hizmet sağlayıcıları, veri işleme faaliyetlerinde kendi kullanıcı sözleşmeleri ve gizlilik politikalarına tabidir.
+                      Detaylı bilgi için ilgili hizmetlerin gizlilik sayfalarını inceleyebilir veya bizimle iletişime geçebilirsiniz.
                     </p>
                   </div>
                 </div>
@@ -609,6 +687,48 @@ export default function PrivacyPage() {
                         ve belirli işlevleri nasıl kullandığınız hakkında bilgi toplar. Bu bilgiler, sonraki ziyaretlerinizde 
                         sitemizi daha kullanışlı ve kişiselleştirilmiş hale getirmemize yardımcı olur.
                       </p>
+                    </div>
+                    
+                    <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-6 flex items-center">
+                      <svg className="w-5 h-5 text-amber-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M12 7V12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M11.9945 15H12.0035" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      Google Analytics ve Reklam Ölçümleme
+                    </h3>
+                    
+                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm mb-8">
+                      <p className="text-gray-700 mb-4">
+                        Google Analytics ve Google Ads etiketlerini yalnızca çerez banner'ı üzerinden açık rıza vermeniz
+                        halinde etkinleştiriyoruz. Rıza verdiğinizde, e-posta veya telefon gibi iletişim bilgilerinizin
+                        SHA-256 algoritması ile maskelenmiş (hash'lenmiş) halleri Google'a gönderilebilir. Bu paylaşımlar;
+                        reklam kampanyalarının başarısını ölçmek, dönüşümleri modellemek ve benzer hedef kitleler
+                        oluşturmak için kullanılır.
+                      </p>
+                      <ul className="space-y-3 text-gray-600">
+                        <li className="flex items-start">
+                          <svg className="w-5 h-5 text-amber-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M7.75 11.9999L10.58 14.8299L16.25 9.16992" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                          <span>Maskelenen veriler yalnızca ölçümleme, reklam kişiselleştirmesi ve benzer kitle analizi için kullanılır.</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="w-5 h-5 text-amber-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M7.75 11.9999L10.58 14.8299L16.25 9.16992" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                          <span>Rızanızı cookie tercihleri panelinden dilediğiniz zaman geri çekebilir veya güncelleyebilirsiniz.</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="w-5 h-5 text-amber-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M7.75 11.9999L10.58 14.8299L16.25 9.16992" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                          <span>Google ile paylaşılan veriler, Google'ın <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">Gizlilik Politikası</a> ve <a href="https://support.google.com/analytics/answer/12017362" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">İleri Dönüşüm Eşleştirme</a> şartlarına tabidir.</span>
+                        </li>
+                      </ul>
                     </div>
                     
                     <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-6 flex items-center">

@@ -10,14 +10,25 @@ function setCookie(name: string, value: string, days = 365) {
 export default function CookieConsent() {
   const [showConsent, setShowConsent] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
-  const [marketingEnabled, setMarketingEnabled] = useState(true);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const [marketingEnabled, setMarketingEnabled] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     try {
       if (typeof window !== 'undefined' && window.localStorage) {
         const cookieConsent = localStorage.getItem("cookie-consent");
+        const analyticsPref = localStorage.getItem("cookie-analytics");
+        const marketingPref = localStorage.getItem("cookie-marketing");
+
+        if (analyticsPref !== null) {
+          setAnalyticsEnabled(analyticsPref === "true");
+        }
+
+        if (marketingPref !== null) {
+          setMarketingEnabled(marketingPref === "true");
+        }
+
         if (!cookieConsent) {
           setShowConsent(true);
         }
@@ -47,6 +58,19 @@ export default function CookieConsent() {
       console.error('Error saving cookie preferences:', error);
     }
     setShowConsent(false);
+
+    if (typeof window !== 'undefined') {
+      try {
+        const detail = {
+          consent,
+          analytics: analytics === "true",
+          marketing: marketing === "true",
+        };
+        window.dispatchEvent(new CustomEvent("cookie-consent-updated", { detail }));
+      } catch (eventError) {
+        console.error('Error dispatching cookie consent event:', eventError);
+      }
+    }
   };
 
   const acceptAllCookies = () => {
@@ -88,8 +112,10 @@ export default function CookieConsent() {
               </div>
               
               <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
-                Bu web sitesi, deneyiminizi geliştirmek, içerik ve reklamları kişiselleştirmek ve site trafiğini analiz etmek için çerezleri kullanır. 
-                Sitemizi kullanarak çerezlerin kullanımını kabul etmiş olursunuz. Çerez tercihlerinizi dilediğiniz zaman değiştirebilirsiniz.
+                Bu web sitesi; deneyiminizi geliştirmek, site performansını ölçmek ve rızanız halinde reklam kampanyalarını
+                kişiselleştirmek için çerezler ve benzeri teknolojiler kullanır. Google Analytics ve Google reklam platformlarına
+                yalnızca açık rıza verdiğinizde, e-posta veya telefon gibi iletişim bilgilerinizin SHA-256 ile maskelenmiş (hash'lenmiş)
+                versiyonları ölçümleme amacıyla aktarılır. Tercihlerinizi dilediğiniz zaman güncelleyebilirsiniz.
               </p>
               
               <div className="mt-3 flex items-center gap-2 text-xs text-gray-500">
@@ -181,8 +207,10 @@ export default function CookieConsent() {
                   </label>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Bu çerezler, ziyaretçilerin web sitemizi nasıl kullandığına dair bilgileri toplar. Bu bilgiler, sayfaların ziyaret 
-                  sayısı, ziyaretçilerin sitemize nereden geldiği ve sayfaları nasıl dolaştığı gibi anonim bilgileri içerir.
+                  Bu çerezler, ziyaretçilerin web sitemizi nasıl kullandığına dair bilgileri toplar. Açık rıza vermeniz halinde,
+                  Google Analytics tarafından sunulan gelişmiş ölçümleme ve dönüşüm modelleme özellikleri için iletişim verilerinizin
+                  SHA-256 ile maskelenmiş versiyonları kullanılabilir. Tercihinizi değiştirerek bu işleme dilediğiniz zaman son
+                  verebilirsiniz.
                 </p>
               </div>
               
@@ -206,8 +234,10 @@ export default function CookieConsent() {
                   </label>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Bu çerezler, ziyaretçilere ilgi alanlarına göre hedeflenmiş reklamlar göstermek için kullanılır. 
-                  Bu çerezler, ziyaretçilerin web sitemizi tekrar ziyaret etmesini sağlayan bilgileri de toplar.
+                  Bu çerezler, ziyaretçilere ilgi alanlarına göre hedeflenmiş reklamlar göstermek için kullanılır. Sadece rıza
+                  vermeniz halinde, e-posta veya telefon gibi bilgilerinizin SHA-256 ile maskelenmiş halleri Google reklam
+                  platformlarıyla paylaşılır ve kampanya performansını ölçmek için kullanılır. Bu izni istediğiniz an geri
+                  çekebilirsiniz.
                 </p>
               </div>
             </div>

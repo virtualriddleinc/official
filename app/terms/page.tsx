@@ -266,6 +266,37 @@ export default function TermsPage() {
                       Virtual Riddle olarak kullanıcılarımızın gizliliğine büyük önem veriyoruz. Bu bölüm, platformumuzun gizlilik uygulamaları ve kişisel verilerin korunmasına yönelik politikalarımız hakkında özet bilgiler içermektedir.
                     </p>
                     
+                    <p className="leading-relaxed text-lg text-gray-700">
+                      Google Analytics ve Google reklam hizmetlerini kullanırken, yalnızca çerez banner'ı üzerinden açık rıza verdiğinizde
+                      iletişim bilgilerinizi (örneğin e-posta veya telefon) SHA-256 algoritmasıyla maskelenmiş (hash'lenmiş) formatta Google
+                      ile paylaşırız. Bu veriler, reklam kampanyalarının performansını ölçmek ve hedef kitle oluşturmak amacıyla işlenir.
+                      Rızanızı dilediğiniz zaman geri çekebilir ve çerez tercihlerinizi güncelleyebilirsiniz.
+                    </p>
+
+                    <div className="bg-white p-6 rounded-xl border border-purple-100 shadow-sm mt-6">
+                      <h3 className="text-lg font-semibold text-purple-800 mb-3">Kullandığımız Google Hizmetleri</h3>
+                      <ul className="space-y-3 text-gray-600">
+                        <li className="flex items-start">
+                          <span className="text-purple-500 mr-2">•</span>
+                          <span>
+                            <a href="https://analytics.google.com/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-700 underline">Google Analytics</a> – Ziyaretçi davranışlarını analiz eder, çerez rızası olmadan devreye alınmaz.
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-purple-500 mr-2">•</span>
+                          <span>
+                            <a href="https://tagmanager.google.com/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-700 underline">Google Tag Manager</a> – Etiketleri yönetmemize yardımcı olur ve yalnızca izin verilen etiketleri tetikler.
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-purple-500 mr-2">•</span>
+                          <span>
+                            <a href="https://marketingplatform.google.com/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-700 underline">Google Marketing Platform</a> – Reklam ölçümlemesi ve hedef kitle analizleri için kullanılır; ad_storage izni olmadan çalıştırılmaz.
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                    
                     <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-100 mt-8 mb-6">
                       <h3 className="text-xl font-semibold text-purple-900 mb-4">Detaylı Gizlilik Politikası</h3>
                       <p className="text-purple-800 mb-4">

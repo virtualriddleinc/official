@@ -48,8 +48,8 @@ export default function Home() {
           <div className="container mx-auto px-4 h-full flex items-center">
             <div className="h-full flex flex-col lg:flex-row items-center gap-10 pb-16">
               {/* Left Side - Content */}
-              <div className="flex-1 text-center lg:text-left">
-                <div className="max-w-3xl mx-auto lg:mx-0 space-y-8">
+              <div className="flex-1 text-left">
+                <div className="max-w-3xl mx-0 space-y-8">
                   {/* Top Heading */}
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-4">
@@ -63,13 +63,13 @@ export default function Home() {
 
                   {/* Main Heading */}
                   <div className="space-y-6">
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-left">
                       <div className="text-white leading-tight">Atlassian</div>
                       <div className="text-white/90 leading-tight">Danışmanlık</div>
                       <div className="text-white/80 leading-tight">Hizmetleri</div>
                 </h1>
                     
-                    <p className="text-xl text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                    <p className="text-xl text-white/80 max-w-2xl mx-0 leading-relaxed font-medium text-left">
                       Tüm Atlassian ürünleri için kurumsal danışmanlık hizmetleri, öncelikle Jira ve Confluence.
                     </p>
                   </div>
