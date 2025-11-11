@@ -144,9 +144,7 @@ export default function RootLayout({
                   ad_personalization: marketingAllowed ? 'granted' : 'denied'
                 });
 
-                if (analyticsAllowed || marketingAllowed) {
-                  injectGtagScript();
-                }
+                injectGtagScript();
               };
 
               const readStoredConsent = () => {
@@ -165,6 +163,8 @@ export default function RootLayout({
               };
 
               setDefaultConsent();
+              window.gtag('set', 'ads_data_redaction', true);
+              injectGtagScript();
 
               const storedConsent = readStoredConsent();
               if (storedConsent.analyticsAllowed || storedConsent.marketingAllowed) {
