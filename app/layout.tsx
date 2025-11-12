@@ -90,61 +90,21 @@ export default function RootLayout({
   return (
     <html lang="tr" className={inter.className}>
       <head>
-        <Script id="ga-consent-manager" strategy="afterInteractive">
+        <Script id="gtm-consent-manager" strategy="beforeInteractive">
           {`
             (function () {
-              const GA_ID = 'G-TL8K7KXZ0J';
               if (typeof window === 'undefined') return;
-
-              const GTAG_URL = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-              let gtagInitialized = false;
-
-              const initDataLayer = () => {
-                window.dataLayer = window.dataLayer || [];
-                window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
-              };
-
-              const setDefaultConsent = () => {
-                initDataLayer();
-                window.gtag('consent', 'default', {
-                  analytics_storage: 'denied',
-                  ad_storage: 'denied',
-                  ad_user_data: 'denied',
-                  ad_personalization: 'denied',
-                  wait_for_update: 500
-                });
-              };
-
-              const activateGtag = () => {
-                if (gtagInitialized) return;
-                gtagInitialized = true;
-                initDataLayer();
-                window.gtag('js', new Date());
-                window.gtag('config', GA_ID, { anonymize_ip: true });
-              };
-
-              const injectGtagScript = () => {
-                if (document.head.querySelector('script[src="' + GTAG_URL + '"]')) {
-                  activateGtag();
-                  return;
-                }
-                const script = document.createElement('script');
-                script.async = true;
-                script.src = GTAG_URL;
-                script.onload = activateGtag;
-                document.head.appendChild(script);
-              };
+              const dataLayer = window.dataLayer = window.dataLayer || [];
+              function gtag(){ dataLayer.push(arguments); }
+              window.gtag = window.gtag || gtag;
 
               const applyConsent = (analyticsAllowed, marketingAllowed) => {
-                initDataLayer();
-                window.gtag('consent', 'update', {
+                gtag('consent', 'update', {
                   analytics_storage: analyticsAllowed ? 'granted' : 'denied',
                   ad_storage: marketingAllowed ? 'granted' : 'denied',
                   ad_user_data: marketingAllowed ? 'granted' : 'denied',
                   ad_personalization: marketingAllowed ? 'granted' : 'denied'
                 });
-
-                injectGtagScript();
               };
 
               const readStoredConsent = () => {
@@ -162,9 +122,14 @@ export default function RootLayout({
                 }
               };
 
-              setDefaultConsent();
-              window.gtag('set', 'ads_data_redaction', true);
-              injectGtagScript();
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500
+              });
+              gtag('set', 'ads_data_redaction', true);
 
               const storedConsent = readStoredConsent();
               if (storedConsent.analyticsAllowed || storedConsent.marketingAllowed) {
@@ -176,6 +141,15 @@ export default function RootLayout({
                 applyConsent(!!detail.analytics, !!detail.marketing);
               });
             })();
+          `}
+        </Script>
+        <Script id="gtm-base" strategy="beforeInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PTXL5HBN');
           `}
         </Script>
         
@@ -414,6 +388,11 @@ export default function RootLayout({
         {/* CSS will be loaded automatically by Next.js */}
       </head>
       <body className="min-h-screen bg-white">
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTXL5HBN" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
+          }}
+        />
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
