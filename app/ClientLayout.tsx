@@ -483,6 +483,12 @@ export default function ClientLayout({
                 </AnimatePresence>
               </div>
               <Link
+                href="/pricing"
+                className="px-4 py-2 text-base text-gray-800 hover:text-blue-600 font-semibold rounded-xl transition-all duration-200"
+              >
+                Ücretlendirme
+              </Link>
+              <Link
                 href="/contact"
                 className="px-4 py-2 text-base text-gray-800 hover:text-blue-600 font-semibold rounded-xl transition-all duration-200"
               >
@@ -723,6 +729,12 @@ export default function ClientLayout({
                       </div>
                     </MobileAccordion>
 
+                    <div className="border-b border-white/10">
+                      <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white hover:bg-white/5 rounded-xl transition-all duration-200">
+                        Ücretlendirme
+                      </Link>
+                    </div>
+
 
                     <div className="border-b border-white/10">
                       <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white hover:bg-white/5 rounded-xl transition-all duration-200">
@@ -799,8 +811,8 @@ export default function ClientLayout({
                             href={item.url}
                             onClick={handleResultClick}
                             className={`flex justify-between items-center p-3 my-1 rounded-lg cursor-pointer transition-colors ${selectedIndex === index
-                                ? 'bg-blue-600/10 dark:bg-blue-500/20'
-                                : 'hover:bg-gray-100 dark:hover:bg-gray-700/50'
+                              ? 'bg-blue-600/10 dark:bg-blue-500/20'
+                              : 'hover:bg-gray-100 dark:hover:bg-gray-700/50'
                               }`}>
 
                             <div className="flex items-center space-x-4">
@@ -840,8 +852,8 @@ export default function ClientLayout({
                       href={`/search?q=${encodeURIComponent(searchText.trim())}`}
                       onClick={handleResultClick}
                       className={`block w-full text-left p-4 text-base font-semibold transition-colors ${selectedIndex === searchResults.length
-                          ? 'bg-blue-600/10 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400'
-                          : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50'
+                        ? 'bg-blue-600/10 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400'
+                        : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50'
                         }`}>
 
                       <span className="flex items-center"><Search className="h-5 w-5 mr-3" /> &quot;{searchText}&quot; için tüm sonuçları gör</span>
