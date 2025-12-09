@@ -101,7 +101,7 @@ const PricingPage = () => {
   useEffect(() => {
     if (mounted && selectedPkg && quantity > 0) {
       let finalQuantity = quantity;
-      
+
       // TZDP için özel hesaplama - her zaman gün üzerinden hesapla
       if (selectedPkg.id === 'dedicated') {
         if (billingCycle === 'hourly') {
@@ -115,10 +115,10 @@ const PricingPage = () => {
         }
         // Günlük seçili ise quantity zaten gün cinsinden
       }
-      
+
       const minValue = billingCycle === 'hourly' ? selectedPkg.minHours : selectedPkg.minDays;
       finalQuantity = Math.max(finalQuantity, minValue);
-      
+
       if (billingCycle === 'hourly') {
         setCalculatedPrice(selectedPkg.hourlyPrice * quantity);
         setCalculatedOldPrice(selectedPkg.oldPrice * Math.ceil(quantity / 8));
@@ -146,12 +146,12 @@ const PricingPage = () => {
 
   const handleBillingCycleChange = (newCycle: 'hourly' | 'daily') => {
     if (newCycle === billingCycle) return;
-    
+
     setBillingCycle(newCycle);
-    
+
     if (quantity > 0 && selectedPkg) {
       let newQuantity: number;
-      
+
       if (newCycle === 'daily') {
         // Saatlikten günlüğe geçiş
         newQuantity = Math.round(quantity / 8);
@@ -159,10 +159,10 @@ const PricingPage = () => {
         // Günlükten saatliğe geçiş
         newQuantity = quantity * 8;
       }
-      
+
       const minValue = newCycle === 'hourly' ? selectedPkg.minHours : selectedPkg.minDays;
       newQuantity = Math.max(newQuantity, minValue);
-      
+
       setTimeout(() => {
         setQuantity(newQuantity);
       }, 0);
@@ -209,11 +209,10 @@ const PricingPage = () => {
                   setQuantity(pkg.minDays);
                 }
               }}
-              className={`relative w-full md:w-96 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-8 cursor-pointer flex flex-col border-2 ${
-                selectedPackage === pkg.id
+              className={`relative w-full md:w-96 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-8 cursor-pointer flex flex-col border-2 ${selectedPackage === pkg.id
                   ? 'border-[#0066FF] ring-2 ring-[#0066FF] shadow-lg scale-105'
                   : 'border-transparent'
-              }`}
+                }`}
               type="button"
             >
               {pkg.popular && (
@@ -221,26 +220,26 @@ const PricingPage = () => {
                   En Popüler
                 </span>
               )}
-              
+
               <div className="min-h-[4rem] flex items-center justify-center mb-4">
                 <h2 className="text-xl md:text-2xl font-semibold text-[#253858] text-center leading-tight">{pkg.name}</h2>
               </div>
-              
+
               <div className="min-h-[8rem] flex flex-col justify-center mb-6">
-                                  <div className="text-center mb-4">
-                    <div className="text-sm md:text-base text-[#42526E] mb-3 font-bold">
-                      {billingCycle === 'hourly' ? '🕐 Saatlik Fiyat:' : '📅 Günlük Fiyat (8 Saat):'}
-                    </div>
-                    <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-3">
-                      <div className="text-2xl md:text-4xl font-bold text-[#0066FF]">
-                        ₺{billingCycle === 'hourly' ? pkg.hourlyPrice.toLocaleString() : pkg.dailyPrice.toLocaleString()}
-                      </div>
-                      <span className="inline-flex items-center px-2 md:px-3 py-1 md:py-2 bg-blue-100 text-blue-800 text-xs md:text-sm font-bold rounded-full">
-                        + KDV
-                      </span>
-                    </div>
+                <div className="text-center mb-4">
+                  <div className="text-sm md:text-base text-[#42526E] mb-3 font-bold">
+                    {billingCycle === 'hourly' ? '🕐 Saatlik Fiyat:' : '📅 Günlük Fiyat (8 Saat):'}
                   </div>
-                
+                  <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-3">
+                    <div className="text-2xl md:text-4xl font-bold text-[#0066FF]">
+                      ₺{billingCycle === 'hourly' ? pkg.hourlyPrice.toLocaleString() : pkg.dailyPrice.toLocaleString()}
+                    </div>
+                    <span className="inline-flex items-center px-2 md:px-3 py-1 md:py-2 bg-blue-100 text-blue-800 text-xs md:text-sm font-bold rounded-full">
+                      + KDV
+                    </span>
+                  </div>
+                </div>
+
                 {pkg.discount && (
                   <div className="text-center">
                     <span className="inline-block bg-gradient-to-r from-green-400 to-green-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm animate-pulse">
@@ -249,7 +248,7 @@ const PricingPage = () => {
                   </div>
                 )}
               </div>
-              
+
               <div className="min-h-[5rem] flex items-center mb-6">
                 <p className="text-[#42526E] text-center leading-tight text-sm md:text-base">
                   {pkg.id === 'dedicated' ? (
@@ -267,7 +266,7 @@ const PricingPage = () => {
                   )}
                 </p>
               </div>
-              
+
               <ul className="space-y-3 flex-grow">
                 {pkg.features.map((feature, i) => (
                   <li key={i} className="flex items-start text-[#42526E]">
@@ -293,12 +292,12 @@ const PricingPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 rounded-3xl"></div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
-          
+
           {/* Ana kart */}
           <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-4 md:p-10">
             {/* Üst dekoratif çizgi */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-            
+
             {/* Başlık */}
             <div className="text-center mb-6 md:mb-10 relative z-10">
               <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600 rounded-3xl mb-4 md:mb-6 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
@@ -326,16 +325,15 @@ const PricingPage = () => {
                     </div>
                     <h4 className="text-xl md:text-2xl font-bold text-slate-800">Paket Seçimi</h4>
                   </div>
-                  
+
                   <div className="space-y-4">
                     {packages.map((pkg) => (
                       <label
                         key={pkg.id}
-                        className={`group relative block p-3 md:p-5 rounded-xl border-2 cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02] ${
-                          selectedPackage === pkg.id
+                        className={`group relative block p-3 md:p-5 rounded-xl border-2 cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02] ${selectedPackage === pkg.id
                             ? 'border-blue-500 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-xl scale-[1.02] ring-4 ring-blue-100'
                             : 'border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50/50'
-                        }`}
+                          }`}
                       >
                         <input
                           type="radio"
@@ -350,7 +348,7 @@ const PricingPage = () => {
                             <div className="font-bold text-slate-800 text-base md:text-lg">{pkg.name}</div>
                             <div className="text-xs md:text-sm text-slate-600 mt-1 flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0">
                               <span className="font-semibold">
-                                {billingCycle === 'hourly' 
+                                {billingCycle === 'hourly'
                                   ? `₺${pkg.hourlyPrice.toLocaleString()}/saat`
                                   : `₺${pkg.dailyPrice.toLocaleString()}/gün`
                                 }
@@ -365,11 +363,10 @@ const PricingPage = () => {
                               )}
                             </div>
                           </div>
-                          <div className={`w-5 h-5 md:w-6 md:h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${
-                            selectedPackage === pkg.id
+                          <div className={`w-5 h-5 md:w-6 md:h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${selectedPackage === pkg.id
                               ? 'border-blue-500 bg-blue-500 shadow-lg'
                               : 'border-gray-300 group-hover:border-blue-400'
-                          }`}>
+                            }`}>
                             {selectedPackage === pkg.id && (
                               <div className="w-2 md:w-2.5 h-2 md:h-2.5 bg-white rounded-full"></div>
                             )}
@@ -393,16 +390,15 @@ const PricingPage = () => {
                     </div>
                     <h4 className="text-xl md:text-2xl font-bold text-slate-800">Ücret Gösterim Birimi</h4>
                   </div>
-                  
+
                   <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl p-1 mb-4 shadow-inner">
                     <div className="flex">
                       <button
                         onClick={() => handleBillingCycleChange('hourly')}
-                        className={`flex-1 py-3 px-6 text-sm font-bold rounded-lg transition-all duration-300 ${
-                          billingCycle === 'hourly'
+                        className={`flex-1 py-3 px-6 text-sm font-bold rounded-lg transition-all duration-300 ${billingCycle === 'hourly'
                             ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-xl transform scale-105'
                             : 'text-slate-600 hover:text-blue-600 hover:bg-gray-200'
-                        }`}
+                          }`}
                       >
                         <div className="flex items-center justify-center">
                           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -413,11 +409,10 @@ const PricingPage = () => {
                       </button>
                       <button
                         onClick={() => handleBillingCycleChange('daily')}
-                        className={`flex-1 py-3 px-6 text-sm font-bold rounded-lg transition-all duration-300 ${
-                          billingCycle === 'daily'
+                        className={`flex-1 py-3 px-6 text-sm font-bold rounded-lg transition-all duration-300 ${billingCycle === 'daily'
                             ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-xl transform scale-105'
                             : 'text-slate-600 hover:text-blue-600 hover:bg-gray-200'
-                        }`}
+                          }`}
                       >
                         <div className="flex items-center justify-center">
                           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -428,7 +423,7 @@ const PricingPage = () => {
                       </button>
                     </div>
                   </div>
-                  
+
                   <div className="text-sm text-emerald-700 bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-xl px-4 py-3 text-center shadow-sm">
                     <div className="flex items-center justify-center">
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -449,7 +444,7 @@ const PricingPage = () => {
                     </div>
                     <h4 className="text-xl md:text-2xl font-bold text-slate-800">Miktar</h4>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="relative">
                       <input
@@ -465,7 +460,7 @@ const PricingPage = () => {
                         </span>
                       </div>
                     </div>
-                    
+
                     {showWarning && selectedPkg && (
                       <div className="flex items-center p-4 bg-gradient-to-r from-red-50 to-pink-50 border border-red-200 rounded-xl shadow-sm">
                         <div className="w-10 h-10 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mr-3 shadow-md">
@@ -523,12 +518,12 @@ const PricingPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/40 rounded-3xl"></div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-teal-400/20 to-emerald-400/20 rounded-full blur-3xl"></div>
-          
+
           {/* Ana kart */}
           <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-4 md:p-10">
             {/* Üst dekoratif çizgi */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent"></div>
-            
+
             <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center relative z-10">
               {/* Sol Taraf - İçerik */}
               <div className="space-y-4 md:space-y-6">
@@ -545,7 +540,7 @@ const PricingPage = () => {
                     <p className="text-emerald-600 font-semibold text-sm md:text-base">Kişiselleştirilmiş Çözümler</p>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -557,7 +552,7 @@ const PricingPage = () => {
                       <strong>Özel proje gereksinimleri</strong> için tamamen kişiselleştirilmiş danışmanlık hizmetleri
                     </p>
                   </div>
-                  
+
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -568,7 +563,7 @@ const PricingPage = () => {
                       <strong>Esnek çalışma saatleri</strong> ve <strong>özel sözleşme koşulları</strong>
                     </p>
                   </div>
-                  
+
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -591,11 +586,11 @@ const PricingPage = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
                     </div>
-                    <h4 className="text-xl font-bold text-slate-800 mb-2">Ücretsiz Danışmanlık</h4>
+                    <h4 className="text-xl font-bold text-slate-800 mb-2">8 Saat Ücretsiz Danışmanlık</h4>
                     <p className="text-slate-600 text-sm">Proje gereksinimlerinizi değerlendirelim</p>
                   </div>
-                  
-                  <Link 
+
+                  <Link
                     href="/solutions/consulting"
                     className="inline-flex items-center justify-center w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   >
@@ -605,7 +600,7 @@ const PricingPage = () => {
                     Özel Teklif Al
                   </Link>
                 </div>
-                
+
 
               </div>
             </div>
@@ -623,15 +618,15 @@ const PricingPage = () => {
               <div>
                 <div className="font-bold text-base md:text-lg">Kampanya Hakkında</div>
                 <div className="text-xs md:text-sm text-blue-100 leading-tight">
-                  <strong>01.09.2025</strong> tarihine kadar yapılan alımlarda fiyatlar <strong>01.01.2026</strong> tarihine kadar korunur!
+                  <strong>31.12.2025</strong> tarihine kadar yapılan alımlarda fiyatlar <strong>31.12.2026</strong> tarihine kadar korunur!
                 </div>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-2 md:space-x-3">
               <div className="hidden md:block text-right">
                 <div className="text-xs text-blue-100">Kampanya Bitiş:</div>
-                <div className="font-bold">01.09.2025</div>
+                <div className="font-bold">31.12.2025</div>
               </div>
               <Link href="/solutions/consulting" className="bg-white text-blue-600 px-4 md:px-6 py-1.5 md:py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 text-sm md:text-base">
                 Hemen Başla
@@ -649,7 +644,7 @@ const PricingPage = () => {
           { name: 'Fiyatlandırma', item: 'https://virtualriddle.com/pricing' }
         ]}
       />
-      
+
       <StructuredData
         type="faq"
         faqItems={[
@@ -687,7 +682,7 @@ const PricingPage = () => {
           },
           {
             question: 'Kampanya süresi ne kadardır?',
-            answer: '01.09.2025 tarihine kadar yapılan alımlarda fiyatlar 01.01.2026 tarihine kadar korunur.'
+            answer: '31.12.2025 tarihine kadar yapılan alımlarda fiyatlar 31.12.2026 tarihine kadar korunur.'
           }
         ]}
       />
