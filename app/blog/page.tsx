@@ -19,7 +19,7 @@ export const posts = [
     category: "Dijital Dönüşüm",
     title: "Atlassian Datacenter End of Life Sonrası Alternatifler: Savunma Sanayii ve Güvenlik Odaklı Şirketler İçin Rehber",
     summary: "Atlassian Datacenter'ın sona ermesiyle birlikte Cloud'a geçemeyen savunma sanayii ve güvenlik odaklı şirketler için Jira ve Confluence alternatifleri. XWiki, BlueSpice, Wiki.js, MediaWiki ve daha fazlası hakkında detaylı analiz, karşılaştırma tabloları ve geçiş stratejileri.",
-    date: "7 Ocak 2025",
+    date: "7 Ocak 2026",
     readingTime: "20 dk",
     color: "from-blue-600 to-indigo-700",
     icon: (

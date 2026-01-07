@@ -22,8 +22,8 @@ export default function AtlassianDatacenterAlternatifleri() {
         "url": "https://virtualriddle.com/logo.svg"
       }
     },
-    "datePublished": "2025-01-07T00:00:00.000Z",
-    "dateModified": "2025-01-07T00:00:00.000Z",
+    "datePublished": "2026-01-07T00:00:00.000Z",
+    "dateModified": "2026-01-07T00:00:00.000Z",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://virtualriddle.com/blog/atlassian-datacenter-alternatifleri"
@@ -51,7 +51,7 @@ export default function AtlassianDatacenterAlternatifleri() {
         <section className="max-w-4xl w-full bg-white rounded-2xl shadow-lg px-4 md:px-8 py-6 md:py-8 mx-auto mt-8 mb-4">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">Dijital Dönüşüm</span>
-            <span className="text-xs text-gray-400">7 Ocak 2025</span>
+            <span className="text-xs text-gray-400">7 Ocak 2026</span>
             <span className="text-xs text-gray-400">• 20 dk okuma</span>
           </div>
           <h1 className="text-2xl md:text-4xl font-bold text-blue-900 mb-4 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>Atlassian Datacenter End of Life Sonrası Alternatifler: Savunma Sanayii ve Güvenlik Odaklı Şirketler İçin Rehber</h1>
@@ -523,8 +523,8 @@ export default function AtlassianDatacenterAlternatifleri() {
           title: "Atlassian Datacenter End of Life Sonrası Alternatifler",
           description: "Savunma sanayii ve güvenlik odaklı şirketler için Jira ve Confluence alternatifleri",
           author: "Virtual Riddle Blog Ekibi",
-          datePublished: "2025-01-07",
-          dateModified: "2025-01-07"
+          datePublished: "2026-01-07",
+          dateModified: "2026-01-07"
         }}
       />
     </>
