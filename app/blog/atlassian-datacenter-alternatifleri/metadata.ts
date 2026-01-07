@@ -1,0 +1,82 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Atlassian Datacenter End of Life Sonrası Alternatifler: Savunma Sanayii ve Güvenlik Odaklı Şirketler İçin Rehber',
+  description: 'Atlassian Datacenter\'ın sona ermesiyle birlikte Cloud\'a geçemeyen savunma sanayii ve güvenlik odaklı şirketler için Jira ve Confluence alternatifleri. XWiki, BlueSpice, Wiki.js, MediaWiki ve daha fazlası hakkında detaylı analiz.',
+  keywords: [
+    'Atlassian Datacenter',
+    'Jira alternatifleri',
+    'Confluence alternatifleri',
+    'XWiki',
+    'BlueSpice',
+    'Wiki.js',
+    'MediaWiki',
+    'savunma sanayii',
+    'on-premise wiki',
+    'self-hosted proje yönetimi',
+    'güvenlik odaklı yazılım',
+    'Atlassian migration',
+    'enterprise wiki',
+    'open source wiki',
+    'kurumsal dokümantasyon',
+    'proje yönetim araçları',
+    'Atlassian end of life',
+    'data sovereignty',
+    'compliance',
+    'GDPR uyumlu wiki'
+  ],
+  authors: [{ name: 'Virtual Riddle Blog Ekibi' }],
+  creator: 'Virtual Riddle',
+  publisher: 'Virtual Riddle',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://virtualriddle.com'),
+  alternates: {
+    canonical: '/blog/atlassian-datacenter-alternatifleri',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'article',
+    locale: 'tr_TR',
+    url: 'https://virtualriddle.com/blog/atlassian-datacenter-alternatifleri',
+    title: 'Atlassian Datacenter End of Life Sonrası Alternatifler: Savunma Sanayii ve Güvenlik Odaklı Şirketler İçin Rehber',
+    description: 'Atlassian Datacenter\'ın sona ermesiyle birlikte Cloud\'a geçemeyen şirketler için Jira ve Confluence alternatifleri. XWiki, BlueSpice, Wiki.js, MediaWiki detaylı analiz.',
+    siteName: 'Virtual Riddle',
+    publishedTime: '2025-01-07T00:00:00.000Z',
+    modifiedTime: '2025-01-07T00:00:00.000Z',
+    authors: ['Virtual Riddle Blog Ekibi'],
+    section: 'Dijital Dönüşüm',
+    tags: ['Atlassian', 'Jira', 'Confluence', 'Alternatifler', 'Savunma Sanayii', 'Güvenlik'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Atlassian Datacenter End of Life Sonrası Alternatifler',
+    description: 'Savunma sanayii ve güvenlik odaklı şirketler için Jira ve Confluence alternatifleri. XWiki, BlueSpice, Wiki.js, MediaWiki detaylı analiz.',
+    creator: '@virtualriddle',
+  },
+  other: {
+    'article:author': 'Virtual Riddle Blog Ekibi',
+    'article:published_time': '2025-01-07T00:00:00.000Z',
+    'article:modified_time': '2025-01-07T00:00:00.000Z',
+    'article:section': 'Dijital Dönüşüm',
+    'article:tag': 'Atlassian,Datacenter,Alternatifler,Savunma Sanayii,Güvenlik',
+    'reading-time': '20',
+    'word-count': '4000',
+  }
+};
+

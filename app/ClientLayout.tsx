@@ -868,13 +868,13 @@ export default function ClientLayout({
       </AnimatePresence>
       {/* Footer */}
       <footer className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 pt-20 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
             {/* Logo ve Sosyal Medya */}
-            <div className="flex flex-col items-start space-y-10">
+            <div className="flex flex-col items-start space-y-6 md:space-y-10 pt-8 md:pt-8">
               <img src="/logo-footer.svg" alt="Virtual Riddle Logo" className="w-72" style={{ height: 'auto', maxHeight: '18rem' }} />
               <p className="text-gray-400">Dijital dönüşüm yolculuğunuzda yanınızdayız. Modern çözümlerle işinizi ileriye taşıyın.</p>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center flex-wrap gap-4 mt-4 md:mt-0">
                 {/* Instagram */}
                 <a href="https://www.instagram.com/virtual.riddle" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-white hover:bg-white/20 transition-all" aria-label="Virtual Riddle Instagram sayfasını ziyaret edin - Sosyal medya içeriklerimizi takip edin">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -905,7 +905,7 @@ export default function ClientLayout({
             </div>
 
             {/* Ürünler */}
-            <div>
+            <div className="pt-8 md:pt-8">
               <h3 className="text-lg font-semibold text-white mb-6">Ürünler</h3>
               <ul className="space-y-4">
                 <li><Link href="/products/jira-software" className="text-gray-400 hover:text-white transition-colors">Jira Software</Link></li>
@@ -920,7 +920,7 @@ export default function ClientLayout({
             </div>
 
             {/* Çözümler */}
-            <div>
+            <div className="pt-8 md:pt-8">
               <h3 className="text-lg font-semibold text-white mb-6">Çözümler</h3>
               <ul className="space-y-4">
                 <li>
@@ -939,7 +939,7 @@ export default function ClientLayout({
             </div>
 
             {/* Şirket */}
-            <div>
+            <div className="pt-8 md:pt-8">
               <h3 className="text-lg font-semibold text-white mb-6">Şirket</h3>
               <ul className="space-y-4">
                 <li>
@@ -958,7 +958,7 @@ export default function ClientLayout({
             </div>
 
             {/* İletişim */}
-            <div>
+            <div className="pt-8 md:pt-8">
               <h3 className="text-lg font-semibold text-white mb-6">Bize Ulaşın</h3>
               <div className="space-y-4">
                 <p className="text-gray-400">Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız.</p>

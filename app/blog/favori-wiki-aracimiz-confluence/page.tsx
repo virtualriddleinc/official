@@ -2,23 +2,26 @@ import { Link } from "../../components/Link";
 
 export default function FavoriWikiAracimizConfluence() {
   return (
-    <main className="flex min-h-screen flex-col items-center pt-32 bg-gray-50">
-      <article className="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-8 mx-auto mt-8">
-        <header className="mb-8">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">Atlassian</span>
-            <span className="text-xs text-gray-400">5 Temmuz 2025</span>
-            <span className="text-xs text-gray-400">• 4 dk okuma</span>
-          </div>
-          <h1 className="text-4xl font-bold text-blue-900 mb-4">Favori Wiki Aracımız: Confluence!</h1>
-          <div className="text-gray-600 text-base mb-4">Yazar: <span className="font-semibold">Virtual Riddle Blog Ekibi</span></div>
-          <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-xl mb-6">
-            <div className="font-semibold text-blue-700 mb-1">TL;DR - Özetle</div>
-            <p className="text-blue-900 text-sm leading-relaxed">
-              Confluence, ekip içi bilgi paylaşımını kolaylaştıran ve kurumsal hafızayı dijitalde tutan güçlü bir araçtır. Belgeleri merkezi bir yerde saklamak, iş birliğini artırmak ve süreçleri hızlandırmak gibi birçok avantaj sunar. Hem küçük ekipler hem de büyük organizasyonlar için esneklik sağlar.
-            </p>
-          </div>
-        </header>
+    <main className="flex min-h-screen flex-col items-center pt-32 bg-gray-50 px-4">
+      {/* Yeni Kart Bölümü */}
+      <section className="max-w-4xl w-full bg-white rounded-2xl shadow-lg px-4 md:px-8 py-6 md:py-8 mx-auto mt-8 mb-4">
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">Atlassian</span>
+          <span className="text-xs text-gray-400">5 Temmuz 2025</span>
+          <span className="text-xs text-gray-400">• 4 dk okuma</span>
+        </div>
+        <h1 className="text-2xl md:text-4xl font-bold text-blue-900 mb-4 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>Favori Wiki Aracımız: Confluence!</h1>
+        <div className="text-gray-600 text-base mb-4">Yazar: <span className="font-semibold">Virtual Riddle Blog Ekibi</span></div>
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-xl break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+          <div className="font-semibold text-blue-700 mb-1">TL;DR - Özetle</div>
+          <p className="text-blue-900 text-sm leading-relaxed break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+            Confluence, ekip içi bilgi paylaşımını kolaylaştıran ve kurumsal hafızayı dijitalde tutan güçlü bir araçtır. Belgeleri merkezi bir yerde saklamak, iş birliğini artırmak ve süreçleri hızlandırmak gibi birçok avantaj sunar. Hem küçük ekipler hem de büyük organizasyonlar için esneklik sağlar.
+          </p>
+        </div>
+      </section>
+      
+      {/* Article - Sadece İçerik */}
+      <article className="max-w-4xl w-full bg-white rounded-2xl shadow-lg px-4 md:px-8 py-6 md:py-8 mx-auto mb-8 overflow-hidden">
         <section className="prose prose-lg max-w-none text-gray-900">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Confluence Kullanmanın Avantajları 📘</h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">

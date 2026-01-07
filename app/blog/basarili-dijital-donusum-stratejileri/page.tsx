@@ -2,25 +2,28 @@ import { Link } from "../../components/Link";
 
 export default function BasariliDijitalDonusum() {
   return (
-    <main className="flex min-h-screen flex-col items-center pt-32 bg-gray-50">
-      <article className="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-8 mx-auto mt-8">
-        <header className="mb-8">
-          <div className="flex items-center gap-3 mb-2">
+      <main className="flex min-h-screen flex-col items-center pt-32 bg-gray-50 px-4">
+        {/* Yeni Kart Bölümü */}
+        <section className="max-w-4xl w-full bg-white rounded-2xl shadow-lg px-4 md:px-8 py-6 md:py-8 mx-auto mt-8 mb-4">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
             <span className="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full font-semibold">Dijital Dönüşüm</span>
             <span className="text-xs text-gray-400">3 Mart 2024</span>
             <span className="text-xs text-gray-400">• 7 dk okuma</span>
           </div>
-          <h1 className="text-4xl font-bold text-indigo-900 mb-4">Başarılı Dijital Dönüşüm Stratejileri</h1>
+          <h1 className="text-2xl md:text-4xl font-bold text-indigo-900 mb-4 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>Başarılı Dijital Dönüşüm Stratejileri</h1>
           <div className="text-gray-600 text-base mb-4">Yazar: <span className="font-semibold">Virtual Riddle Blog Ekibi</span></div>
-          <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-xl mb-6">
+          <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-xl break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
             <div className="font-semibold text-indigo-700 mb-1">TL;DR - Özetle</div>
-            <ul className="list-disc pl-5 text-indigo-900 text-sm space-y-1">
+            <ul className="list-disc pl-5 text-indigo-900 text-sm space-y-1 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               <li>Dijital dönüşüm sadece teknoloji değil, kültür ve liderlik işidir.</li>
               <li>Adım adım ve ölçülebilir hedeflerle ilerlemek başarıyı artırır.</li>
               <li>Çalışan katılımı ve müşteri odaklılık kritik önemdedir.</li>
             </ul>
           </div>
-        </header>
+        </section>
+        
+        {/* Article - Sadece İçerik */}
+        <article className="max-w-4xl w-full bg-white rounded-2xl shadow-lg px-4 md:px-8 py-6 md:py-8 mx-auto mb-8 overflow-hidden">
         <section className="prose prose-lg max-w-none text-gray-900">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Dijital Dönüşüm Nedir?</h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
