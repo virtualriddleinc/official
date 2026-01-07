@@ -483,12 +483,6 @@ export default function ClientLayout({
                 </AnimatePresence>
               </div>
               <Link
-                href="/pricing"
-                className="px-4 py-2 text-base text-gray-800 hover:text-blue-600 font-semibold rounded-xl transition-all duration-200"
-              >
-                Ücretlendirme
-              </Link>
-              <Link
                 href="/contact"
                 className="px-4 py-2 text-base text-gray-800 hover:text-blue-600 font-semibold rounded-xl transition-all duration-200"
               >
@@ -728,13 +722,6 @@ export default function ClientLayout({
                         </ul>
                       </div>
                     </MobileAccordion>
-
-                    <div className="border-b border-white/10">
-                      <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white hover:bg-white/5 rounded-xl transition-all duration-200">
-                        Ücretlendirme
-                      </Link>
-                    </div>
-
 
                     <div className="border-b border-white/10">
                       <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center p-4 font-semibold text-lg text-white hover:bg-white/5 rounded-xl transition-all duration-200">
