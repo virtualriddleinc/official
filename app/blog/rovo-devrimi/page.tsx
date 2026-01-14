@@ -50,7 +50,7 @@ export default function RovoDevrimiPage() {
           <div className="font-semibold text-blue-700 mb-1">TL;DR - Özetle</div>
           <p className="text-gray-700 text-sm leading-relaxed break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
             Yeni nesil yapay zeka destekli kurumsal asistan, ekiplerin dağınık bilgi kaynaklarına hızlı ve anlamlı erişimini sağlıyor. Belgeler, notlar, sohbetler ve görev yönetim araçları tek bir noktada birleşiyor. Aranan bilgi doğal dil ile sorgulanabiliyor, özetleniyor ve kişiye özel hale geliyor. Ayrıca, tekrar eden görevleri otomatikleştirerek zaman kazandırıyor. Güvenlik ve gizlilik ilkelerine uygun şekilde çalışıyor. Verimliliği artırmak, bilgiye kolay ulaşmak ve iş yükünü azaltmak isteyen ekipler için etkili bir çözüm sunuyor.
-          </p>
+        </p>
         </div>
       </section>
       
@@ -99,7 +99,7 @@ export default function RovoDevrimiPage() {
         <p>Yapay zeka artık sadece bireysel kullanımda değil; ekiplerin ortak hafızasını güçlendiren bir iş ortağı olarak da hayatımıza giriyor. Bu yeni sistem sayesinde, bilgi aramak değil, bilgiyi kullanmak ön plana çıkıyor. Ekipler daha hızlı öğreniyor, daha iyi karar alıyor ve daha verimli çalışıyor.</p>
         <p>Bu çözüm, sadece teknolojik bir araç değil; aynı zamanda çalışma kültürünü dönüştüren bir adım. Eğer hâlâ bilgiye ulaşmak için onlarca sekme açıyorsanız, bu yeni yapay zeka yardımcısına bir şans verin derim. Sizi yormadan, sizinle birlikte çalışmaya hazır.</p>
       </section>
-      </article>
+    </article>
     </main>
   );
 } 

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import ClientLayout from './ClientLayout'
 import Script from 'next/script'
+import { headers, cookies } from 'next/headers'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -82,76 +83,99 @@ export const viewport: Viewport = {
   themeColor: '#004CFF',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  // Middleware'den nonce'u request header'dan al (öncelikli)
+  // Eğer header'da yoksa cookie'den al (fallback)
+  // Bu sayede server-side render ve client-side hydration aynı nonce'u kullanır
+  const headersList = await headers();
+  const cookieStore = await cookies();
+  const nonce = headersList.get('x-nonce') || cookieStore.get('x-nonce')?.value || '';
+  
   return (
-    <html lang="tr" className={inter.className}>
+    <html lang="tr" className={inter.className} data-scroll-behavior="smooth">
       <head>
-        <Script id="gtm-consent-manager" strategy="beforeInteractive">
-          {`
-            (function () {
-              if (typeof window === 'undefined') return;
-              const dataLayer = window.dataLayer = window.dataLayer || [];
-              function gtag(){ dataLayer.push(arguments); }
-              window.gtag = window.gtag || gtag;
+        {/* GTM Script'leri - suppressHydrationWarning ile hydration mismatch'i önle */}
+        {nonce && (
+          <>
+            <script
+              id="gtm-consent-manager"
+              nonce={nonce}
+              suppressHydrationWarning
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function () {
+                    if (typeof window === 'undefined') return;
+                    const dataLayer = window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    window.gtag = window.gtag || gtag;
 
-              const applyConsent = (analyticsAllowed, marketingAllowed) => {
-                gtag('consent', 'update', {
-                  analytics_storage: analyticsAllowed ? 'granted' : 'denied',
-                  ad_storage: marketingAllowed ? 'granted' : 'denied',
-                  ad_user_data: marketingAllowed ? 'granted' : 'denied',
-                  ad_personalization: marketingAllowed ? 'granted' : 'denied'
-                });
-              };
+                    const applyConsent = (analyticsAllowed, marketingAllowed) => {
+                      gtag('consent', 'update', {
+                        analytics_storage: analyticsAllowed ? 'granted' : 'denied',
+                        ad_storage: marketingAllowed ? 'granted' : 'denied',
+                        ad_user_data: marketingAllowed ? 'granted' : 'denied',
+                        ad_personalization: marketingAllowed ? 'granted' : 'denied'
+                      });
+                    };
 
-              const readStoredConsent = () => {
-                try {
-                  const consent = localStorage.getItem('cookie-consent');
-                  const analytics = localStorage.getItem('cookie-analytics');
-                  const marketing = localStorage.getItem('cookie-marketing');
+                    const readStoredConsent = () => {
+                      try {
+                        const consent = localStorage.getItem('cookie-consent');
+                        const analytics = localStorage.getItem('cookie-analytics');
+                        const marketing = localStorage.getItem('cookie-marketing');
 
-                  const analyticsAllowed = consent === 'all' || (consent === 'custom' && analytics === 'true');
-                  const marketingAllowed = consent === 'all' || (consent === 'custom' && marketing === 'true');
+                        const analyticsAllowed = consent === 'all' || (consent === 'custom' && analytics === 'true');
+                        const marketingAllowed = consent === 'all' || (consent === 'custom' && marketing === 'true');
 
-                  return { analyticsAllowed, marketingAllowed };
-                } catch (error) {
-                  return { analyticsAllowed: false, marketingAllowed: false };
-                }
-              };
+                        return { analyticsAllowed, marketingAllowed };
+                      } catch (error) {
+                        return { analyticsAllowed: false, marketingAllowed: false };
+                      }
+                    };
 
-              gtag('consent', 'default', {
-                analytics_storage: 'denied',
-                ad_storage: 'denied',
-                ad_user_data: 'denied',
-                ad_personalization: 'denied',
-                wait_for_update: 500
-              });
-              gtag('set', 'ads_data_redaction', true);
+                    gtag('consent', 'default', {
+                      analytics_storage: 'denied',
+                      ad_storage: 'denied',
+                      ad_user_data: 'denied',
+                      ad_personalization: 'denied',
+                      wait_for_update: 500
+                    });
+                    gtag('set', 'ads_data_redaction', true);
 
-              const storedConsent = readStoredConsent();
-              if (storedConsent.analyticsAllowed || storedConsent.marketingAllowed) {
-                applyConsent(storedConsent.analyticsAllowed, storedConsent.marketingAllowed);
-              }
+                    const storedConsent = readStoredConsent();
+                    if (storedConsent.analyticsAllowed || storedConsent.marketingAllowed) {
+                      applyConsent(storedConsent.analyticsAllowed, storedConsent.marketingAllowed);
+                    }
 
-              window.addEventListener('cookie-consent-updated', function (event) {
-                const detail = event.detail || {};
-                applyConsent(!!detail.analytics, !!detail.marketing);
-              });
-            })();
-          `}
-        </Script>
-        <Script id="gtm-base" strategy="beforeInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PTXL5HBN');
-          `}
-        </Script>
+                    window.addEventListener('cookie-consent-updated', function (event) {
+                      const detail = event.detail || {};
+                      applyConsent(!!detail.analytics, !!detail.marketing);
+                    });
+                  })();
+                `,
+              }}
+            />
+            <script
+              id="gtm-base"
+              nonce={nonce}
+              suppressHydrationWarning
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;var n=d.querySelector('[nonce]');
+                  n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce'));f.parentNode.insertBefore(j,f);
+                  })(window,document,'script','dataLayer','GTM-PTXL5HBN');
+                `,
+              }}
+            />
+          </>
+        )}
         
         {/* DNS Prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -165,17 +189,8 @@ export default function RootLayout({
         
         {/* CSS is automatically loaded by Next.js */}
         
-        {/* Preload critical resources to reduce network dependency chain */}
-        <link rel="preload" href="/contact" as="fetch" crossOrigin="anonymous" />
-        <link rel="preload" href="/free-discovery" as="fetch" crossOrigin="anonymous" />
-        
-        {/* Preload critical images */}
-        <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/vr-showcase/solutions-1.svg" as="image" type="image/svg+xml" />
-        
-        
-        {/* Preload critical fonts */}
-        <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLvoW5hJNmnEiuXDsMlGDkNCcPbmJQ31fygqt0.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        {/* Preload critical resources - KALDIRILDI: Gereksiz preload'lar performansı düşürüyor */}
+        {/* Next.js otomatik olarak kritik kaynakları optimize ediyor */}
         
         {/* Critical CSS inline - Above the fold styles */}
         <style>{`

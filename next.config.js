@@ -3,37 +3,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true', // sadece ANALYZE=true ile çalışır
 });
 
-const securityHeaders = [
-  {
-    key: 'Content-Security-Policy',
-    value: [
-      "default-src 'self';",
-      "script-src 'self' https://maps.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://virtualriddle.com;",
-      "img-src 'self' data: https://virtualriddle.com https://maps.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://stats.g.doubleclick.net;",
-      "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com data:;",
-      "connect-src 'self' https://rvskttz2jh.execute-api.us-east-1.amazonaws.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net;",
-      "object-src 'none';",
-      "frame-src https://www.google.com https://maps.google.com https://www.google.com/maps/ https://maps.gstatic.com;",
-      "frame-ancestors 'none';",
-      "base-uri 'self';",
-      "form-action 'self';",
-      "report-uri /api/csp-violation;"
-    ].join(' ')
-  },
-  {
-    key: 'Strict-Transport-Security',
-    value: 'max-age=31536000; includeSubDomains; preload'
-  },
-  {
-    key: 'Cross-Origin-Opener-Policy',
-    value: 'same-origin'
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'DENY'
-  }
-];
+// CSP header'ı artık middleware.ts'de dinamik olarak nonce ile oluşturuluyor
+// Not: CSP, Strict-Transport-Security, Cross-Origin-Opener-Policy ve X-Frame-Options
+// middleware.ts'de dinamik olarak set ediliyor
 
 const nextConfig = {
   output: 'standalone',
@@ -147,14 +119,10 @@ const nextConfig = {
 
     return config;
   },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
-  },
+  // Headers artık middleware.ts'de set ediliyor
+  // async headers() {
+  //   return [];
+  // },
 }
 
 module.exports = withBundleAnalyzer(nextConfig) 
