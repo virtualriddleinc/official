@@ -104,4 +104,4 @@ export default function PerformanceOptimizer({ children }: PerformanceOptimizerP
   }, []);
 
   return <>{children}</>;
-} 
+}

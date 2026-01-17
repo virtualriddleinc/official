@@ -64,9 +64,9 @@ export default function CookieConsent() {
         const detail = {
           consent,
           analytics: analytics === "true",
-          marketing: marketing === "true",
-        };
-        window.dispatchEvent(new CustomEvent("cookie-consent-updated", { detail }));
+        marketing: marketing === "true",
+      };
+      window.dispatchEvent(new CustomEvent("cookie-consent-updated", { detail }));
       } catch (eventError) {
         console.error('Error dispatching cookie consent event:', eventError);
       }

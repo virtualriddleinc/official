@@ -112,6 +112,9 @@ export default async function RootLayout({
                     const dataLayer = window.dataLayer = window.dataLayer || [];
                     function gtag(){ dataLayer.push(arguments); }
                     window.gtag = window.gtag || gtag;
+                    
+                    // Prefer beacon transport to avoid no-cors fetch opaque errors
+                    window.gtag('set', 'transport_type', 'beacon');
 
                     const applyConsent = (analyticsAllowed, marketingAllowed) => {
                       gtag('consent', 'update', {

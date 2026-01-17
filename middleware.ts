@@ -55,20 +55,21 @@ export function middleware(request: NextRequest) {
     "default-src 'self';",
     // Nonce kullanarak inline script'lere izin ver
     // unsafe-eval: Google Tag Manager ve Google Ads bazı durumlarda eval kullanıyor (güvenlik riski var ama Google servisleri için gerekli)
-    `script-src 'self' 'nonce-${nonce}' 'unsafe-eval' https://maps.googleapis.com https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://www.google.com https://*.google.com https://*.google.com.tr https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://googletagmanager.com https://tagmanager.google.com;`,
+    `script-src 'self' 'nonce-${nonce}' 'unsafe-eval' https://maps.googleapis.com https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://www.googleadservices.com https://*.googleadservices.com https://www.google.com https://*.google.com https://*.google.com.tr https://pagead2.googlesyndication.com https://*.googlesyndication.com https://googleads.g.doubleclick.net https://*.doubleclick.net https://googletagmanager.com https://tagmanager.google.com;`,
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://virtualriddle.com https://googletagmanager.com https://tagmanager.google.com;",
     // style-src-elem ekle (CSS @import için gerekli - Next.js font yükleme için)
     "style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com;",
     // Google Tag Manager, Google Analytics, Google Ads için img-src
     // *.google.com.tr: Türkiye için Google Ads conversion tracking
-    "img-src 'self' data: https://virtualriddle.com https://maps.googleapis.com https://www.googletagmanager.com https://*.googletagmanager.com https://*.google-analytics.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.google.com https://*.google.com https://*.google.com.tr https://www.google.com.tr https://pagead2.googlesyndication.com https://www.googleadservices.com https://google.com https://stats.g.doubleclick.net https://ssl.gstatic.com https://www.gstatic.com;",
+    "img-src 'self' data: https://virtualriddle.com https://maps.googleapis.com https://www.googletagmanager.com https://*.googletagmanager.com https://*.google-analytics.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://*.doubleclick.net https://www.google.com https://*.google.com https://*.google.com.tr https://www.google.com.tr https://pagead2.googlesyndication.com https://www.googleadservices.com https://google.com https://stats.g.doubleclick.net https://ssl.gstatic.com https://www.gstatic.com;",
     "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com data:;",
     // Google Tag Manager, Google Analytics, Google Ads için connect-src
     // Google Analytics 4 için: https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
     // Google Ads için: https://www.google.com https://google.com https://www.googleadservices.com https://googleads.g.doubleclick.net
     // Not: CSP path bazlı kontrol yapmaz, sadece domain bazlı. 
     // www.google.com/ccm/collect ve www.google-analytics.com/g/collect endpoint'leri domain'ler kapsanıyor.
-    "connect-src 'self' https://rvskttz2jh.execute-api.us-east-1.amazonaws.com https://www.googletagmanager.com https://*.googletagmanager.com https://*.google-analytics.com https://www.google-analytics.com https://*.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net https://pagead2.googlesyndication.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://*.google.com https://*.google.com.tr https://www.google.com.tr https://google.com;",
+    // Production'da "Fetch failed loading" mesajları CSP hatası değil, network/CORS veya consent mode nedeniyle oluşabilir.
+    `connect-src 'self' https://rvskttz2jh.execute-api.us-east-1.amazonaws.com https://www.googletagmanager.com https://*.googletagmanager.com https://google-analytics.com https://*.google-analytics.com https://www.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://stats.g.doubleclick.net https://*.doubleclick.net https://pagead2.googlesyndication.com https://*.googlesyndication.com https://www.googleadservices.com https://*.googleadservices.com https://googleads.g.doubleclick.net https://google.com https://*.google.com https://google.com.tr https://*.google.com.tr https://www.google.com.tr;`,
     // Next.js plugin sistemi için object-src'yi data: ile güncelle
     "object-src 'self' data:;",
     // Google Tag Manager Preview Mode ve Google Maps için frame-src
@@ -85,6 +86,8 @@ export function middleware(request: NextRequest) {
   // Diğer güvenlik header'larını da ekle
   response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
+  response.headers.set('Cross-Origin-Resource-Policy', 'cross-origin');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   response.headers.set('X-Frame-Options', 'DENY');
   
   return response;
